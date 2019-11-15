@@ -3,7 +3,7 @@
         <div class="page__section__inner">
             <SectionHeader :header="header" :para="para"/>
             <div class="offer__grid__container">
-                <OfferCell v-for="(offer, index) in offers" :key="index" :offer="offer"/>
+                <OfferCell v-for="(service, index) in services" :key="index" :service="service"/>
             </div>
             <nuxt-link to="/services" class="site__button services__button">See more</nuxt-link>
         </div>
@@ -20,19 +20,11 @@ export default {
         OfferCell
     },
     props: {
-        offers: Array,
+        services: Array,
         header: String,
         para: String,
         status: String
-    },
-    // mounted() {
-    //     this.$nextTick(() => {
-    //         this.$nuxt.$loading.start();
-    //         setTimeout(() => {
-    //             this.$nuxt.$loading.finish();
-    //         }, 1500);
-    //     });
-    // }
+    }
 }
 </script>
 

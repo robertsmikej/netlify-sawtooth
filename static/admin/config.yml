@@ -103,7 +103,7 @@ collections:
     fields:
       - { label: 'Nav Item Status', name: 'nav_item_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
       - label: "Sort Number"
-        name: "nav_sort_number"
+        name: "sort_number"
         widget: "number"
         default: 1
         valueType: "int"
@@ -124,17 +124,13 @@ collections:
     editor:
       preview: false
     fields:
-      - label: "Company Information"
-        name: "company_information"
-        widget: "object"
-        fields:
-        - { label: 'Company Name', name: 'company_name', widget: 'string' }
-        - { label: 'Company Logo', name: 'company_logo', widget: 'file', required: false }
-        - { label: 'Company Address Line 1', name: 'company_address_line_1', widget: 'string', required: false }
-        - { label: 'Company Address Line 2', name: 'company_address_line_2', widget: 'string', required: false }
-        - { label: 'Company Address Line 3', name: 'company_address_line_3', widget: 'string', required: false }
-        - { label: 'Company Phone Number', name: 'company_phone_number', widget: 'string', required: false }
-        - { label: 'Company Email Address', name: 'company_email_address', widget: 'string', required: false }
+      - { label: 'Company Name', name: 'company_name', widget: 'string' }
+      - { label: 'Company Logo', name: 'company_logo', widget: 'file', required: false }
+      - { label: 'Company Address Line 1', name: 'company_address_line_1', widget: 'string', required: false }
+      - { label: 'Company Address Line 2', name: 'company_address_line_2', widget: 'string', required: false }
+      - { label: 'Company Address Line 3', name: 'company_address_line_3', widget: 'string', required: false }
+      - { label: 'Company Phone Number', name: 'company_phone_number', widget: 'string', required: false }
+      - { label: 'Company Email Address', name: 'company_email_address', widget: 'string', required: false }
       - label: "Contact Box - Every Page"
         name: "contact_box"
         widget: "object"
@@ -151,3 +147,28 @@ collections:
         - { label: 'Footer Copyright', name: 'footer_copyright', widget: 'string', required: false }
         - { label: 'Footer - Show Social Media', name: 'footer_show_social', widget: 'boolean', required: false }
         - { label: 'Footer - Show Site Links', name: 'footer_show_site_links', widget: 'boolean', required: false }
+
+  - name: 'services'
+    label: 'Services'
+    identifier_field: service_type
+    format: 'json'
+    folder: 'assets/content/services'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Service Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - { label: 'Service Type', name: 'service_type', widget: 'string' }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 14
+        required: false
+      - { label: 'Service Short Description', name: 'service_short_description', widget: 'text', required: false }
+      - { label: 'Service Icon', name: 'service_icon', widget: 'file', required: false }
+      - { label: 'Service Link', name: 'service_link', widget: 'text', required: false }
+

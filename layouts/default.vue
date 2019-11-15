@@ -1,11 +1,12 @@
 <template>
     <div class="container">
-        <div>
-            {{nav}}
-        </div>
-        <!-- <Header :navItems="nav"/> -->
+        
+        <Header :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
-
+        <!-- <div>
+            {{nav}}
+            {{sitewide}}
+        </div> -->
     </div>
 </template>
 
@@ -17,6 +18,9 @@ export default {
         Header,
     },
     computed: {
+        sitewide: function () {
+            return this.$store.state.sitewide
+        },
         nav: function () {
             return this.$store.state.navItems
         }
@@ -68,11 +72,14 @@ export default {
     main {
         width: 100%;
         background-color: #FFF;
-        transform: translateX(0);
+        /* transform: translateX(0);
+        align-self: flex-start; */
     }
     .container {
         width: 100%;
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         text-align: center;

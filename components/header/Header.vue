@@ -14,17 +14,23 @@
                 </div>
                 <nav class="nav__container" :class="{navexpand: navChanged}">
                     <div class="nav__items" @click="navChange">
-                    <nuxt-link v-for="(item, index) in navItems" v-if="item.nav_item_status === 'published' && item.nav_link" :to="item.nav_link" class="nav__item" :key="index" >
-                            <h2 class="nav__link">{{ item.nav_title }}</h2>
-                            <p class="nav__para">{{ item.nav_para }}</p>
-                    </nuxt-link>
+                        <div v-for="(item, index) in navItems" :key="index" class="nav__item">
+                            <nuxt-link :to="item.nav_link" v-if="item.nav_item_status === 'published' && item.nav_link">
+                                <h2 class="nav__link">{{ item.nav_title }}</h2>
+                                <p class="nav__para">{{ item.nav_para }}</p>
+                            </nuxt-link>
+                            <div v-else-if="item.nav_item_status === 'published' && !item.nav_link">
+                                <h2 class="nav__link">{{ item.nav_title }}</h2>
+                                <p class="nav__para">{{ item.nav_para }}</p>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>
             <div @click="navClose">
                 <nuxt-link to="/" class="header__logo__and__name">
                     <div class="site__logo__container">
-                        <img class="site__logo" :src="sitewide.company_logo" :alt="'Sawtooth Digital Logo - Fox'">
+                        <img class="site__logo" :src="sitewide.company_logo" :alt="'Sawtooth Logo'">
                     </div>
                     <h2 class="header__name"><span>{{ boldName(sitewide.company_name) }}</span>{{ notBoldName(sitewide.company_name) }}</h2>
                 </nuxt-link>
@@ -236,6 +242,9 @@ export default {
     }
     .nav__item {
         margin: 30px 0;
+        cursor: pointer;
+    }
+    .nav__item a {
         text-decoration: none;
         display: block;
     }

@@ -2,7 +2,8 @@ export const state = () => ({
     blogPosts: [],
     pages: {},
     nav: [],
-    sitewide: {}
+    sitewide: {},
+    services: {}
 });
 
 export const mutations = {
@@ -15,16 +16,30 @@ export const mutations = {
         }
     },
     setNav(state, data) {
+        let newdata = {};
         state.navItems = data;
     },
     setSitewide(state, data) {
         state.sitewide = data;
+    },
+    setServices(state, data) {
+        let newdata = [];
+        for (var d in data) {
+            let keys = Object.keys(newdata);
+            let item = data[d];
+            if (item.status === 'published' && item.sort_number !== null) {
+                if (keys.indexOf(item.slug) >= 0) {
+                    newdata.push(item);
+                } else {
+                    newdata.push(item);
+                }
+            }
+        }
+        state.services = newdata.sort(function (a, b) {
+            return a.sort_number - b.sort_number;
+        });
     }
 };
-
-// export const getters = {
-//     pages: state => state.pages
-// };
 
 export const actions = {
     async nuxtServerInit({ commit }) {
@@ -59,5 +74,13 @@ export const actions = {
             return res;
         });
         await commit('setSitewide', sitewides[0]);
+
+        let serviceFiles = await require.context('~/assets/content/services/', false, /\.json$/);
+        let services = serviceFiles.keys().map(key => {
+            let res = serviceFiles(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setServices', services);
     },
 };

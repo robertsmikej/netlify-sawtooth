@@ -1,12 +1,12 @@
 <template>
-    <div v-if="offer.status === 'published'" to="'/' + offer.offer_link" class="offer__grid__cell">
+    <div v-if="service.status === 'published'" to="'/' + service.service_link" class="offer__grid__cell">
         <div class="offer__image__container">
-            <img :src="offer.offer_icon.data.full_url" :alt="offer.offer_header" class="offer__image">
+            <img :src="service.service_icon" :alt="service.service_type" class="offer__image">
         </div>
         <div class="offer__text__container">
-            <h4 class="offer__header">{{ offer.offer_header }}</h4>
+            <h4 class="offer__header">{{ service.service_type }}</h4>
             <div class="offer__text__inner">
-                <p class="offer__text__para">{{ offer.offer_para}}</p>
+                <p class="offer__text__para">{{ service.service_short_description }}</p>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
 <script>
 export default {
     props: {
-        offer: Object
+        service: Object
     }
 }
 </script>
@@ -70,7 +70,6 @@ export default {
     .offer__text__para {
         margin: 0 auto 2px;
         width: 90%;
-        color: #FFF;
     }
     .offer__grid__cell:hover .offer__text__para {
         color: var(--dark-grey);

@@ -1,20 +1,19 @@
 <template>
     <main>
-        <!-- <Hero :hero="pageInfo.index"/> -->
-        {{pageInfo.index}}
-
+        <Hero :hero="pageInfo.hero"/>
+        <Offer :status="pageInfo.page_section_1.page_section_1_status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
     </main>
 </template>
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
-import ContactBox from '~/components/general/ContactBox.vue';
 import Offer from '~/components/index/Offer.vue';
 import Local from '~/components/index/Local.vue';
 import Testimonials from '~/components/general/Testimonials.vue';
 import Recent from '~/components/index/Recent.vue';
 import Process from '~/components/index/Process.vue';
+import ContactBox from '~/components/general/ContactBox.vue';
 
 export default {
     components: {
@@ -33,7 +32,10 @@ export default {
             return this.$store.state.sitewide
         },
         pageInfo: function () {
-            return this.$store.state.pages
+            return this.$store.state.pages.index
+        },
+        services: function () {
+            return this.$store.state.services
         }
     },
     head() {
@@ -53,15 +55,6 @@ export default {
 </script>
 
 <style>
- 
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
