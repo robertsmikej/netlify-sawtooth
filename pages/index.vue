@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- <Hero :hero="pageInfo.index"/> -->
-        {{pageInfo}}
+        {{pageInfo.index}}
 
     </main>
 </template>

@@ -34,7 +34,7 @@ collections:
     create: true
     slug: '{{page_name}}'
     editor:
-      preview: true
+      preview: false
     fields:
       - { label: 'Page Name', name: 'page_name', widget: 'string' }
       - label: "Hero"
@@ -90,3 +90,25 @@ collections:
         - { label: 'Page Section 5 Status', name: 'page_section_5_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 5 Header', name: 'page_section_5_header', widget: 'string', required: false }
         - { label: 'Page Section 5 Para', name: 'page_section_5_para', widget: 'text', required: false }
+
+  - name: 'nav'
+    label: 'Nav Items'
+    format: 'json'
+    folder: 'assets/content/nav'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Nav Item Status', name: 'nav_item_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "nav_sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 14
+      - { label: 'Nav Title', name: 'nav_title', widget: 'string' }
+      - { label: 'Nav Para', name: 'nav_para', widget: 'text' }
+      - { label: 'Nav Link', name: 'nav_link', widget: 'string' }
+      - { label: 'Nav Icon', name: 'nav_icon', widget: 'file' }

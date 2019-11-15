@@ -14,9 +14,9 @@ export const mutations = {
     },
 };
 
-export const getters = {
-    pages: state => state.pages
-};
+// export const getters = {
+//     pages: state => state.pages
+// };
 
 export const actions = {
     async nuxtServerInit({ commit }) {

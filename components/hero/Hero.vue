@@ -3,11 +3,11 @@
         <div v-if="hero" class="hero__background">
             <div class="hero__background__overlay"></div>
             <video v-if="!hero.hero_background_image && hero.hero_background_video" playsinline autoplay muted loop class="hero__header__video">
-                <source :src="hero.hero_background_video.data.full_url" type="video/mp4">
+                <source :src="hero.hero_background_video" type="video/mp4">
             </video>
             <picture v-if="hero.hero_background_image && !hero.hero_background_video" class="hero__header__image">
-                <source :srcset="hero.hero_background_image.data.full_url" media="(min-width: 900px)">
-                <img :src="hero.hero_background_image.data.full_url"/>
+                <source :srcset="hero.hero_background_image" media="(min-width: 900px)">
+                <img :src="hero.hero_background_image"/>
             </picture>
         </div>
         <div v-if="hero" class="hero__inner">
@@ -27,8 +27,8 @@
             </div>
             <div v-if="hero.hero_sub_image" class="hero__sub__image__container">
                 <picture class="hero__sub__image">
-                    <source :srcset="hero.hero_sub_image.data.full_url" media="(min-width: 900px)">
-                    <img :src="hero.hero_sub_image.data.full_url"/>
+                    <source :srcset="hero.hero_sub_image" media="(min-width: 900px)">
+                    <img :src="hero.hero_sub_image"/>
                 </picture>
             </div>
         </div>
