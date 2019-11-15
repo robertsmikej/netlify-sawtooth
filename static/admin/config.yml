@@ -28,6 +28,7 @@ collections:
 
   - name: 'page'
     label: 'Page'
+    identifier_field: page_name
     format: 'json'
     folder: 'assets/content/page'
     create: true
@@ -36,53 +37,54 @@ collections:
       preview: true
     fields:
       - { label: 'Page Name', name: 'page_name', widget: 'string' }
-      - label: "hero"
-        name: "Hero"
+      - label: "Hero"
+        name: "hero"
         widget: "object"
         fields:
         - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
+        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
         - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
-      - label: "page_intro"
-        name: "Page Intro"
+      - label: "Page Intro"
+        name: "page_intro"
         widget: "object"
         fields:
         - { label: 'Page Intro Section Status', name: 'page_intro_section_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Intro Header', name: 'page_intro_header', widget: 'string', required: false }
         - { label: 'Page Intro Para', name: 'page_intro_para', widget: 'text', required: false }
-      - label: "page_section_1"
-        name: "Page Section - 1"
+      - label: "Page Section - 1"
+        name: "page_section_1"
         widget: "object"
         fields:
         - { label: 'Page Section 1 Status', name: 'page_section_1_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 1 Header', name: 'page_section_1_header', widget: 'string', required: false }
         - { label: 'Page Section 1 Para', name: 'page_section_1_para', widget: 'text', required: false}
-      - label: "page_section_2"
-        name: "Page Section - 2"
+      - label: "Page Section - 2"
+        name: "page_section_2"
         widget: "object"
         fields:
         - { label: 'Page Section 2 Status', name: 'page_section_2_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 2 Header', name: 'page_section_2_header', widget: 'string', required: false }
         - { label: 'Page Section 2 Para', name: 'page_section_2_para', widget: 'text', required: false }
-      - label: "page_section_3"
-        name: "Page Section - 3"
+      - label: "Page Section - 3"
+        name: "page_section_3"
         widget: "object"
         fields:
         - { label: 'Page Section 3 Status', name: 'page_section_3_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 3 Header', name: 'page_section_3_header', widget: 'string', required: false }
         - { label: 'Page Section 3 Para', name: 'page_section_3_para', widget: 'text', required: false }
-      - label: "page_section_4"
-        name: "Page Section - 4"
+      - label: "Page Section - 4"
+        name: "page_section_4"
         widget: "object"
         fields:
         - { label: 'Page Section 4 Status', name: 'page_section_4_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 4 Header', name: 'page_section_4_header', widget: 'string', required: false }
         - { label: 'Page Section 4 Para', name: 'page_section_4_para', widget: 'text', required: false }
-      - label: "page_section_5"
-        name: "Page Section - 5"
+      - label: "Page Section - 5"
+        name: "page_section_5"
         widget: "object"
         fields:
         - { label: 'Page Section 5 Status', name: 'page_section_5_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }

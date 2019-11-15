@@ -1,50 +1,62 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Netlify
-      </h1>
-      <h2 class="subtitle">
-        Testing Project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+    <main>
+        <!-- <Hero :hero="pageInfo.index"/> -->
+        {{pageInfo}}
+
+    </main>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Hero from '~/components/hero/Hero.vue';
+import PageIntro from '~/components/general/PageIntro.vue';
+import ContactBox from '~/components/general/ContactBox.vue';
+import Offer from '~/components/index/Offer.vue';
+import Local from '~/components/index/Local.vue';
+import Testimonials from '~/components/general/Testimonials.vue';
+import Recent from '~/components/index/Recent.vue';
+import Process from '~/components/index/Process.vue';
 
 export default {
-  components: {
-    Logo
-  },
-  head() {
-    return {
-      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
-    };
-  }
-}
+    components: {
+        Hero,
+        PageIntro,
+        ContactBox,
+        Offer,
+        Local,
+        Testimonials,
+        Recent,
+        Process
+    },
+    transition: 'bounce',
+    computed: {
+        pageInfo: function () {
+            return this.$store.state.pages
+        }
+    },
+    head() {
+        return {
+            script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+            title: "Sawtooth Digital | Boise Idaho Based Web Development Agency",
+            meta: [
+                { 
+                    hid: 'description',
+                    name: 'description',
+                    content: "Sawtooth Digital is a Digital Web Design and Development Agency based in Boise, Idaho. Our passion is creating custom, cutting edge websites that will make you money."
+                }
+            ]
+        };
+    }
+    }
 </script>
 
 <style>
  
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .title {
