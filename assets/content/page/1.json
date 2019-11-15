@@ -1,3 +1,7 @@
 {
-  "name_of_page": "Index"
+  "name_of_page": "Index",
+  "hero": {
+    "hero_header": "Digital Experiences. Zero Limitations.",
+    "hero_para": "We create modern websites which make a lasting impression."
+  }
 }
