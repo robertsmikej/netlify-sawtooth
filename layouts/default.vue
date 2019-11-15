@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <!-- <Header :sitewide="sitewide" :navItemsHeader="navItemsHeader"/> -->
+        <div>
+            {{nav}}
+        </div>
+        <!-- <Header :navItems="nav"/> -->
         <nuxt/>
 
     </div>
@@ -14,8 +17,8 @@ export default {
         Header,
     },
     computed: {
-        sitewide: function () {
-            return this.$store.state.sitewide
+        nav: function () {
+            return this.$store.state.navItems
         }
     }
 }

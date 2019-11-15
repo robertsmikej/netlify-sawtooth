@@ -14,7 +14,7 @@
                 </div>
                 <nav class="nav__container" :class="{navexpand: navChanged}">
                     <div class="nav__items" @click="navChange">
-                    <nuxt-link v-for="(item, index) in navItemsHeader" v-if="item.nav_type === 'mainnav' && item.status === 'published' && item.nav_link" :to="item.nav_link" class="nav__item" :key="index" >
+                    <nuxt-link v-for="(item, index) in navItems" v-if="item.nav_item_status === 'published' && item.nav_link" :to="item.nav_link" class="nav__item" :key="index" >
                             <h2 class="nav__link">{{ item.nav_title }}</h2>
                             <p class="nav__para">{{ item.nav_para }}</p>
                     </nuxt-link>
@@ -24,7 +24,7 @@
             <div @click="navClose">
                 <nuxt-link to="/" class="header__logo__and__name">
                     <div class="site__logo__container">
-                        <img class="site__logo" :src="sitewide.company_logo.data.full_url" :alt="'Sawtooth Digital Logo - Fox'">
+                        <img class="site__logo" :src="sitewide.company_logo" :alt="'Sawtooth Digital Logo - Fox'">
                     </div>
                     <h2 class="header__name"><span>{{ boldName(sitewide.company_name) }}</span>{{ notBoldName(sitewide.company_name) }}</h2>
                 </nuxt-link>
@@ -53,7 +53,7 @@ export default {
     },
     props: {
         sitewide: Object,
-        navItemsHeader: Array
+        navItems: Array
     },
     methods: {
         boldName: function (name) {
@@ -77,10 +77,6 @@ export default {
             this.$nuxt.$emit("contact_show", !this.$parent.contactShow);
         }
     }
-    // ,
-    // mounted() {
-    //     this.navChanged = true;
-    // }
 }
 </script>
 

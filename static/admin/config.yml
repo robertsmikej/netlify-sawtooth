@@ -93,6 +93,7 @@ collections:
 
   - name: 'nav'
     label: 'Nav Items'
+    identifier_field: nav_title
     format: 'json'
     folder: 'assets/content/nav'
     create: true
@@ -108,7 +109,45 @@ collections:
         valueType: "int"
         min: 1
         max: 14
-      - { label: 'Nav Title', name: 'nav_title', widget: 'string' }
-      - { label: 'Nav Para', name: 'nav_para', widget: 'text' }
-      - { label: 'Nav Link', name: 'nav_link', widget: 'string' }
-      - { label: 'Nav Icon', name: 'nav_icon', widget: 'file' }
+      - { label: 'Nav Title', name: 'nav_title', widget: 'string', required: false }
+      - { label: 'Nav Para', name: 'nav_para', widget: 'text', required: false }
+      - { label: 'Nav Link', name: 'nav_link', widget: 'string', required: false }
+      - { label: 'Nav Icon', name: 'nav_icon', widget: 'file', required: false }
+
+  - name: 'sitewide'
+    label: 'Sitewide'
+    identifier_field: company_name
+    format: 'json'
+    folder: 'assets/content/sitewide'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - label: "Company Information"
+        name: "company_information"
+        widget: "object"
+        fields:
+        - { label: 'Company Name', name: 'company_name', widget: 'string' }
+        - { label: 'Company Logo', name: 'company_logo', widget: 'file', required: false }
+        - { label: 'Company Address Line 1', name: 'company_address_line_1', widget: 'string', required: false }
+        - { label: 'Company Address Line 2', name: 'company_address_line_2', widget: 'string', required: false }
+        - { label: 'Company Address Line 3', name: 'company_address_line_3', widget: 'string', required: false }
+        - { label: 'Company Phone Number', name: 'company_phone_number', widget: 'string', required: false }
+        - { label: 'Company Email Address', name: 'company_email_address', widget: 'string', required: false }
+      - label: "Contact Box - Every Page"
+        name: "contact_box"
+        widget: "object"
+        fields:
+        - { label: 'Contact Header', name: 'contact_header', widget: 'string', required: false }
+        - { label: 'Contact Para', name: 'contact_para', widget: 'text', required: false }
+        - { label: 'Contact Button Link', name: 'contact_button_link', widget: 'string', required: false }
+        - { label: 'Contact Button Text', name: 'contact_button_text', widget: 'string', required: false }
+      - label: "Footer Company Details"
+        name: "contact_box"
+        widget: "object"
+        fields:
+        - { label: 'Footer Company Para', name: 'footer_company_para', widget: 'text', required: false }
+        - { label: 'Footer Copyright', name: 'footer_copyright', widget: 'string', required: false }
+        - { label: 'Footer - Show Social Media', name: 'footer_show_social', widget: 'boolean', required: false }
+        - { label: 'Footer - Show Site Links', name: 'footer_show_site_links', widget: 'boolean', required: false }
