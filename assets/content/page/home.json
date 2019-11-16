@@ -8,31 +8,31 @@
     "hero_background_video": "/img/meeting.mp4"
   },
   "page_intro": {
-    "page_intro_section_status": "deleted",
+    "status": "published",
     "page_intro_header": "Better Than Ordinary",
     "page_intro_para": "Our passion is building custom, quick, and unique digital experiences. We build each experience with you and your business specifically in mind, allowing us to tailor it perfectly. This focus on strategy, design, and technology, makes us an invaluable parter in growing your business and brand."
   },
   "page_section_1": {
-    "page_section_1_status": "published",
+    "status": "published",
     "page_section_1_header": "Services",
     "page_section_1_para": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
   },
   "page_section_2": {
-    "page_section_2_status": "published",
+    "status": "published",
     "page_section_2_header": "Testimonials",
     "page_section_2_para": "What our recent clients have to say."
   },
   "page_section_3": {
-    "page_section_3_status": "published",
+    "status": "published",
     "page_section_3_header": "The Process",
     "page_section_3_para": "Know what to expect when working with us."
   },
   "page_section_4": {
-    "page_section_4_status": "published",
+    "status": "published",
     "page_section_4_header": "Work With Idaho Natives",
     "page_section_4_para": "We've seen Boise grow with you over the last 30 years. We understand the needs and concerns that local business owners have, and will work with you to come up with solutions that work in our region, not just online."
   },
   "page_section_5": {
-    "page_section_5_status": "deleted"
+    "status": "deleted"
   }
 }
