@@ -5,9 +5,11 @@
   "company_phone_number": "1(208)794-9008",
   "company_email_address": "contact@sawtooth.dev",
   "contact_box": {
-    "footer_show_site_links": true
+    "footer_show_site_links": true,
+    "footer_copyright": ""
   },
   "social_media": {
+    "footer_show_social": true,
     "facebook_link": "https://www.facebook.com/sawtooth-digital"
   }
 }
