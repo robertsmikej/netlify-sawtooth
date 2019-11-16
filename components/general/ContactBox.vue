@@ -6,7 +6,6 @@
             <div class="site__button contact__box__button js__open__contact" @click="contact()">
                 {{ sitewide.contact_button_text }}
             </div>
-            <!-- <nuxt-link to="/contact" class="site__button contact__box__button">{{ sitewide.contact_button_text }}</nuxt-link> -->
         </div>
     </div>
 </template>

@@ -5,9 +5,6 @@
             <div class="process__text__images">
                 <div class="process__text__cells">
                     <ProcessCell v-for="(proc, index) in process" v-if="proc.status === 'published'" :ind="index + 1" :process="proc" :key="index"/>
-                    <!-- <nuxt-link to="/process" class="site__button process__see__more__button">
-                        See More Process
-                    </nuxt-link> -->
                 </div>
                 <div class="process__images">
                     <div class="process__images__inner">

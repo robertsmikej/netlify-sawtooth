@@ -52,42 +52,42 @@ collections:
         name: "page_intro"
         widget: "object"
         fields:
-        - { label: 'Page Intro Section Status', name: 'page_intro_section_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Intro Section Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Intro Header', name: 'page_intro_header', widget: 'string', required: false }
         - { label: 'Page Intro Para', name: 'page_intro_para', widget: 'text', required: false }
       - label: "Page Section - 1"
         name: "page_section_1"
         widget: "object"
         fields:
-        - { label: 'Page Section 1 Status', name: 'page_section_1_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 1 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 1 Header', name: 'page_section_1_header', widget: 'string', required: false }
         - { label: 'Page Section 1 Para', name: 'page_section_1_para', widget: 'text', required: false}
       - label: "Page Section - 2"
         name: "page_section_2"
         widget: "object"
         fields:
-        - { label: 'Page Section 2 Status', name: 'page_section_2_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 2 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 2 Header', name: 'page_section_2_header', widget: 'string', required: false }
         - { label: 'Page Section 2 Para', name: 'page_section_2_para', widget: 'text', required: false }
       - label: "Page Section - 3"
         name: "page_section_3"
         widget: "object"
         fields:
-        - { label: 'Page Section 3 Status', name: 'page_section_3_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 3 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 3 Header', name: 'page_section_3_header', widget: 'string', required: false }
         - { label: 'Page Section 3 Para', name: 'page_section_3_para', widget: 'text', required: false }
       - label: "Page Section - 4"
         name: "page_section_4"
         widget: "object"
         fields:
-        - { label: 'Page Section 4 Status', name: 'page_section_4_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 4 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 4 Header', name: 'page_section_4_header', widget: 'string', required: false }
         - { label: 'Page Section 4 Para', name: 'page_section_4_para', widget: 'text', required: false }
       - label: "Page Section - 5"
         name: "page_section_5"
         widget: "object"
         fields:
-        - { label: 'Page Section 5 Status', name: 'page_section_5_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 5 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 5 Header', name: 'page_section_5_header', widget: 'string', required: false }
         - { label: 'Page Section 5 Para', name: 'page_section_5_para', widget: 'text', required: false }
 
@@ -101,7 +101,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Nav Item Status', name: 'nav_item_status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - { label: 'Nav Item Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
       - label: "Sort Number"
         name: "sort_number"
         widget: "number"
@@ -139,14 +139,24 @@ collections:
         - { label: 'Contact Para', name: 'contact_para', widget: 'text', required: false }
         - { label: 'Contact Button Link', name: 'contact_button_link', widget: 'string', required: false }
         - { label: 'Contact Button Text', name: 'contact_button_text', widget: 'string', required: false }
-      - label: "Footer Company Details"
-        name: "contact_box"
+      - label: "Footer Details"
+        name: "footer_details"
         widget: "object"
         fields:
+        - { label: 'Footer - Show Site Links', name: 'footer_show_site_links', widget: 'boolean', required: false }
         - { label: 'Footer Company Para', name: 'footer_company_para', widget: 'text', required: false }
         - { label: 'Footer Copyright', name: 'footer_copyright', widget: 'string', required: false }
+      - label: "Social Media"
+        name: "social_media"
+        widget: "object"
+        fields:
         - { label: 'Footer - Show Social Media', name: 'footer_show_social', widget: 'boolean', required: false }
-        - { label: 'Footer - Show Site Links', name: 'footer_show_site_links', widget: 'boolean', required: false }
+        - { label: 'Facebook Link', name: 'facebook_link', widget: 'string', required: false }
+        - { label: 'Instagram Link', name: 'instagram_link', widget: 'string', required: false }
+        - { label: 'Twitter Link', name: 'twitter_link', widget: 'string', required: false }
+        - { label: 'GitHub Link', name: 'github_link', widget: 'string', required: false }
+        - { label: 'Dribble Link', name: 'dribble_link', widget: 'string', required: false }
+
 
   - name: 'services'
     label: 'Services'
@@ -166,9 +176,53 @@ collections:
         default: 1
         valueType: "int"
         min: 1
-        max: 14
+        max: 20
         required: false
       - { label: 'Service Short Description', name: 'service_short_description', widget: 'text', required: false }
       - { label: 'Service Icon', name: 'service_icon', widget: 'file', required: false }
       - { label: 'Service Link', name: 'service_link', widget: 'text', required: false }
 
+  - name: 'process'
+    label: 'Process'
+    identifier_field: process_header
+    format: 'json'
+    folder: 'assets/content/process'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Process Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 20
+        required: false
+      - { label: 'Process Header', name: 'process_header', widget: 'string', required: false }
+      - { label: 'Process Short Description', name: 'process_short_description', widget: 'text', required: false }
+
+  - name: 'testimonials'
+    label: 'Testimonials'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/testimonials'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Testamonial Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 20
+        required: false
+      - { label: 'Testamonial Name', name: 'name', widget: 'string', required: false }
+      - { label: 'Testamonial Text', name: 'text', widget: 'text', required: false }
+      - { label: 'Testamonial Description', name: 'string', widget: 'text', required: false }

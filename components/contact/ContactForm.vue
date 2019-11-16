@@ -2,30 +2,31 @@
     <div class="contact__form__container">
         <div class="contact__exit" @click="contactclose()"></div>
         <h2 class="contact__header">Send Us A Message</h2>
-        <form id="contact__form" class="" action="" method="post" @submit.prevent="handleSubmit">
+        <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="" action="" method="post" @submit.prevent="handleSubmit">
+            <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
             <fieldset>
                 <p>Your Name</p>
-                <input aria-label="Full Name" placeholder="Eg. Edward Cullen" type="text" v-model="formData.name" required autofocus>
+                <input aria-label="Full Name" name="name" placeholder="Eg. Edward Cullen" type="text" v-model="formData.name" required autofocus>
             </fieldset>
             <fieldset>
                 <p>Your Email Address</p>
-                <input aria-label="Email Address" placeholder="Eg. jacobsux@gmail.com" type="email" v-model="formData.email" required>
+                <input aria-label="Email Address" name="email" placeholder="Eg. jacobsux@gmail.com" type="email" v-model="formData.email" required>
             </fieldset>
             <fieldset>
                 <p>Your Phone Number</p>
-                <input aria-label="Telephone Number" placeholder="Eg. 1-208-555-0000" type="tel" v-model="formData.phone" required>
+                <input aria-label="Telephone Number" name="phone" placeholder="Eg. 1-208-555-0000" type="tel" v-model="formData.phone" required>
             </fieldset>
             <fieldset>
                 <p>Your Company</p>
-                <input aria-label="Your Company's Name" placeholder="Eg. Nighttime Transfusions" type="text" v-model="formData.companyname">
+                <input aria-label="Your Company's Name" name="compant" placeholder="Eg. Nighttime Transfusions" type="text" v-model="formData.companyname">
             </fieldset>
             <fieldset>
                 <p>Your Current Website</p>
-                <input aria-label="Your Current Website" placeholder="Eg. https://www.extremehairs.com" type="url" v-model="formData.currentsite">
+                <input aria-label="Your Current Website" name="website" placeholder="Eg. https://www.extremehairs.com" type="url" v-model="formData.currentsite">
             </fieldset>
             <fieldset>
                 <p>How Can We Help You?</p>
-                <textarea aria-label="Message To Us" placeholder="Eg. Build Me A Website!" rows="4" v-model="formData.message" required></textarea>
+                <textarea aria-label="Message To Us" name="message" placeholder="Eg. Build Me A Website!" rows="4" v-model="formData.message" required></textarea>
             </fieldset>
             <fieldset>
                 <button class="site__button contact__submit js__contact__submit" data-submit="Sending">Send Message</button>
@@ -38,17 +39,6 @@
 const axios = require('axios');
 
 export default {
-    props: {
-        
-    },
-    computed: {
-        pageInfo: function () {
-            return this.$store.state.pages
-        },
-        sitewide: function () {
-            return this.$store.state.sitewide
-        }
-    },
     data() {
         return {
             formData: {
@@ -63,17 +53,6 @@ export default {
     },
     methods: {
         handleSubmit: function () {
-            let data = {
-                "name": this.formData.name,
-                "email": this.formData.email,
-                "phone": this.formData.phone,
-                "company_name": this.formData.company,
-                "current_website": this.formData.currentsite,
-                "message": this.formData.message
-            };
-            axios.post('https://www.4fuq.com/directus/public/_/items/site_contacts', data).then(function (response) {
-                console.log("Contact Added To Directus");
-            });
             let emaildata = JSON.stringify({
                 name: this.formData.name,
                 email: this.formData.email,
@@ -82,18 +61,11 @@ export default {
                 current_website: this.formData.currentsite,
                 message: this.formData.message
             });
-            let xhr = new XMLHttpRequest();
-            let url = "./assets/php/submitForm.php";
-            xhr.open("POST", url);
-            xhr.setRequestHeader("Content-type", "application/json");
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    console.log('message submitted');
-                } else {
-                    console.log('error submitting');
-                }
-            };
-            xhr.send(emaildata);
+            this.$axios.post('/', emaildata).then(function(Response) {
+                console.log(Response);
+            }).catch(function (err) {
+                this.errors.push(err)
+            });
         },
         contactclose: function() {
             this.$nuxt.$emit("contact_hide", !this.$parent.$parent.contactShow);

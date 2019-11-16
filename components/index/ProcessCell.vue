@@ -4,7 +4,7 @@
         <div class="process__text__number">{{ ind }}</div>
         <div class="process__text">
             <h3>{{ process.process_header }}</h3>
-            <p>{{ process.process_para }}</p>
+            <p>{{ process.process_short_description }}</p>
         </div>
     </div>
     <!-- </nuxt-link> -->

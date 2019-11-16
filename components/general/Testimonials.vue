@@ -2,15 +2,15 @@
     <section v-if="status === 'published'" class="page__section testimonials__section">
         <SectionHeader :header="header" :para="para"/>
         <div class="testimonial__inner">
-            <carousel v-if="showCarousel" :per-page="1" :mouse-drag="true" :autoplay="true" :scroll-per-page="false" :loop="true" :autoplayHoverPause="true" :speed="700" :autoplay-timeout="6000" :navigation-enabled="false" :spacePadding="0" :pagination-enabled="false" :perPageCustom="[[520, 1], [1000, 2]]">
+            <carousel v-if="showCarousel" :per-page="1" :mouse-drag="true" :autoplay="true" :scroll-per-page="false" :loop="true" :autoplayHoverPause="true" :speed="700" :autoplay-timeout="6000" :navigation-enabled="true" :spacePadding="0" :pagination-enabled="false" :perPageCustom="[[520, 1], [1000, 2]]">
                 <slide v-for="(ball, index) in testes" v-if="ball.status === 'published'" :key="index" class="testimonial__cell">
                     <div class="teste__cell__inner">
                         <blockquote>
-                            <p class="teste__para">{{ ball.testimonial_text }}</p>
+                            <p class="teste__para">{{ ball.text }}</p>
                         </blockquote>
                         <hr>
-                        <p class="teste__name">{{ ball.testimonial_name }}</p>
-                        <p class="teste__description">{{ ball.testimonial_description }}</p>
+                        <p class="teste__name">{{ ball.name }}</p>
+                        <p class="teste__description">{{ ball.string }}</p>
                     </div>
                     <div class="teste__cell__transparent"></div>
                 </slide>
@@ -21,10 +21,14 @@
 
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
+// import { Carousel, Slide } from 'vue-carousel';
 
 export default {
+    
     components: {
-        SectionHeader
+        SectionHeader,
+        Carousel: () => import('vue-carousel').then(m => m.Carousel).catch(),
+        Slide: () => import('vue-carousel').then(m => m.Slide).catch()
     },
     props: {
         header: String,
@@ -33,7 +37,7 @@ export default {
     },
     computed: {
         testes: function () {
-            return this.$store.state.testes
+            return this.$store.state.testimonials
         }
     },
     data() {

@@ -5,7 +5,7 @@
                 <div class="footer__brand">
                     <div class="footer__brand--nowrap">
                         <div v-if="sitewide.footer_company_logo" class="footer__logo__container">
-                            <img class="site__logo" :src="sitewide.footer_company_logo.data.full_url" :alt="'Sawtooth Digital Logo'">
+                            <img class="site__logo" :src="sitewide.company_logo" :alt="sitewide.company_name + ' Logo'">
                         </div>
                         <h2 class="header__name"><span>{{ boldName(sitewide.company_name) }}</span>{{ notBoldName(sitewide.company_name) }}</h2>
                     </div>
@@ -17,23 +17,29 @@
                         <h3>BOISE</h3>
                     </div>
                     <div class="footer__address">
-                        <p v-if="sitewide.company_address_line1">{{ sitewide.company_address_line1 }}</p>
-                        <p v-if="sitewide.company_address_line2">{{ sitewide.company_address_line2 }}</p>
-                        <p v-if="sitewide.company_address_line3">{{ sitewide.company_address_line3 }}</p>
+                        <p v-if="sitewide.company_address_line_1">{{ sitewide.company_address_line_1 }}</p>
+                        <p v-if="sitewide.company_address_line_2">{{ sitewide.company_address_line_2 }}</p>
+                        <p v-if="sitewide.company_address_line_3">{{ sitewide.company_address_line_3 }}</p>
                         <a v-if="sitewide.company_phone_number" :href="'tel:' + sitewide.company_phone_number">{{ sitewide.company_phone_number }}</a>
-                        <a v-if="sitewide.contact_email_address" class="footer__email__address" :href="'mailto:' + sitewide.contact_email_address">{{ sitewide.contact_email_address }}</a>
+                        <a v-if="sitewide.company_email_address" class="footer__email__address" :href="'mailto:' + sitewide.company_email_address">{{ sitewide.company_email_address }}</a>
                     </div>
                 </div>
             </div>
-            <!-- <div class="footer__small__divider" v-if="sitewide.show_nav_links_footer || sitewide.show_social_media_footer"></div> -->
-            <div class="footer__section footer__nav" v-if="sitewide.show_nav_links_footer">
-                <nuxt-link v-for="(item, index) in navItemsFooter" v-if="item.nav_type === 'mainnav'" :to="item.nav_link" class="footer__nav__items" :key="index">{{ item.nav_title }}</nuxt-link>
+            <div class="footer__section footer__nav" v-if="sitewide.footer_details.footer_show_site_links">
+                <div v-for="(item, index) in navItems" :key="index">
+                    <nuxt-link v-if="item.status === 'published' && item.nav_link" :to="item.nav_link" class="footer__nav__items">{{ item.nav_title }}</nuxt-link>
+                    <div v-else-if="item.status === 'published' && !item.nav_link" class="footer__nav__items">
+                        {{ item.nav_title }}
+                    </div>
+                </div>
             </div>
-            <div class="footer__section footer__social" v-if="sitewide.show_social_media_footer">
-                <nuxt-link v-for="(item, index) in navItemsFooterSocial" v-if="item.nav_type === 'footersocial'" :to="'/' + navStrip(item.nav_title)" class="footer__nav__items" :key="index">{{ item.nav_title }}</nuxt-link>
+            <div class="footer__section footer__social" v-if="sitewide.social_media.footer_show_social">
+                <div v-for="(item, index) in sitewide.social_media" :key="index">
+                     <nuxt-link v-if="typeof item === 'string'" :to="'/' + item" class="footer__nav__items" >{{ navStrip(index) }}</nuxt-link>
+                </div>
             </div>
             <div class="footer__legalize">
-                <p>©Sawtooth Digital Group, LLC. - All Rights Reserved /</p>
+                <p>©{{sitewide.company_name}}, LLC. - All Rights Reserved /</p>
                 <nuxt-link to="/privacy-policy">&nbsp;Privacy Policy</nuxt-link>
             </div>
         </div>
@@ -48,8 +54,7 @@ export default {
         Logo
     },
     props: {
-        navItemsFooter: Array,
-        navItemsFooterSocial: Array,
+        navItems: Array,
         sitewide: Object
     },
     methods: {
@@ -60,7 +65,7 @@ export default {
             return name.split(" ")[1];
         },
         navStrip: function (name) {
-            return name.replace(" ", "-").toLowerCase();
+            return name.split("_")[0].toLowerCase();
         }
     }
 }
@@ -92,6 +97,7 @@ export default {
         text-decoration: none;
         display: block;
         text-align: left;
+        text-transform: capitalize;
     }
     .footer__inner {
         width: 100%;
@@ -188,10 +194,11 @@ export default {
         padding-top: 10px;
     }
     .footer__nav__items {
-        margin: 0 0 30px;
+        margin: 0 0 10px;
         font-weight: 400;
         font-size: 18px;
         line-height: 18px;
+        cursor: pointer;
     }
     .footer__legalize {
         width: 100%;

@@ -6,6 +6,21 @@ export const state = () => ({
     services: {}
 });
 
+function sortItems(data) {
+    let newdata = [];
+    for (var d in data) {
+        let keys = Object.keys(newdata);
+        let item = data[d];
+        if (item.status === 'published' && item.sort_number !== null) {
+            newdata.push(item);
+        }
+    }
+    newdata.sort(function (a, b) {
+        return a.sort_number - b.sort_number;
+    });
+    return newdata;
+}
+
 export const mutations = {
     setBlogPosts(state, data) {
         state.blogPosts = data;
@@ -16,28 +31,19 @@ export const mutations = {
         }
     },
     setNav(state, data) {
-        let newdata = {};
-        state.navItems = data;
+        state.navItems = sortItems(data);
     },
     setSitewide(state, data) {
         state.sitewide = data;
     },
     setServices(state, data) {
-        let newdata = [];
-        for (var d in data) {
-            let keys = Object.keys(newdata);
-            let item = data[d];
-            if (item.status === 'published' && item.sort_number !== null) {
-                if (keys.indexOf(item.slug) >= 0) {
-                    newdata.push(item);
-                } else {
-                    newdata.push(item);
-                }
-            }
-        }
-        state.services = newdata.sort(function (a, b) {
-            return a.sort_number - b.sort_number;
-        });
+        state.services = sortItems(data);
+    },
+    setProcesses(state, data) {
+        state.processes = sortItems(data);
+    },
+    setTestimonials(state, data) {
+        state.testimonials = sortItems(data);
     }
 };
 
@@ -82,5 +88,21 @@ export const actions = {
             return res;
         });
         await commit('setServices', services);
+
+        let processFiles = await require.context('~/assets/content/process/', false, /\.json$/);
+        let processes = processFiles.keys().map(key => {
+            let res = processFiles(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setProcesses', processes);
+
+        let testFiles = await require.context('~/assets/content/testimonials/', false, /\.json$/);
+        let tests = testFiles.keys().map(key => {
+            let res = testFiles(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setTestimonials', tests);
     },
 };

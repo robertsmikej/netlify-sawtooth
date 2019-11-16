@@ -1,7 +1,13 @@
 <template>
     <main>
         <Hero :hero="pageInfo.hero"/>
-        <Offer :status="pageInfo.page_section_1.page_section_1_status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
+        <!-- <PageIntro :intro="pageInfo.index"/> -->
+        <Offer :status="pageInfo.page_section_1.status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
+        <!-- <Recent :status="pageInfo.index.status" :header="pageInfo.index.section_header_2" :para="pageInfo.index.section_para_2" :recentWork="indexRecentWork"/> -->
+        <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.section_header_3" :para="pageInfo.section_para_3" :process="processes"/>
+        <Local v-if="pageInfo.page_section_4.status === 'published'" :header="pageInfo.page_section_4.page_section_4_header" :para="pageInfo.page_section_4.page_section_4_para"/>
+        <Testimonials v-if="pageInfo.page_section_2.status === 'published'" :status="pageInfo.page_section_2.status" :header="pageInfo.page_section_2.page_section_2_header" :para="pageInfo.page_section_2.page_section_2_para"/>
+        <ContactBox :sitewide="sitewide.contact_box"/>
     </main>
 </template>
 
@@ -36,7 +42,10 @@ export default {
         },
         services: function () {
             return this.$store.state.services
-        }
+        },
+        processes: function () {
+            return this.$store.state.processes
+        },
     },
     head() {
         return {
