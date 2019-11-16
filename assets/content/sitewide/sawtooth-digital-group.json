@@ -6,5 +6,8 @@
   "company_email_address": "contact@sawtooth.dev",
   "contact_box": {
     "footer_show_site_links": true
+  },
+  "social_media": {
+    "facebook_link": "https://www.facebook.com/sawtooth-digital"
   }
 }
