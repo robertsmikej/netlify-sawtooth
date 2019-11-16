@@ -4,7 +4,11 @@
   "company_address_line_2": "Boise, ID 83702",
   "company_phone_number": "1(208)794-9008",
   "company_email_address": "contact@sawtooth.dev",
-  "contact_box": {},
+  "contact_box": {
+    "contact_header": "Let's Talk",
+    "contact_para": "We’re only a click away, and would to assist you in any way we can. Reach out, and let's talk about how we can help you get started revamping your digital strategy.",
+    "contact_button_text": "Send A Message"
+  },
   "footer_details": {
     "footer_show_site_links": true
   },
