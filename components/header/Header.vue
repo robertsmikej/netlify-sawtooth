@@ -19,7 +19,7 @@
                                 <h2 class="nav__link">{{ item.nav_title }}</h2>
                                 <p class="nav__para">{{ item.nav_para }}</p>
                             </nuxt-link>
-                            <div v-else-if="item.status === 'published' && !item.nav_link">
+                            <div v-else-if="item.status === 'published' && !item.nav_link" @click="contactToggle()">
                                 <h2 class="nav__link">{{ item.nav_title }}</h2>
                                 <p class="nav__para">{{ item.nav_para }}</p>
                             </div>
@@ -41,7 +41,6 @@
 
 <script>
 import Logo from '~/components/header/Logo.vue';
-// import Nav from '~/components/header/Nav.vue';
 
 export default {
     data () {
@@ -79,8 +78,8 @@ export default {
             document.querySelector(".nav__icon").classList.remove("navchanger");
             this.navChanged = false;
         },
-        contact: function() {
-            this.$nuxt.$emit("contact_show", !this.$parent.contactShow);
+        contactToggle: function(event) {
+            this.$nuxt.$emit("showContact", true);
         }
     }
 }

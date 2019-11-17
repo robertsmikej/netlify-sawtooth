@@ -3,7 +3,7 @@
         <div class="contact__box__inner">
             <h2 class="contact__box__header page__section__header">{{ sitewide.contact_header }}</h2>
             <p class="contact__box__para">{{ sitewide.contact_para }}</p>
-            <div class="site__button contact__box__button js__open__contact" @click="contact()">
+            <div class="site__button contact__box__button js__open__contact" @click="contactToggle()">
                 {{ sitewide.contact_button_text }}
             </div>
         </div>
@@ -21,8 +21,8 @@ export default {
         sitewide: Object
     },
     methods: {
-        contact: function() {
-            this.$nuxt.$emit("contact_show", !this.$parent.contactShow);
+        contactToggle: function(event) {
+            this.$nuxt.$emit("showContact", true);
         }
     }
 }

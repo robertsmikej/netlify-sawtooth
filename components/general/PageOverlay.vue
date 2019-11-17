@@ -1,12 +1,12 @@
 <template>
-    <div class="page__overlay" @click="contact()"></div>
+    <div class="page__overlay" @click="contactToggle()"></div>
 </template>
 
 <script>
 export default {
     methods: {
-        contact: function() {
-            this.$nuxt.$emit("contact_hide", !this.$parent.contactShow);
+        contactToggle: function(event) {
+            this.$nuxt.$emit("showContact", true);
         }
     }
 }
@@ -23,7 +23,7 @@ export default {
         z-index: 10;
         display: none;
     }
-    .pageOverlayShow {
+    .pageOverlayShow .page__overlay {
         display: flex;
     }
 </style>

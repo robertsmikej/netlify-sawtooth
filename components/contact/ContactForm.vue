@@ -1,44 +1,52 @@
 <template>
-    <div class="contact__form__container">
-        <div class="contact__exit" @click="contactclose()"></div>
-        <h2 class="contact__header">Send Us A Message</h2>
-        <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="" action="" method="post" @submit.prevent="handleSubmit">
-            <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
-            <fieldset>
-                <p>Your Name</p>
-                <input aria-label="Full Name" name="name" placeholder="Eg. Edward Cullen" type="text" v-model="formData.name" required autofocus>
-            </fieldset>
-            <fieldset>
-                <p>Your Email Address</p>
-                <input aria-label="Email Address" name="email" placeholder="Eg. jacobsux@gmail.com" type="email" v-model="formData.email" required>
-            </fieldset>
-            <fieldset>
-                <p>Your Phone Number</p>
-                <input aria-label="Telephone Number" name="phone" placeholder="Eg. 1-208-555-0000" type="tel" v-model="formData.phone" required>
-            </fieldset>
-            <fieldset>
-                <p>Your Company</p>
-                <input aria-label="Your Company's Name" name="compant" placeholder="Eg. Nighttime Transfusions" type="text" v-model="formData.companyname">
-            </fieldset>
-            <fieldset>
-                <p>Your Current Website</p>
-                <input aria-label="Your Current Website" name="website" placeholder="Eg. https://www.extremehairs.com" type="url" v-model="formData.currentsite">
-            </fieldset>
-            <fieldset>
-                <p>How Can We Help You?</p>
-                <textarea aria-label="Message To Us" name="message" placeholder="Eg. Build Me A Website!" rows="4" v-model="formData.message" required></textarea>
-            </fieldset>
-            <fieldset>
-                <button class="site__button contact__submit js__contact__submit" data-submit="Sending">Send Message</button>
-            </fieldset>
-        </form>
+    <div>
+        <PageOverlay/>
+        <div class="contact__form__container">
+            <div class="contact__exit" @click="contactclose()"></div>
+            <h2 class="contact__header">Send Us A Message</h2>
+            <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="" action="" method="post" @submit.prevent="handleSubmit">
+                <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
+                <fieldset>
+                    <p>Your Name</p>
+                    <input aria-label="Full Name" name="name" placeholder="Eg. Edward Cullen" type="text" v-model="formData.name" required autofocus>
+                </fieldset>
+                <fieldset>
+                    <p>Your Email Address</p>
+                    <input aria-label="Email Address" name="email" placeholder="Eg. jacobsux@gmail.com" type="email" v-model="formData.email" required>
+                </fieldset>
+                <fieldset>
+                    <p>Your Phone Number</p>
+                    <input aria-label="Telephone Number" name="phone" placeholder="Eg. 1-208-555-0000" type="tel" v-model="formData.phone" required>
+                </fieldset>
+                <fieldset>
+                    <p>Your Company</p>
+                    <input aria-label="Your Company's Name" name="compant" placeholder="Eg. Nighttime Transfusions" type="text" v-model="formData.companyname">
+                </fieldset>
+                <fieldset>
+                    <p>Your Current Website</p>
+                    <input aria-label="Your Current Website" name="website" placeholder="Eg. https://www.extremehairs.com" type="url" v-model="formData.currentsite">
+                </fieldset>
+                <fieldset>
+                    <p>How Can We Help You?</p>
+                    <textarea aria-label="Message To Us" name="message" placeholder="Eg. Build Me A Website!" rows="4" v-model="formData.message" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <button class="site__button contact__submit js__contact__submit" data-submit="Sending">Send Message</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
 </template>
 
 <script>
 const axios = require('axios');
 
+import PageOverlay from '~/components/general/PageOverlay.vue';
+
 export default {
+    components: {
+        PageOverlay
+    },
     data() {
         return {
             formData: {
@@ -68,7 +76,7 @@ export default {
             });
         },
         contactclose: function() {
-            this.$nuxt.$emit("contact_hide", !this.$parent.$parent.contactShow);
+            this.$nuxt.$emit("showContact", false);
         }
     }
 }
@@ -91,18 +99,18 @@ export default {
         transition: top .6s;
         overflow: hidden;
     }
-    .contactShow {
+    .contactShow .contact__form__container {
         top: 50%;
     }
     .contact__header {
-        margin: 20px 0 10px;
+        margin: 14px 0 10px;
     }
     .contact__form__container fieldset {
         border: none;
     }
     .contact__form__container p {
         text-align: right;
-        margin: 14px 0 0;
+        margin: 6px 0 0;
     }
     .contact__form__container input {
         border: none;
@@ -131,7 +139,7 @@ export default {
         font-size: 13px;
     }
     .contact__form__container .contact__submit {
-        margin: 20px auto 0;
+        margin: 14px auto 0;
         background-color: #FFF;
         border: none;
         border-bottom: 1px solid var(--dark-grey);
@@ -142,7 +150,7 @@ export default {
         width: 20px;
         height: 20px;
         position: absolute;
-        top: 5px;
+        top: 8px;
         right: 8px;
         cursor: pointer;
     }

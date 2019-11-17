@@ -12,7 +12,6 @@
         </div>
         <div v-if="hero" class="hero__inner">
             <div class="hero__text__container">
-                <!-- <nuxt-link to="/services">Contact</nuxt-link> -->
                 <h1 v-if="hero.hero_header" class="hero__header">{{ hero.hero_header }}</h1>
                 <hr v-if="hero.hero_para" class="hero__hr">
                 <p v-if="hero.hero_para" class="hero__para">{{ hero.hero_para }}</p>
@@ -20,7 +19,7 @@
                     <nuxt-link v-if="hero.hero_button_link !== 'contact'" :to="hero.hero_button_link" class="hero__button js__open__contact">
                         {{ hero.hero_button_text }}
                     </nuxt-link>
-                    <div v-if="hero.hero_button_link === 'contact'" @click="contact()" class="hero__button site__button js__open__contact">
+                    <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button site__button js__open__contact">
                         {{ hero.hero_button_text }}
                     </div>
                 </div>
@@ -53,8 +52,8 @@ export default {
                 document.getElementsByClassName("header")[0].classList.add("header__dark");
             }
         },
-        contact: function() {
-            this.$nuxt.$emit("contact_show", !this.$parent.$parent.$parent.contactShow);
+        contactToggle: function(event) {
+            this.$nuxt.$emit("showContact", true);
         }
     },
     mounted() {

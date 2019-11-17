@@ -2,9 +2,8 @@
     <div class="container">
         <Header :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
-        <ContactForm :class="{contactShow: contactShow}"/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
-        <PageOverlay :class="{pageOverlayShow: contactShow}"/>
+        <ContactForm @click="checkContact()" :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/>
     </div>
 </template>
 
@@ -12,14 +11,13 @@
 import Header from '~/components/header/Header.vue';
 import ContactForm from '~/components/contact/ContactForm.vue';
 import Footer from '~/components/footer/Footer.vue';
-import PageOverlay from '~/components/general/PageOverlay.vue';
+
 
 export default {
     components: {
         Header,
         Footer,
-        ContactForm,
-        PageOverlay
+        ContactForm
     },
     computed: {
         sitewide: function () {
@@ -29,28 +27,23 @@ export default {
             return this.$store.state.navItems
         }
     },
+    created() {
+        this.$nuxt.$on('showContact', data => {
+            console.log('here');
+            this.contactShow = !this.contactShow;
+        });
+    },
     data() {
         return {
             contactShow: false
         }
     },
-    created() {
-        this.$nuxt.$on('contact_show', data => {
-            this.contactShow = !this.contactShow;
-        });
-        this.$nuxt.$on('contact_hide', data => {
-            this.contactShow = false;
-        });
-    },
     methods: {
         checkContact: function(event) {
             if (event.target.classList.contains("contact__exit")) {
-                this.contactShow = false;
-            } else if (event.target.classList.contains("contact__form__container") || event.target.closest(".contact__form__container") || event.target.classList.contains("js__open__contact") || event.target.closest(".js__open__contact")) {
-                this.contactShow = true;
-            } else {
-                this.contactShow = false;
-            }
+                // this.contactShow = !this.contactShow;
+                this.$nuxt.$emit("showContact", false);
+            } 
         }
     }
 }
@@ -176,9 +169,6 @@ export default {
         background: #FFF;
         color: var(--dark-blue);
         font-size: 1.2em;
-    }
-    .page__overlay { 
-
     }
     /* ----------------------------  MEDIA QUERY ------------------------------ */
     @media screen and (max-width:900px) {
