@@ -5,7 +5,7 @@
             <div class="offer__grid__container">
                 <OfferCell v-for="(service, index) in services" :key="index" :service="service"/>
             </div>
-            <nuxt-link to="/services" class="site__button services__button">See more</nuxt-link>
+            <!-- <nuxt-link to="/services" class="site__button services__button">See more</nuxt-link> -->
         </div>
     </section>
 </template>

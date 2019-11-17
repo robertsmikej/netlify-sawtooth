@@ -3,7 +3,7 @@
         <Header :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
-        <ContactForm @click="checkContact()" :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/>
+        <ContactForm :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/>
     </div>
 </template>
 
@@ -29,7 +29,6 @@ export default {
     },
     created() {
         this.$nuxt.$on('showContact', data => {
-            console.log('here');
             this.contactShow = !this.contactShow;
         });
     },
@@ -39,12 +38,7 @@ export default {
         }
     },
     methods: {
-        checkContact: function(event) {
-            if (event.target.classList.contains("contact__exit")) {
-                // this.contactShow = !this.contactShow;
-                this.$nuxt.$emit("showContact", false);
-            } 
-        }
+
     }
 }
 </script>
@@ -52,7 +46,6 @@ export default {
 <style>
 :root {
         --dark-yellow: #fec303;
-        --dark-grey: #1d1d1d;
         --teal: #139487;
         --cyan: #1dbad3;
         --aqua: #0ED7F4;
@@ -180,7 +173,7 @@ export default {
      /* ----------------------------  MEDIA QUERY ------------------------------ */
     @media screen and (max-width:700px) {
         .page__section {
-            padding: 6vh 5px 8vh;
+            padding: 6vh 5px 6vh;
         }
         h1 {
             font-size: 2.7em;

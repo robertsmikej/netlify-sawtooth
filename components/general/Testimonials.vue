@@ -2,8 +2,8 @@
     <section v-if="status === 'published'" class="page__section testimonials__section">
         <SectionHeader :header="header" :para="para"/>
         <div class="testimonial__inner">
-            <carousel v-if="showCarousel" :per-page="1" :mouse-drag="true" :autoplay="true" :scroll-per-page="false" :loop="true" :autoplayHoverPause="true" :speed="700" :autoplay-timeout="6000" :navigation-enabled="true" :spacePadding="0" :pagination-enabled="false" :perPageCustom="[[520, 1], [1000, 2]]">
-                <slide v-for="(ball, index) in testes" v-if="ball.status === 'published'" :key="index" class="testimonial__cell">
+            <div v-for="(ball, index) in testes" :key="index" class="testimonial__cell">
+                <div v-if="ball.status === 'published'" class="testimonial__cell__inner">
                     <div class="teste__cell__inner">
                         <blockquote>
                             <p class="teste__para">{{ ball.text }}</p>
@@ -13,8 +13,8 @@
                         <p class="teste__description">{{ ball.string }}</p>
                     </div>
                     <div class="teste__cell__transparent"></div>
-                </slide>
-            </carousel> 
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -24,11 +24,8 @@ import SectionHeader from '~/components/general/SectionHeader.vue';
 // import { Carousel, Slide } from 'vue-carousel';
 
 export default {
-    
     components: {
-        SectionHeader,
-        Carousel: () => import('vue-carousel').then(m => m.Carousel).catch(),
-        Slide: () => import('vue-carousel').then(m => m.Slide).catch()
+        SectionHeader
     },
     props: {
         header: String,
@@ -52,38 +49,12 @@ export default {
 </script>
 
 <style>
-.VueCarousel {
-    width: 100%;
-}
-.VueCarousel-slide {
-    backface-visibility: visible !important;
-}
-.VueCarousel-navigation-button {
-    font-size: 30px;
-}
-.VueCarousel-navigation-prev {
-    color: var(--light-orange) !important;
-}
-.VueCarousel-navigation-next {
-    color: var(--turkish-blue) !important;
-}
 .testimonials__section {
     background-color: var(--light-blue);
 }
-/* .testimonials__section::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background-color: #fff;
-    transform: rotate(-1deg) skewX(-1deg);
-    transform-origin: 0 100%;
-} */
 .testimonial__inner {
     max-width: 1000px;
-    margin: 60px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -97,15 +68,22 @@ export default {
     align-content: center;
     justify-content: center;
     position: relative;
+    flex: 1 0 45%;
+    margin: 10px 0 20px;
+}
+.testimonial__cell__inner {
+    flex: 1;
+    padding: 0 20px;
 }
 .teste__cell__transparent {
     width: 100%;
     height: 40px;
+    flex: 1;
 }
 .teste__cell__inner {
-    width: 93%;
+    width: 100%;
     height: 90%;
-    padding: 30px 50px;
+    padding: 26px 50px;
     background-color: #FFF;
     display: flex;
     flex-direction: column;
@@ -119,7 +97,7 @@ export default {
 .teste__cell__inner::after {
     content: "";
     position: absolute;
-	bottom: 0px;
+	bottom: -6px;
 	width: 0;
 	height: 0;
 	border: 40px solid transparent;
@@ -153,10 +131,10 @@ export default {
 }
 
 .testimonial__cell:nth-of-type(5n + 3) .teste__cell__inner {
-    background-color: var(--aqua);
+    background-color: var(--dark-grey);
 }
 .testimonial__cell:nth-of-type(5n + 3) .teste__cell__inner::after {
-    border-top-color: var(--aqua);
+    border-top-color: var(--dark-grey);
     left: 55%;
     border-right: 0;
 }
@@ -206,8 +184,6 @@ blockquote {
     font-size: 80px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
-
-
 .testimonial__cell hr {
     width: 100%;
     min-height: 1px;
@@ -227,16 +203,30 @@ blockquote {
     font-size: 14px;
 }
 /* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 900px) {
+    .teste__cell__inner::after {
+        bottom: 0;
+    }
+    .testimonial__cell {
+        flex: 1 1 45%;
+        min-width: 270px;
+        margin: 10px 0 20px;
+    }
+}
+/* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 500px) {
     .testimonial__inner {
-        margin: 40px auto 10px;
+        margin: 20px auto 10px;
+    }
+    .testimonial__cell {
+        margin: 10px 0 10px;
     }
     .teste__cell__inner {
-        padding: 30px 20px 30px 30px;
+        padding: 20px 20px 20px 30px;
         border-radius: 20px;
     }
     .teste__para::before {
-        top: 14px;
+        top: 4px;
         left: -26px;
         font-size: 60px;
     }
