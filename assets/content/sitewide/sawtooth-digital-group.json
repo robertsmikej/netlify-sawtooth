@@ -13,7 +13,7 @@
     "footer_show_site_links": true
   },
   "social_media": {
-    "footer_show_social": true,
+    "footer_show_social": false,
     "facebook_link": "https://www.facebook.com/sawtooth-digital"
   }
 }
