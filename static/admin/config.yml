@@ -143,7 +143,6 @@ collections:
         - { label: 'GitHub Link', name: 'github_link', widget: 'string', required: false }
         - { label: 'Dribble Link', name: 'dribble_link', widget: 'string', required: false }
 
-
   - name: 'services'
     label: 'Services'
     identifier_field: service_type
@@ -212,3 +211,16 @@ collections:
       - { label: 'Testamonial Name', name: 'name', widget: 'string', required: false }
       - { label: 'Testamonial Text', name: 'text', widget: 'text', required: false }
       - { label: 'Testamonial Description', name: 'string', widget: 'text', required: false }
+
+  - name: 'privacy_policy'
+    label: 'Privacy Policy'
+    identifier_field: privacy_policy_name
+    format: 'json'
+    folder: 'assets/content/privacy-policy'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Privacy Policy Unique Name', name: 'privacy_policy_name', widget: 'string', required: false }
+      - { label: 'Privacy Policy Text', name: 'privacy_policy_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }

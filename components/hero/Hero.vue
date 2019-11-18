@@ -80,6 +80,7 @@ export default {
         position: relative;
         overflow: hidden;
         margin: -60px 0 0 0;
+        min-height: 60vh;
     }
     .hero__background {
         width: 100%;

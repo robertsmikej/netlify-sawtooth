@@ -2,7 +2,8 @@ export const state = () => ({
     pages: {},
     nav: [],
     sitewide: {},
-    services: {}
+    services: {},
+    privacyPolicy: []
 });
 
 function sortItems(data) {
@@ -34,6 +35,9 @@ export const mutations = {
     },
     setServices(state, data) {
         state.services = sortItems(data);
+    },
+    setPrivacy(state, data) {
+        state.privacyPolicy = data[0];
     },
     setProcesses(state, data) {
         state.processes = sortItems(data);
@@ -92,5 +96,13 @@ export const actions = {
             return res;
         });
         await commit('setTestimonials', tests);
+
+        let privacyFiles = await require.context('~/assets/content/privacy-policy/', false, /\.json$/);
+        let privacy = privacyFiles.keys().map(key => {
+            let res = privacyFiles(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setPrivacy', privacy);
     },
 };

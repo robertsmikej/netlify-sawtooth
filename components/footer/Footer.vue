@@ -100,7 +100,6 @@ export default {
         text-decoration: none;
         display: block;
         text-align: left;
-        text-transform: capitalize;
     }
     .footer__inner {
         width: 100%;
@@ -186,7 +185,6 @@ export default {
         font-weight: 500;
         text-decoration: none;
         display: block;
-        text-transform: uppercase;
     }
     a.footer__email__address {
         margin-top: 20px;
