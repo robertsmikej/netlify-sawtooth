@@ -12,20 +12,6 @@ logo_url: https://www.sawtooth.dev/directus/public/uploads/_/originals/fox1.png
 show_preview_links: true
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    format: 'json'
-    folder: 'assets/content/blog'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: true
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-
   - name: 'page'
     label: 'Page'
     identifier_field: page_name
