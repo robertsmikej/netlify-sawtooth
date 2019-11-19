@@ -26,7 +26,6 @@ export default {
         flex: 1 1 33.3333%;
         min-width: 200px;
         text-decoration: none;
-        /* cursor: pointer; */
         transition: background .4s;
         border-radius: 50px;
         display: flex;

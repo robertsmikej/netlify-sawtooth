@@ -1,12 +1,11 @@
 <template>
     <main>
         <Hero :hero="pageInfo.hero"/>
-        <!-- <PageIntro :intro="pageInfo.index"/> -->
         <Offer :status="pageInfo.page_section_1.status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
-        <!-- <Recent :status="pageInfo.index.status" :header="pageInfo.index.section_header_2" :para="pageInfo.index.section_para_2" :recentWork="indexRecentWork"/> -->
         <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.section_header_3" :para="pageInfo.section_para_3" :process="processes"/>
-        <Local v-if="pageInfo.page_section_4.status === 'published'" :header="pageInfo.page_section_4.page_section_4_header" :para="pageInfo.page_section_4.page_section_4_para"/>
+        <Portfolio v-if="pageInfo.page_section_5.status === 'published'" :header="pageInfo.page_section_5.page_section_5_header" :para="pageInfo.page_section_5.page_section_5_para"/>
         <Testimonials v-if="pageInfo.page_section_2.status === 'published'" :status="pageInfo.page_section_2.status" :header="pageInfo.page_section_2.page_section_2_header" :para="pageInfo.page_section_2.page_section_2_para"/>
+        <Local v-if="pageInfo.page_section_4.status === 'published'" :header="pageInfo.page_section_4.page_section_4_header" :para="pageInfo.page_section_4.page_section_4_para"/>
         <ContactBox :sitewide="sitewide.contact_box"/>
     </main>
 </template>
@@ -19,6 +18,7 @@ import Local from '~/components/index/Local.vue';
 import Testimonials from '~/components/general/Testimonials.vue';
 import Recent from '~/components/index/Recent.vue';
 import Process from '~/components/index/Process.vue';
+import Portfolio from '~/components/index/Portfolio.vue';
 import ContactBox from '~/components/general/ContactBox.vue';
 
 export default {
@@ -30,6 +30,7 @@ export default {
         Local,
         Testimonials,
         Recent,
+        Portfolio,
         Process
     },
     transition: 'bounce',
@@ -43,9 +44,12 @@ export default {
         services: function () {
             return this.$store.state.services
         },
+        portfolio: function () {
+            return this.$store.state.portfolio
+        },
         processes: function () {
             return this.$store.state.processes
-        },
+        }
     },
     head() {
         return {
@@ -65,24 +69,24 @@ export default {
 
 <style>
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+    display: block;
+    font-weight: 300;
+    font-size: 100px;
+    color: #35495e;
+    letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+    font-weight: 300;
+    font-size: 42px;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
 }
 
 .links {
-  padding-top: 15px;
+    padding-top: 15px;
 }
 </style>

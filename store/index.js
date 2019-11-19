@@ -3,7 +3,8 @@ export const state = () => ({
     nav: [],
     sitewide: {},
     services: {},
-    privacyPolicy: []
+    privacyPolicy: [],
+    portfolio: []
 });
 
 function sortItems(data) {
@@ -42,20 +43,40 @@ export const mutations = {
     setProcesses(state, data) {
         state.processes = sortItems(data);
     },
+    setPortfolio(state, data) {
+        state.portfolio = sortItems(data);
+    },
     setTestimonials(state, data) {
         state.testimonials = sortItems(data);
     }
 };
 
+function getData(files) {
+    var f = files.keys().map(key => {
+        let res = files(key);
+        res.slug = key.slice(2, -5);
+        console.log(f);
+        return f;
+    });
+}
+
 export const actions = {
     async nuxtServerInit({ commit }) {
-        let pagefiles = await require.context('~/assets/content/page/', false, /\.json$/);
-        let pages = pagefiles.keys().map(key => {
-            let res = pagefiles(key);
+        // let pageFiles = await require.context('~/assets/content/page/', false, /\.json$/);
+        // let pages = pageFiles.keys().map(key => {
+        //     let res = pageFiles(key);
+        //     res.slug = key.slice(2, -5);
+        //     return res;
+        // });
+        // await commit('setPages', pages);
+
+        var files = await require.context('~/assets/content/page/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
             res.slug = key.slice(2, -5);
             return res;
         });
-        await commit('setPages', pages);
+        await commit('setPages', file);
 
         let navfiles = await require.context('~/assets/content/nav/', false, /\.json$/);
         let navs = navfiles.keys().map(key => {
@@ -97,12 +118,20 @@ export const actions = {
         });
         await commit('setTestimonials', tests);
 
-        let privacyFiles = await require.context('~/assets/content/privacy-policy/', false, /\.json$/);
-        let privacy = privacyFiles.keys().map(key => {
-            let res = privacyFiles(key);
+        var files = await require.context('~/assets/content/privacy-policy/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
             res.slug = key.slice(2, -5);
             return res;
         });
-        await commit('setPrivacy', privacy);
+        await commit('setPrivacy', file);
+
+        var files = await require.context('~/assets/content/portfolio/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setPortfolio', file);
     },
 };

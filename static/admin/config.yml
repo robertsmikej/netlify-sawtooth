@@ -212,6 +212,40 @@ collections:
       - { label: 'Testamonial Text', name: 'text', widget: 'text', required: false }
       - { label: 'Testamonial Description', name: 'string', widget: 'text', required: false }
 
+  - name: 'portfolio'
+    label: 'Portfolio Items'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/portfolio'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Portfolio Item Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 30
+      - { label: 'Client Name', name: 'name', widget: 'string', required: false }
+      - { label: 'Client Description', name: 'para', widget: 'text', required: false }
+      - label: "Our Work Category"
+        name: "category"
+        widget: "relation"
+        collection: "services"
+        searchFields: ["service_type"]
+        valueField: "service_type"
+        multiple: true
+        displayFields: ["service_type"]
+        required: false
+      - { label: 'Client Link', name: 'link', widget: 'string', required: false }
+      - { label: 'Client Main Image', name: 'main_image', widget: 'file', required: false }
+      - { label: 'Client Logo', name: 'logo', widget: 'file', required: false }
+
+
   - name: 'privacy_policy'
     label: 'Privacy Policy'
     identifier_field: privacy_policy_name

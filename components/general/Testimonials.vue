@@ -52,6 +52,17 @@ export default {
 .testimonials__section {
     background-color: var(--light-blue);
 }
+.testimonials__section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--light-blue);
+    transform: rotate(-1deg) skewX(-1deg);
+    transform-origin: 0 0;
+}
 .testimonial__inner {
     max-width: 1000px;
     margin: 30px auto;
