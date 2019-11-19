@@ -51,7 +51,7 @@ export default {
         bottom: 0px;
         left: 0;
         width: 100%;
-        height: 50px;
+        height: 70px;
         background-color: var(--light-orange);
         transform: rotate(1.3deg) skewX(1.3deg);
         transform-origin: 0 0;
