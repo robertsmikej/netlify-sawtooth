@@ -3,16 +3,14 @@ const pkg = require('./package');
 module.exports = {
     mode: 'universal',
     generate: {
-        generate: {
-            routes: function () {
-                const fs = require('fs');
-                return fs.readdirSync('./assets/content/portfolio').map(file => {
-                    return {
-                        route: `/portfolio/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
-                        payload: require(`./assets/content/portfolio/${file}`),
-                    };
-                });
-            },
+        routes: function () {
+            const fs = require('fs');
+            return fs.readdirSync('./assets/content/portfolio').map(file => {
+                return {
+                    route: `/portfolio/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
+                    payload: require(`./assets/content/portfolio/${file}`),
+                };
+            });
         },
     },
     /*
@@ -75,4 +73,4 @@ module.exports = {
     build: {
         vendor: ['vue-carousel']
     }
-}
+};
