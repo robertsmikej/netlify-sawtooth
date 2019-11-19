@@ -1,0 +1,12 @@
+{
+  "page_name": "portfolio",
+  "hero": {
+    "hero_header": "Our Work",
+    "hero_background_video": "/img/cattype.mp4"
+  },
+  "page_intro": {
+    "status": "published",
+    "page_intro_header": "The Importance Of Our Past Work",
+    "page_intro_para": "At the end of the day, we realize how important it is for us to show you that we can help make you money."
+  }
+}
