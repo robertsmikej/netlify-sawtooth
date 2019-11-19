@@ -1,0 +1,13 @@
+{
+  "status": "published",
+  "sort_number": 1,
+  "name": "HotSpringing.com",
+  "para": "Dedicated to sharing Idaho's Outdoors Hot Springs and educating the general public to basic Hot Springing etiquette.",
+  "category": [
+    "Website Development",
+    "Website Hosting"
+  ],
+  "link": "https://www.hotspringing.com",
+  "main_image": "/img/hotspringing-mockup-640.jpg",
+  "logo": "/img/hotspringing.png"
+}
