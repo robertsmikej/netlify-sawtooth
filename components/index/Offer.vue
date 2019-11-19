@@ -1,5 +1,5 @@
 <template>
-    <section v-if="status === 'published'" class="page__section page__grids what__we__offer">
+    <section class="page__section page__grids what__we__offer">
         <div class="page__section__inner">
             <SectionHeader :header="header" :para="para"/>
             <div class="offer__grid__container">

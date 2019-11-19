@@ -1,8 +1,8 @@
 <template>
     <main>
         <Hero :hero="pageInfo.hero"/>
-        <Offer :status="pageInfo.page_section_1.status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
-        <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.section_header_3" :para="pageInfo.section_para_3" :process="processes"/>
+        <Offer v-if="pageInfo.page_section_1.status === 'published'" :status="pageInfo.page_section_1.status" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
+        <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.page_section_3.page_section_3_header" :para="pageInfo.page_section_3.page_section_3_para" :process="processes"/>
         <Portfolio v-if="pageInfo.page_section_5.status === 'published'" :header="pageInfo.page_section_5.page_section_5_header" :para="pageInfo.page_section_5.page_section_5_para"/>
         <Testimonials v-if="pageInfo.page_section_2.status === 'published'" :status="pageInfo.page_section_2.status" :header="pageInfo.page_section_2.page_section_2_header" :para="pageInfo.page_section_2.page_section_2_para"/>
         <Local v-if="pageInfo.page_section_4.status === 'published'" :header="pageInfo.page_section_4.page_section_4_header" :para="pageInfo.page_section_4.page_section_4_para"/>
