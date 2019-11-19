@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <Header :sitewide="sitewide" :navItems="nav"/>
+        <Header :class="{'navShow' : navShow}" :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
         <ContactForm :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/>
@@ -11,7 +11,6 @@
 import Header from '~/components/header/Header.vue';
 import ContactForm from '~/components/contact/ContactForm.vue';
 import Footer from '~/components/footer/Footer.vue';
-
 
 export default {
     components: {
@@ -28,17 +27,30 @@ export default {
         }
     },
     created() {
+        this.$nuxt.$on('navShow', data => {
+            if (data === false) {
+                this.navShow = false;
+            } else if (data === true) {
+                this.navShow = true;
+            } else {
+                this.navShow = !this.navShow;
+            }
+        });
         this.$nuxt.$on('showContact', data => {
-            this.contactShow = !this.contactShow;
+            if (data === false) {
+                this.contactShow = false;
+            } else if (data === true) {
+                this.contactShow = true;
+            } else {
+                this.contactShow = !this.contactShow;
+            }
         });
     },
     data() {
         return {
+            navShow: false,
             contactShow: false
         }
-    },
-    methods: {
-
     }
 }
 </script>

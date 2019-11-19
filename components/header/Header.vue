@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header__inner" >
             <div class="site__nav">
-                <div class="nav__icon" @click="navChange" :class="{navchanger: navChanged}">
+                <div class="nav__icon" @click="navToggle()">
                     <div class="nav__lines">
                         <div class="nav__line nav__line--1"></div>
                         <div class="nav__line nav__line--2"></div>
@@ -12,8 +12,8 @@
                         <div class="nav__line nav__line--6"></div>
                     </div>
                 </div>
-                <nav class="nav__container" :class="{navexpand: navChanged}">
-                    <div class="nav__items" @click="navChange">
+                <nav class="nav__container">
+                    <div class="nav__items" @click="navToggle(false)">
                         <div v-for="(item, index) in navItems" :key="index" class="nav__item">
                             <nuxt-link :to="item.nav_link" v-if="item.status === 'published' && item.nav_link">
                                 <h2 class="nav__link">{{ item.nav_title }}</h2>
@@ -27,7 +27,7 @@
                     </div>
                 </nav>
             </div>
-            <div @click="navClose">
+            <div @click="navToggle(false)">
                 <nuxt-link to="/" class="header__logo__and__name">
                     <div class="site__logo__container">
                         <img class="site__logo" :src="sitewide.company_logo" :alt="'Sawtooth Logo'">
@@ -43,18 +43,8 @@
 import Logo from '~/components/header/Logo.vue';
 
 export default {
-    data () {
-        return {
-            navChanged: false   
-        }
-    },
     components: {
         Logo
-    },
-    computed: {
-        pageInfo: function () {
-            return this.$store.state.pages
-        }
     },
     props: {
         sitewide: Object,
@@ -67,19 +57,14 @@ export default {
         notBoldName: function (name) {
             return name.split(" ")[1];
         },
-        navChange: function() {
-            this.navChanged = !this.navChanged;
-        },
         navStrip: function (name) {
             return name.replace(" ", "-").toLowerCase();
         },
-        navClose: function () {
-            document.querySelector(".nav__container").classList.remove("navexpand");
-            document.querySelector(".nav__icon").classList.remove("navchanger");
-            this.navChanged = false;
+        contactToggle: function(toggle) {
+            this.$nuxt.$emit("contactShow", toggle);
         },
-        contactToggle: function(event) {
-            this.$nuxt.$emit("showContact", true);
+        navToggle: function(toggle) {
+            this.$nuxt.$emit("navShow", toggle);
         }
     }
 }
@@ -136,6 +121,7 @@ export default {
     .header__name span {
         margin-right: 2px;
     }
+
     .site__nav {
         margin-left: auto;
         align-self: center;
@@ -186,9 +172,6 @@ export default {
     .nav__line--6 {
         top: 100%;
     }
-    /* .header__dark .nav__line {
-        background-color: var(--dark-grey);
-    } */
     .navchanger .nav__line--1 {
         top: -2px; 
     }
@@ -227,7 +210,7 @@ export default {
         align-content: center;
         justify-content: center;
     }
-    .navexpand {
+    .navShow .nav__container {
         left: 0;
     }
     .nav__items {

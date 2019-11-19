@@ -6,7 +6,7 @@
 export default {
     methods: {
         contactToggle: function(event) {
-            this.$nuxt.$emit("showContact", true);
+            this.$nuxt.$emit("showContact", false);
         }
     }
 }
