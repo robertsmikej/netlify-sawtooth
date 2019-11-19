@@ -102,6 +102,9 @@ export default {
         height: auto;
         min-height: 100%;
     }
+    .hero__header__image img {
+        min-width: 100%;
+    }
     .hero__inner {
         z-index: 3;
         width: 100%;
