@@ -3,5 +3,5 @@
   "service_type": "Website Development",
   "sort_number": 1,
   "service_short_description": "Using some of the latest technologies and techniques allows us to do things that other agencies just won't, or can't, do.",
-  "service_icon": "/img/design-color.png"
+  "icon": "/img/design-color.png"
 }
