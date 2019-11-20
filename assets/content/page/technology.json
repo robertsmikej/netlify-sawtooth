@@ -4,5 +4,10 @@
     "hero_header": "Technology",
     "hero_para": "Take a look at the technology and integrations that drive our business.",
     "hero_background_video": "/img/ipad.mp4"
+  },
+  "page_intro": {
+    "status": "published",
+    "page_intro_header": "What We Use",
+    "page_intro_para": "To us, the technology that is used to build your website is just as important as what it looks like."
   }
 }
