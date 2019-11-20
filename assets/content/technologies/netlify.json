@@ -1,0 +1,7 @@
+{
+  "status": "published",
+  "sort_number": 2,
+  "icon": "/img/netlify-logo.png",
+  "name": "Netlify",
+  "short_description": "Netlify is everything you need to build fast, modern websites: continuous deployment, serverless functions, and so much more."
+}
