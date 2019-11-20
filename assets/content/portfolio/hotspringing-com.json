@@ -19,7 +19,8 @@
   "hero": {
     "hero_header": "HotSpringing.com",
     "hero_para": "Dedicated to sharing Idaho's Outdoors Hot Springs and educating the general public to basic Hot Springing etiquette.",
-    "hero_background_image": "/img/hotspringing-mockup-medium-wide.jpg"
+    "hero_background_image": "",
+    "hero_sub_image": "/img/hotspringing-ipad3.png"
   },
   "category": [
     "Website Development",
