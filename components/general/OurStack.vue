@@ -44,6 +44,9 @@ export default {
 </script>
 
 <style>
+.our__stack {
+    max-width: 1000px;
+}
 .our__stack img[alt*="Jam Stack"] { 
     max-width: 400px;
     width: 96%;

@@ -180,8 +180,8 @@ collections:
         max: 20
         required: false
       - { label: 'Service Short Description', name: 'service_short_description', widget: 'text', required: false }
-      - { label: 'Service Icon', name: 'service_icon', widget: 'file', required: false }
-      - { label: 'Service Link', name: 'service_link', widget: 'text', required: false }
+      - { label: 'Service Icon', name: 'icon', widget: 'file', required: false }
+      - { label: 'Service Link', name: 'link', widget: 'string', required: false }
 
   - name: 'process'
     label: 'Process'
@@ -248,6 +248,7 @@ collections:
         max: 30
       - { label: 'Client Name', name: 'name', widget: 'string', required: false }
       - { label: 'Client Description', name: 'para', widget: 'text', required: false }
+      - { label: 'Client Heavy Text', name: 'long_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
       - label: "Our Work Category"
         name: "category"
         widget: "relation"

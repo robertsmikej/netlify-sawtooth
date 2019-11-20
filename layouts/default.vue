@@ -129,6 +129,9 @@ export default {
     h2 {
         font-weight: 400;
     }
+    h4 {
+        margin: 8px auto 0;
+    }
 
     p {
         font-size: 1.1em;
@@ -153,6 +156,8 @@ export default {
         flex-wrap: wrap;
         align-content: center;
         justify-content: flex-start;
+        margin-left: auto;
+        margin-right: auto;
     }
     .page__section__inner {
         display: flex;

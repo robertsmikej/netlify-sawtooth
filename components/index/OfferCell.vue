@@ -1,7 +1,7 @@
 <template>
     <div v-if="service.status === 'published'" to="'/' + service.service_link" class="offer__grid__cell">
         <div class="offer__image__container">
-            <img :src="service.service_icon" :alt="service.service_type" class="offer__image">
+            <img :src="service.icon" :alt="service.service_type" class="offer__image">
         </div>
         <div class="offer__text__container">
             <h4 class="offer__header">{{ service.service_type }}</h4>

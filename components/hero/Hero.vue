@@ -19,7 +19,6 @@
                     <nuxt-link v-if="hero.hero_button_link !== 'contact'" :to="hero.hero_button_link" class="hero__button js__open__contact">
                         {{ hero.hero_button_text }}
                     </nuxt-link>
-
                     <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button js__open__contact">
                         <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
                     </div>
@@ -86,7 +85,7 @@ export default {
         position: relative;
         overflow: hidden;
         margin: -60px 0 0 0;
-        min-height: 60vh;
+        min-height: 50vh;
     }
     .hero__background {
         width: 100%;

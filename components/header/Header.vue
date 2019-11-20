@@ -15,13 +15,13 @@
                 <nav class="nav__container">
                     <div class="nav__items" @click="navToggle(false)">
                         <div v-for="(item, index) in navItems" :key="index" class="nav__item">
-                            <nuxt-link :to="'/' + item.nav_link" v-if="item.status === 'published' && item.nav_link">
-                                <h2 class="nav__link">{{ item.nav_title }}</h2>
-                                <p class="nav__para">{{ item.nav_para }}</p>
+                            <nuxt-link :to="'/' + item.link" v-if="item.status === 'published' && item.link">
+                                <h2 class="nav__link">{{ item.title }}</h2>
+                                <p class="nav__para">{{ item.para }}</p>
                             </nuxt-link>
-                            <div v-else-if="item.status === 'published' && !item.nav_link" @click="contactToggle()">
-                                <h2 class="nav__link">{{ item.nav_title }}</h2>
-                                <p class="nav__para">{{ item.nav_para }}</p>
+                            <div v-else-if="item.status === 'published' && !item.link" @click="contactToggle()">
+                                <h2 class="nav__link">{{ item.title }}</h2>
+                                <p class="nav__para">{{ item.para }}</p>
                             </div>
                         </div>
                     </div>

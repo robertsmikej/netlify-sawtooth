@@ -56,7 +56,7 @@ export default {
 .privacy__policy p, .privacy__policy ul, .privacy__policy li, .privacy__policy h3, .privacy__policy h4 {
     text-align: left;
 }
-.page__intro::before {
+.privacy__policy .page__intro::before {
     content: "";
     position: absolute;
     top: 0px;
@@ -68,7 +68,7 @@ export default {
     transform-origin: 0 0;
     z-index: 2;
 }
-.page__intro {
+.privacy__policy .page__intro {
     background-color: var(--light-orange);
     color: #FFF;
     font-weight: 600;

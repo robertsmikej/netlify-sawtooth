@@ -22,20 +22,25 @@ export default {
 
 <style>
 .site__button {
-    margin: 20px auto;
+    margin: 8px auto;
     display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    flex: 0 1 auto;
 }
 .site__button__inner {
     width: 100%;
     font-size: 1.1em;
-    padding: 14px 24px;
+    padding: 10px 24px;
     margin: 0 auto;
-    min-width: 170px;
     text-decoration: none;
-    display: flex;
+    /* display: flex;
+    flex-direction: row;
     align-self: center;
     align-items: center;
-    align-content: center;
+    align-content: center; */
     text-transform: capitalize;
     transition: all .5s;
     cursor: pointer;
