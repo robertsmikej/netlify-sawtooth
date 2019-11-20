@@ -28,7 +28,7 @@
     "status": "published",
     "page_section_6_header": "JAMstack",
     "page_section_6_para": "To us, the technology that is used to build your website is just as important as what it looks like.",
-    "page_section_6_description": "We've worked hard to built a simple, robust, but easy to use series of systems, so you can get back to what's important. Your business.\n\n![Jam Stack Logo](/img/jamstack-logo.png \"Jam Stack Logo\")\n\nJAMstack stands for JavaScript, APIs, & Pre-rendered Markup.\n\nWhat's all this mean?\n\nAt the core of it all it means that we build your site with speed, security, and cost to you in mind."
+    "page_section_6_description": "We've worked hard to built a simple, robust, but easy to use series of systems, so you can get back to what's important. Your business.\n\n![Jam Stack Logo](/img/jamstack-logo.png \"Jam Stack Logo\")\n\nJAMstack stands for JavaScript, APIs, & Pre-rendered Markup.\n\nWhat's all that mean to you?\n\nAt the core of it all it means that we build your site with speed, security, and cost to you in mind. You site will literally be the fastest it can be, right when we deploy it!"
   },
   "hero": {
     "hero_header": "Digital Experiences. Zero Limitations.",
