@@ -80,7 +80,7 @@ export default {
         background-color: var(--dark-grey);
         padding: 90px 0 50px;
         color: #FFF;
-        align-self: flex-end;
+        /* align-self: flex-end; */
         position: relative;
         z-index: 10;
     }

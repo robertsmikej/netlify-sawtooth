@@ -6,8 +6,9 @@ module.exports = {
         routes: function () {
             const fs = require('fs');
             return fs.readdirSync('./assets/content/portfolio').map(file => {
+                console.log(file.slice(2, -5));
                 return {
-                    route: `/portfolio/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
+                    route: `/portfolio/${file}`, // Remove the .json from the end of the filename
                     payload: require(`./assets/content/portfolio/${file}`),
                 };
             });
@@ -45,7 +46,7 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        { src: '~plugins/vue-carousel', ssr: false }
+        
     ],
 
     /*
@@ -71,6 +72,6 @@ module.exports = {
     ** Build configuration
     */
     build: {
-        vendor: ['vue-carousel']
+        
     }
 };
