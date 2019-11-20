@@ -6,9 +6,8 @@ module.exports = {
         routes: function () {
             const fs = require('fs');
             return fs.readdirSync('./assets/content/portfolio').map(file => {
-                console.log(file.slice(2, -5));
                 return {
-                    route: `/portfolio/${file}`, // Remove the .json from the end of the filename
+                    route: `/portfolio/${file.split(".")[0]}`, // Remove the .json from the end of the filename
                     payload: require(`./assets/content/portfolio/${file}`),
                 };
             });
