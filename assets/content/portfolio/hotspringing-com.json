@@ -5,6 +5,14 @@
   "name": "HotSpringing.com",
   "status": "published",
   "main_image": "/img/hotspringing-mockup-640.jpg",
+  "tech": {
+    "tech_used": [
+      "Vue.js"
+    ],
+    "integrations_used": [
+      "Shopify"
+    ]
+  },
   "link": "https://www.hotspringing.com",
   "hero": {
     "hero_header": "HotSpringing.com",
