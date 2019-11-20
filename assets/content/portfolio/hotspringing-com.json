@@ -7,7 +7,8 @@
   "main_image": "/img/hotspringing-mockup-640.jpg",
   "tech": {
     "tech_used": [
-      "Vue.js"
+      "Vue.js",
+      "Netlify"
     ],
     "integrations_used": [
       "Shopify"
