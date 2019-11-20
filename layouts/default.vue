@@ -131,7 +131,7 @@ export default {
     }
 
     p {
-        font-size: 1em;
+        font-size: 1.1em;
         line-height: 1.4em;
         font-weight: 500;
     }
@@ -148,6 +148,11 @@ export default {
         padding: 8vh 16px 11vh;
         position: relative;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-start;
     }
     .page__section__inner {
         display: flex;
@@ -155,25 +160,6 @@ export default {
         flex-wrap: wrap;
         justify-content: flex-start;
         align-self: center;
-    }
-    
-    .site__button {
-        font-size: 1.1em;
-        margin: 20px 0 0;
-        padding: 14px 24px;
-        min-width: 170px;
-        text-decoration: none;
-        display: block;
-        align-self: center;
-        text-transform: capitalize;
-        transition: all .5s;
-        cursor: pointer;
-        font-weight: 600;
-    }
-    .site__button:hover {
-        background: #FFF;
-        color: var(--dark-blue);
-        font-size: 1.2em;
     }
     /* ----------------------------  MEDIA QUERY ------------------------------ */
     @media screen and (max-width:900px) {

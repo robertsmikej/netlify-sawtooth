@@ -19,8 +19,9 @@
                     <nuxt-link v-if="hero.hero_button_link !== 'contact'" :to="hero.hero_button_link" class="hero__button js__open__contact">
                         {{ hero.hero_button_text }}
                     </nuxt-link>
-                    <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button site__button js__open__contact">
-                        {{ hero.hero_button_text }}
+
+                    <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button js__open__contact">
+                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
                     </div>
                 </div>
             </div>
@@ -35,7 +36,12 @@
 </template>
 
 <script>
+import SiteButton from '~/components/general/SiteButton.vue';
+
 export default {
+    components: {
+        SiteButton
+    },
     props: {
         hero: Object
     },
@@ -155,10 +161,6 @@ export default {
         flex-direction: row;
         justify-content: center;
         align-self: flex-start
-    }
-    .hero__button {
-        background: var(--blue);
-        color: #FFF;
     }
 
     .hero--subpage {

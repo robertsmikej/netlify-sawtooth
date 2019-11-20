@@ -76,6 +76,22 @@ collections:
         - { label: 'Page Section 5 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 5 Header', name: 'page_section_5_header', widget: 'string', required: false }
         - { label: 'Page Section 5 Para', name: 'page_section_5_para', widget: 'text', required: false }
+      - label: "Page Section - 6"
+        name: "page_section_6"
+        widget: "object"
+        fields:
+        - { label: 'Page Section 6 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 6 Header', name: 'page_section_6_header', widget: 'string', required: false }
+        - { label: 'Page Section 6 Para', name: 'page_section_6_para', widget: 'text', required: false }
+        - { label: 'Page Section 6 Description', name: 'page_section_6_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      - label: "Page Section - 7"
+        name: "page_section_7"
+        widget: "object"
+        fields:
+        - { label: 'Page Section 7 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Page Section 7 Header', name: 'page_section_7_header', widget: 'string', required: false }
+        - { label: 'Page Section 7 Para', name: 'page_section_7_para', widget: 'text', required: false }
+        - { label: 'Page Section 7 Description', name: 'page_section_7_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
 
   - name: 'nav'
     label: 'Nav Items'
@@ -255,7 +271,77 @@ collections:
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+      - label: "Technologies and Integrations"
+        name: "tech"
+        widget: "object"
+        fields:
+          - label: "Technologies Used"
+            name: "tech_used"
+            widget: "relation"
+            collection: "technologies"
+            searchFields: ["name"]
+            valueField: "name"
+            multiple: true
+            displayFields: ["name"]
+            required: false
+          - label: "Integrations Used"
+            name: "integrations_used"
+            widget: "relation"
+            collection: "integrations"
+            searchFields: ["name"]
+            valueField: "name"
+            multiple: true
+            displayFields: ["name"]
+            required: false
 
+  - name: 'technologies'
+    label: 'Technologies'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/technologies'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Technology Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 40
+        required: false
+      - { label: 'Technology Icon', name: 'icon', widget: 'file', required: false }
+      - { label: 'Technology Name', name: 'name', widget: 'string', required: false }
+      - { label: 'Technology Short Description', name: 'short_description', widget: 'text', required: false }
+      - { label: 'Technology Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+
+  - name: 'integrations'
+    label: 'Integrations'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/integrations'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Integration Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - label: "Sort Number"
+        name: "sort_number"
+        widget: "number"
+        default: 1
+        valueType: "int"
+        min: 1
+        max: 40
+        required: false
+      - { label: 'Integration Icon', name: 'icon', widget: 'file', required: false }
+      - { label: 'Integration Name', name: 'name', widget: 'string', required: false }
+      - { label: 'Integration Short Description', name: 'short_description', widget: 'text', required: false }
+      - { label: 'Integration Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      
 
   - name: 'privacy_policy'
     label: 'Privacy Policy'

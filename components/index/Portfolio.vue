@@ -7,6 +7,7 @@
                     <PortfolioCell v-if="cell.status === 'published'" :cell="cell"/>
                 </div>
             </div>
+            <SiteButton :buttonText="'See More Examples'" :buttonLink="'/portfolio'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
         </div>
     </section>
 </template>
@@ -14,11 +15,13 @@
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import PortfolioCell from '~/components/index/PortfolioCell.vue';
+import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
         SectionHeader,
-        PortfolioCell
+        PortfolioCell,
+        SiteButton
     },
     computed: {
         portfolio: function () {
@@ -36,11 +39,6 @@ export default {
 .portfolio {
     background: var(--turkish-blue);
     color: #FFF;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: flex-start;
 }
 .portfolio__cells {
     width: 100%;

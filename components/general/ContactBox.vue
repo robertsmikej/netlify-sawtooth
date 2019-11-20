@@ -3,8 +3,8 @@
         <div class="contact__box__inner">
             <h2 class="contact__box__header page__section__header">{{ sitewide.contact_header }}</h2>
             <p class="contact__box__para">{{ sitewide.contact_para }}</p>
-            <div class="site__button contact__box__button js__open__contact" @click="contactToggle()">
-                {{ sitewide.contact_button_text }}
+            <div class="contact__box__button js__open__contact" @click="contactToggle()">
+                <SiteButton :buttonText="sitewide.contact_button_text" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
             </div>
         </div>
     </div>
@@ -12,10 +12,12 @@
 
 <script>
 import ContactForm from '~/components/contact/ContactForm.vue';
+import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
-        ContactForm
+        ContactForm,
+        SiteButton
     },
     props: {
         sitewide: Object
@@ -52,7 +54,6 @@ export default {
     .contact__box__inner {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
         align-content: flex-start;
         justify-content: center;
         padding: 0 14px;
@@ -73,8 +74,7 @@ export default {
         margin: 30px auto 10px;
     }
     .contact__box__button {
-        background: var(--light-orange);
-        color: #FFF;
+       align-self: center;
     }
     .contact__box .page__section__header::after {
         background: #FFF !important;

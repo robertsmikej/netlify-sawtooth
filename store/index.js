@@ -4,7 +4,9 @@ export const state = () => ({
     sitewide: {},
     services: {},
     privacyPolicy: [],
-    portfolio: []
+    portfolio: [],
+    technology: [],
+    integrations: []
 });
 
 function sortItems(data) {
@@ -48,6 +50,12 @@ export const mutations = {
     },
     setTestimonials(state, data) {
         state.testimonials = sortItems(data);
+    },
+    setTechnology(state, data) {
+        state.technologies = sortItems(data);
+    },
+    setIntegrations(state, data) {
+        state.integrations = sortItems(data);
     }
 };
 
@@ -133,5 +141,21 @@ export const actions = {
             return res;
         });
         await commit('setPortfolio', file);
+
+        var files = await require.context('~/assets/content/technologies/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setTechnology', file);
+
+        var files = await require.context('~/assets/content/integrations/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setIntegrations', file);
     },
 };

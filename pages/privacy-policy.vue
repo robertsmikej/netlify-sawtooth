@@ -2,8 +2,7 @@
     <main>
         <Hero :hero="pageInfo.hero"/>
         <PageIntro :intro="pageInfo.page_intro"/>
-        <div class="privacy__policy" v-html="$md.render(privacyPolicy.privacy_policy_text)">      
-        </div>
+        <div class="privacy__policy" v-html="$md.render(privacyPolicy.privacy_policy_text)"></div>
     </main>
 </template>
 
