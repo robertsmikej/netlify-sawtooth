@@ -6,6 +6,7 @@
   "icon": "/img/design-color.png",
   "hero": {
     "hero_header": "Website Development",
-    "hero_sub_image": "/img/web_developer.png"
+    "hero_background_video": "/img/codecode.mp4",
+    "hero_sub_image": ""
   }
 }
