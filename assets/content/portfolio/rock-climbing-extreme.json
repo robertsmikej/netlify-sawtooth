@@ -1,11 +1,22 @@
 {
-  "status": "published",
+  "para": "Business Dedicated to kicking ass and taking names on the high seas of Idaho",
   "sort_number": 2,
   "name": "Rock Climbing Extreme",
-  "para": "Business Dedicated to kicking ass and taking names on the high seas of Idaho",
-  "category": [
-    "Website Development"
-  ],
+  "status": "published",
+  "main_image": "/img/sawtoothdev-screen-small.jpg",
+  "tech": {
+    "tech_used": [
+      "Vue.js",
+      "Netlify"
+    ]
+  },
   "link": "https://www.google.com",
-  "main_image": "/img/sawtoothdev-screen-small.jpg"
+  "hero": {
+    "hero_header": "Rock Climbing Extreme",
+    "hero_background_video": "/img/rockclimbing.mp4"
+  },
+  "category": [
+    "Website Development",
+    "Responsive Design"
+  ]
 }
