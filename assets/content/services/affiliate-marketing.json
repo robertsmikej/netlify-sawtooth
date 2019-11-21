@@ -1,0 +1,12 @@
+{
+  "status": "published",
+  "service_type": "Affiliate Marketing",
+  "sort_number": 3,
+  "service_short_description": "An advertising model in which a company compensates third-party publishers to generate traffic or leads to the company's products and services.",
+  "icon": "/img/affiliate.png",
+  "hero": {
+    "hero_header": "Affiliate Marketing",
+    "hero_para": "Have a new and exciting product that you'd like us to help you sell? You've come to the right place.",
+    "hero_background_video": "/img/typingfar.mp4"
+  }
+}
