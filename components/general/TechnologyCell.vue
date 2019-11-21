@@ -32,6 +32,7 @@ export default {
     align-content: flex-start;
     justify-content: center;
     margin: 10px 0;
+    text-decoration: none;
 }
 .tech__cell__img__container {
     width: 64px;

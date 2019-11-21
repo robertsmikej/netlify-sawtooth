@@ -9,21 +9,21 @@
         <!-- {{portfoliopage}} -->
         <div class="page__section portfolio__content">
             <div class="portfolio__content__inner">
-                <div class="our__services__used">
-                    <h3 class="portfolio__header">What We Do For Them</h3>
+                <div class="our__services__used portfolio__side__bar" v-if="portfoliopage.category">
+                    <h3 class="portfolio__header">How We Help Them</h3>
                     <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, this.services)" :key="index">
                         <TechnologyCell :cell="item"/>
                     </div>
                 </div>
                 <div class="portfolio__text__content" v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>
-                <div class="portfolio__tech__used">
-                    <div class="portfolio__tech__section">
+                <div class="portfolio__tech__used portfolio__side__bar">
+                    <div class="portfolio__tech__section" v-if="portfoliopage.tech.tech_used">
                         <h3 class="portfolio__header">Technologies Used</h3>
                         <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.tech_used, this.technology)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
-                    <div class="portfolio__tech__section">
+                    <div class="portfolio__tech__section" v-if="portfoliopage.tech.integrations_used">
                         <h3 class="portfolio__header">Integrations Used</h3>
                         <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.integrations_used, this.integrations)" :key="index">
                             <TechnologyCell :cell="item"/>
@@ -157,15 +157,21 @@ export default {
     display: block;
 }
 .portfolio__header {
-    margin: 0 auto 32px;
+    margin: 10px auto;
+    text-decoration: underline;
+    line-height: 1.2em;
 }
-.our__services__used {
+/* .our__services__used {
     flex: 1 1 25%;
     padding: 5px;
 }
 .portfolio__tech__used {
+    
+} */
+.portfolio__side__bar {
     flex: 1 1 25%;
     padding: 5px;
+    min-width: 160px;
 }
 .portfolio__text__content {
     flex: 1 1 50%;
@@ -178,5 +184,37 @@ export default {
 }
 .services__used__cell .tech__cell__inner {
     margin: 20px 0;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 670px) {
+    .portfolio__header {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .portfolio__tech__section {
+        flex: 1 1 100%;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .portfolio__side__bar {
+        flex: 1 1 100%;
+        padding: 5px;
+        width: 120px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .services__used__cell {
+        width: 120px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
 }
 </style>

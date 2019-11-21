@@ -151,7 +151,7 @@ export default {
     .hero__text__container {
         width: 100%;
         margin: 0;
-        max-width: 450px;
+        max-width: 520px;
         display: flex;
         flex-direction: column;
         align-content: flex-start;
@@ -215,6 +215,19 @@ export default {
         .hero__background video {
             align-self: center;
             object-fit: cover;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 700px) {
+        .hero__sub .hero__inner {
+            flex-wrap: wrap;
+            padding: 100px 3vw 70px;
+        }
+        .hero__sub .hero__sub__image__container {
+            padding: 10px;
+        }
+        .hero__sub .hero__sub__image__container {
+            margin: 30px auto 0;
         }
     }
 </style>

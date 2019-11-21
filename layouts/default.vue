@@ -134,8 +134,8 @@ export default {
     }
 
     p {
-        font-size: 1.1em;
-        line-height: 1.4em;
+        font-size: 1em;
+        line-height: 1.3em;
         font-weight: 500;
     }
     ul, li {
@@ -176,7 +176,7 @@ export default {
      /* ----------------------------  MEDIA QUERY ------------------------------ */
     @media screen and (max-width:700px) {
         .page__section {
-            padding: 6vh 5px 6vh;
+            padding: 6vh 5px 8vh;
         }
         h1 {
             font-size: 2.7em;

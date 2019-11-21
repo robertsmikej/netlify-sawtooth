@@ -147,8 +147,8 @@ export default {
         cursor: pointer;
     }
     .contact__exit {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         position: absolute;
         top: 8px;
         right: 8px;
