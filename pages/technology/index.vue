@@ -88,9 +88,6 @@ export default {
 .technology .page__intro {
     background-color: var(--light-orange);
     color: #FFF;
-    font-weight: 600;
-    font-size: 20px;
-    padding-top: 100px;
 }
 .technology__section {
     background-color: var(--light-orange);
