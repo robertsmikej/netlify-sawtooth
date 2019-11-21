@@ -4,16 +4,16 @@
         <PageIntro v-if="pageInfo.page_intro" :intro="pageInfo.page_intro"/>
         <div class="page__section integrations__section">
             <SectionHeader :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para"/>
-            <div class="technology__cells">
-                <div class="tech__cell" v-for="(item, index) in technology" :key="index">
+            <div class="integrations__cells">
+                <div class="tech__cell integration__cell" v-for="(item, index) in integrations" :key="index">
                     <TechnologyCell v-if="item.status === 'published'" :cell="item"/>
                 </div>
             </div>
         </div>
         <div class="page__section technology__section">
             <SectionHeader :header="pageInfo.page_section_2.page_section_2_header" :para="pageInfo.page_section_2.page_section_2_para"/>
-            <div class="integrations__cells">
-                <div class="tech__cell integration__cell" v-for="(item, index) in integrations" :key="index">
+            <div class="technology__cells">
+                <div class="tech__cell" v-for="(item, index) in technology" :key="index">
                     <TechnologyCell v-if="item.status === 'published'" :cell="item"/>
                 </div>
             </div>
@@ -93,7 +93,8 @@ export default {
     padding-top: 100px;
 }
 .technology__section {
-    background-color: var(--light-blue);
+    background-color: var(--light-orange);
+    color: #FFF;
 }
 .technology__cells, .integrations__cells {
     max-width: 1200px;
@@ -107,6 +108,9 @@ export default {
     justify-content: space-around;
 }
 
+.technology__cells .tech__cell a {
+    color: #FFF;
+}
 .tech__cell {
     flex: 0 1 25%;
     margin: 10px 0;

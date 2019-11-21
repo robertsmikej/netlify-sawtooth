@@ -27,7 +27,7 @@
             </div>
             <div class="footer__section footer__nav" v-if="sitewide.footer_details.footer_show_site_links">
                 <div v-for="(item, index) in navItems" :key="index">
-                    <nuxt-link v-if="item.status === 'published' && item.nav_link" :to="item.nav_link" class="footer__nav__items">{{ item.nav_title }}</nuxt-link>
+                    <nuxt-link v-if="item.status === 'published' && item.nav_link" :to="'/' + item.nav_link" class="footer__nav__items">{{ item.nav_title }}</nuxt-link>
                     <div v-else-if="item.status === 'published' && !item.nav_link" class="footer__nav__items" @click="contactToggle()">
                         {{ item.nav_title }}
                     </div>

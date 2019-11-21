@@ -151,7 +151,7 @@ export default {
     }
     
     .page__section {
-        padding: 8vh 16px 11vh;
+        padding: 5vh 16px 8vh;
         position: relative;
         box-sizing: border-box;
         display: flex;

@@ -66,7 +66,7 @@ export default {
 .tech__cell__text__container p {
     font-size: 1em;
     line-height: 23px;
-    font-weight: 300;
+    font-weight: 400;
     margin: 10px auto 0;
 }
 .see__more__link {

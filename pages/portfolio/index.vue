@@ -2,20 +2,26 @@
     <main>
         <Hero :hero="pageInfo.hero"/>
         <PageIntro :intro="pageInfo.page_intro"/>
-        <Portfolio/>
+        <section class="portfolio__page__cells page__section">
+            <div class="portfolio__page__cells__inner">
+                <div class="portfolio__cell" v-for="(cell, index) in portfolio" :key="index">
+                    <PortfolioCell v-if="cell.status === 'published'" :cell="cell"/>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
-import Portfolio from '~/components/index/Portfolio.vue';
+import PortfolioCell from '~/components/index/PortfolioCell.vue';
 
 export default {
     components: {
         Hero,
         PageIntro,
-        Portfolio
+        PortfolioCell
     },
     computed: {
         sitewide: function () {
@@ -45,4 +51,21 @@ export default {
 
 <style>
 
+.portfolio__page__cells {
+    background: var(--turkish-blue);
+    color: #FFF;
+    width: 100%;
+    
+    margin: 0;
+}
+.portfolio__page__cells__inner {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 </style>

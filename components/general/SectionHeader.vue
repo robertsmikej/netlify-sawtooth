@@ -24,7 +24,7 @@ export default {
     .page__section__header {
         max-width: 810px;
         margin: 20px auto 24px;
-        font-size: 3em;
+        font-size: 2.5em;
         line-height: 1em;
         font-weight: 700;
         position: relative;
