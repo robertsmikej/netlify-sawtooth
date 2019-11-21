@@ -1,9 +1,10 @@
 {
   "status": "published",
   "sort_number": 1,
-  "name": "Michael Roberts was born and raised in the neighborhood of Compton in Los Angeles.",
+  "name": "Michael Roberts",
   "title": "Co-Owner",
   "email": "michael@sawtooth.dev",
   "headshot": "/img/michael_roberts_boise_idaho_sawtooth.jpg",
+  "short_text": "Michael Roberts was born and raised in the neighborhood of Compton in Los Angeles.",
   "long_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 }
