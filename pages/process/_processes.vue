@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <main>
         <Hero :hero="processpage.hero"/>
-    </div>
+    </main>
 </template>
 
 <script>

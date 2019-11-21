@@ -82,6 +82,7 @@ export default {
 <style>
     .hero {
         width: 100%;
+        min-width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

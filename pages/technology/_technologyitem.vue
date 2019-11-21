@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <main>
         <Hero :hero="technologypage.hero"/>
-    </div>
+    </main>
 </template>
 
 <script>

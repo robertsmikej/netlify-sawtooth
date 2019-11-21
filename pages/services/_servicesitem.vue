@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <main>
         <Hero :hero="servicespage.hero"/>
-    </div>
+    </main>
 </template>
 
 <script>
