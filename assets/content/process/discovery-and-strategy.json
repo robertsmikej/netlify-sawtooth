@@ -2,5 +2,10 @@
   "status": "published",
   "sort_number": 1,
   "process_header": "Discovery and Strategy",
-  "process_short_description": "You have financial goals to hit. We understand that. That’s why we pour through your requirements and business needs, in order to provide data-supported strategic recommendations, and ensure that your investment in your digital brand is far less than your ROI."
+  "process_short_description": "You have financial goals to hit. We understand that. That’s why we pour through your requirements and business needs, in order to provide data-supported strategic recommendations, and ensure that your investment in your digital brand is far less than your ROI.",
+  "hero": {
+    "hero_header": "Discovery and Strategy",
+    "hero_para": "You have financial goals to hit. We understand that. That’s why we pour through your requirements and business needs, in order to provide data-supported strategic recommendations, and ensure that your investment in your digital brand is far less than your ROI.",
+    "hero_background_video": "/img/divers.mp4"
+  }
 }
