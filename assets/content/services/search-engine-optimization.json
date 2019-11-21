@@ -3,5 +3,10 @@
   "service_type": "Search Engine Optimization",
   "sort_number": 4,
   "service_short_description": "With 91% of traffic usually coming from Search Engines, optimizing your SEO strategy is a must.",
-  "icon": "/img/search-color.png"
+  "icon": "/img/search-color.png",
+  "hero": {
+    "hero_header": "Search Engine Optimization",
+    "hero_para": "With 91% of traffic usually coming from Search Engines, optimizing your SEO strategy is a must.",
+    "hero_background_video": "/img/spy.mp4"
+  }
 }
