@@ -2,6 +2,11 @@
   "page_name": "services",
   "hero": {
     "hero_header": "Our Services",
-    "hero_para": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
+    "hero_para": "",
+    "hero_background_video": "/img/teamwork-space.mp4"
+  },
+  "page_intro": {
+    "status": "published",
+    "page_intro_para": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
   }
 }
