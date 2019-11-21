@@ -2,5 +2,10 @@
   "status": "published",
   "sort_number": 4,
   "process_header": "Launch",
-  "process_short_description": "Launching a completed project with us is as easy as pushing a button, but it comes with much more. We leave you with the tools you need to succeed with, or without, us."
+  "process_short_description": "Launching a completed project with us is as easy as pushing a button, but it comes with much more. We leave you with the tools you need to succeed with, or without, us.",
+  "hero": {
+    "hero_header": "Launch",
+    "hero_para": "Launching a completed project with us is as easy as pushing a button, but it comes with much more. We leave you with the tools you need to succeed with, or without, us.",
+    "hero_background_video": "/img/astro.mp4"
+  }
 }
