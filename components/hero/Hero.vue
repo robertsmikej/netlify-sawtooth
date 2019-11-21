@@ -13,7 +13,7 @@
         <div v-if="hero" class="hero__inner">
             <div class="hero__text__container">
                 <h1 v-if="hero.hero_header" class="hero__header">{{ hero.hero_header }}</h1>
-                <hr v-if="hero.hero_para" class="hero__hr">
+                <hr v-if="hero.hero_header" class="hero__hr">
                 <p v-if="hero.hero_para" class="hero__para">{{ hero.hero_para }}</p>
                 <div v-if="hero.hero_button_text" class="hero__button__container">
                     <nuxt-link v-if="hero.hero_button_link !== 'contact'" :to="hero.hero_button_link" class="hero__button js__open__contact">

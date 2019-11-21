@@ -20,6 +20,7 @@
                     </div>
                 </div>
             </div>
+            <SiteButton :buttonText="'Learn More'" :buttonLink="'/process'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
         </div>
     </section>
 </template>
@@ -27,11 +28,13 @@
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import ProcessCell from '~/components/index/ProcessCell.vue';
+import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
         SectionHeader,
-        ProcessCell
+        ProcessCell,
+        SiteButton
     },
     props: {
         process: Array,

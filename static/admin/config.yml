@@ -215,6 +215,17 @@ collections:
         required: false
       - { label: 'Process Header', name: 'process_header', widget: 'string', required: false }
       - { label: 'Process Short Description', name: 'process_short_description', widget: 'text', required: false }
+      - label: "Hero"
+        name: "hero"
+        widget: "object"
+        fields:
+        - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
+        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
+        - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
+        - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
 
   - name: 'testimonials'
     label: 'Testimonials'

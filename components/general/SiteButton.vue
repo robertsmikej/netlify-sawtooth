@@ -1,9 +1,9 @@
 <template>
     <div class="site__button">
-        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: backgroundColor, color: color}" class="site__button__inner">
+        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: backgroundColor, color: color, border: '1px solid ' + backgroundColor}" class="site__button__inner">
             {{ buttonText.trim() }}
         </nuxt-link>
-        <div v-if="!buttonLink" :style="{backgroundColor: backgroundColor, color: color}" class="site__button__inner">
+        <div v-if="!buttonLink" :style="{backgroundColor: backgroundColor, color: color, border: '1px solid ' + backgroundColor}" class="site__button__inner">
             {{ buttonText.trim() }}
         </div>
     </div>
@@ -41,15 +41,15 @@ export default {
     align-self: center;
     align-items: center;
     align-content: center; */
-    text-transform: capitalize;
+    text-transform: uppercase;
     transition: all .5s;
     cursor: pointer;
     font-weight: 400;
     text-align: center;
 }
 .site__button__inner:hover {
-    background: #FFF;
-    color: var(--dark-blue);
-    font-size: 1.1em;
+    background-color: #FFF !important;
+    color: var(--dark-blue) !important;
+    font-size: 1.1em !important;
 }
 </style>

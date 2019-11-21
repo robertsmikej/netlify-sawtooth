@@ -1,5 +1,5 @@
 <template>
-    <a :href="'/portfolio/' + cell.slug" class="portfolio__cell__inner">
+    <nuxt-link :to="'/portfolio/' + cell.slug" class="portfolio__cell__inner">
         <div class="portfolio__img__container">
             <img :src="cell.main_image" :alt="cell.name" class="portfolio__img">
         </div>
@@ -8,7 +8,7 @@
             <p class="portfolio__para">{{ cell.para }}</p>
             <div class="portfolio__link">More Information</div>
         </div>
-    </a>
+    </nuxt-link>
 </template>
 
 <script>
