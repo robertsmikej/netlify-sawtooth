@@ -1,12 +1,23 @@
 {
-  "status": "published",
-  "sort_number": 3,
-  "name": "Pressed Dress",
   "para": "Bringing your old wedding dress out of the closest to display on your wall as a work of art.",
+  "sort_number": 3,
+  "logo": "/img/pressed-dress-logo.png",
+  "name": "Pressed Dress",
+  "status": "published",
+  "main_image": "/img/pressed-dress-screenshot-640.jpg",
+  "tech": {
+    "tech_used": [
+      "Vue.js"
+    ]
+  },
+  "link": "https://www.presseddress.com",
+  "hero": {
+    "hero_sub_image": "/img/pressed-dress-logo.png"
+  },
   "category": [
     "Website Design",
-    "Website Development"
-  ],
-  "link": "https://www.presseddress.com",
-  "main_image": "/img/pressed-dress-screenshot-640.jpg"
+    "Website Development",
+    "Responsive Design",
+    "Search Engine Optimization"
+  ]
 }
