@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Hero :hero="portfoliopage.hero"/>
+        <Hero :hero="technologypage.hero"/>
     </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
         sitewide: function () {
             return this.$store.state.sitewide
         },
-        portfolio: function () {
-            return this.$store.state.portfolio
+        technology: function () {
+            return this.$store.state.technologies
         }
     },
     data() {
@@ -28,13 +28,13 @@ export default {
             }
         }
     },
-    methods: {
-        getHero: function (pagedata) {
-            return {
-                hero_header: pagedata.name
-            }
-        }
-    },
+    // methods: {
+    //     getHero: function (pagedata) {
+    //         return {
+    //             hero_header: pagedata.name
+    //         }
+    //     }
+    // },
     // head () {
     //     return {
     //         title: sitewide.company_name,
@@ -46,11 +46,11 @@ export default {
     async asyncData({ params, payload }) {
         if (payload) {
             return { 
-                portfoliopage: payload
+                technologypage: payload
             };
         } else if (params) {
             return {
-                portfoliopage: await require(`~/assets/content/portfolio/${params.portfolioitem}.json`),
+                technologypage: await require(`~/assets/content/technologies/${params.portfolioitem}.json`),
             }
         }
     },

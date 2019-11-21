@@ -1,5 +1,5 @@
 <template>
-    <div v-if="service.status === 'published'" to="'/' + service.service_link" class="offer__grid__cell">
+    <nuxt-link :to="'/services/' + service.slug" v-if="service.status === 'published'" class="offer__grid__cell">
         <div class="offer__image__container">
             <img :src="service.icon" :alt="service.service_type" class="offer__image">
         </div>
@@ -9,7 +9,7 @@
                 <p class="offer__text__para">{{ service.service_short_description }}</p>
             </div>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>
@@ -23,10 +23,11 @@ export default {
 <style>
     .offer__grid__cell {
         padding: 20px 0 16px;
-        flex: 1 1 33.3333%;
+        margin: 5px 5px;
+        flex: 1 1 31%;
         min-width: 200px;
         text-decoration: none;
-        transition: background .4s;
+        transition: all .4s;
         border-radius: 50px;
         display: flex;
         flex-direction: column;

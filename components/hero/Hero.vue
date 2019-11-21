@@ -197,7 +197,7 @@ export default {
     }
     .hero__sub__image, .hero__sub__image img {
         align-self: center;
-        width: 100%;
+        width: auto;
         margin: 0 auto;
     }
     /* ------------------ MEDIA QUERY ------------------ */
