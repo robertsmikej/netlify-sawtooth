@@ -35,8 +35,8 @@ export default {
     text-decoration: none;
 }
 .tech__cell__img__container {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -61,9 +61,10 @@ export default {
 }
 .tech__cell__text__container h3 {
     margin: 10px auto 0;
+    font-size: 1em;
 }
 .tech__cell__text__container p {
-    font-size: 19px;
+    font-size: 1em;
     line-height: 23px;
     font-weight: 300;
     margin: 10px auto 0;

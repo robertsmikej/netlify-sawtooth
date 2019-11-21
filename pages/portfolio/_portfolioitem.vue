@@ -1,8 +1,8 @@
 <template>
     <main class="portfolio__page">
         <Hero :hero="portfoliopage.hero"/>
-        <div class="page__section portfolio__company__intro">
-            <img :src="portfoliopage.logo" :alt="portfoliopage.name + ' Logo'" class="portfolio__logo"/>
+        <div class="portfolio__company__intro">
+            <img v-if="portfoliopage.logo" :src="portfoliopage.logo" :alt="portfoliopage.name + ' Logo'" class="portfolio__logo"/>
             <SectionHeader :para="portfoliopage.para"/>
             <!-- <SectionHeader :header="portfoliopage.name" :para="portfoliopage.para"/> -->
         </div>
@@ -63,11 +63,6 @@ export default {
         },
         integrations: function () {
             return this.$store.state.integrations
-        }
-    },
-    data() {
-        return {
-            
         }
     },
     methods: {
@@ -132,6 +127,7 @@ export default {
     /* background: var(--turkish-blue); */
     /* color: #FFF; */
     background-color: var(--light-blue);
+    padding:  30px 10px 40px;
 }
 .portfolio__company__intro .page__section__header__para {
     margin-bottom: 0;
@@ -140,13 +136,14 @@ export default {
     
 }
 .portfolio__content__inner {
-    max-width: 1000px;
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
+    justify-content: space-between;
 }
 .portfolio__logo {
     object-fit: contain;
@@ -159,15 +156,9 @@ export default {
 .portfolio__header {
     margin: 10px auto;
     text-decoration: underline;
+    font-size: 1em;
     line-height: 1.2em;
 }
-/* .our__services__used {
-    flex: 1 1 25%;
-    padding: 5px;
-}
-.portfolio__tech__used {
-    
-} */
 .portfolio__side__bar {
     flex: 1 1 25%;
     padding: 5px;
@@ -181,6 +172,7 @@ export default {
     font-size: 1em;
     font-weight: 400;
     margin: 0 auto 10px;
+    text-align: left;
 }
 .services__used__cell .tech__cell__inner {
     margin: 20px 0;

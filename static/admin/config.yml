@@ -83,7 +83,7 @@ collections:
         - { label: 'Page Section 6 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 6 Header', name: 'page_section_6_header', widget: 'string', required: false }
         - { label: 'Page Section 6 Para', name: 'page_section_6_para', widget: 'text', required: false }
-        - { label: 'Page Section 6 Description', name: 'page_section_6_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+        - { label: 'Page Section 6 Description', name: 'page_section_6_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Page Section - 7"
         name: "page_section_7"
         widget: "object"
@@ -91,7 +91,7 @@ collections:
         - { label: 'Page Section 7 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
         - { label: 'Page Section 7 Header', name: 'page_section_7_header', widget: 'string', required: false }
         - { label: 'Page Section 7 Para', name: 'page_section_7_para', widget: 'text', required: false }
-        - { label: 'Page Section 7 Description', name: 'page_section_7_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+        - { label: 'Page Section 7 Description', name: 'page_section_7_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
 
   - name: 'nav'
     label: 'Nav Items'
@@ -270,7 +270,7 @@ collections:
         max: 30
       - { label: 'Client Name', name: 'name', widget: 'string', required: false }
       - { label: 'Client Description', name: 'para', widget: 'text', required: false }
-      - { label: 'Client Heavy Text', name: 'long_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      - { label: 'Client Heavy Text', name: 'long_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Our Work Category"
         name: "category"
         widget: "relation"
@@ -339,7 +339,7 @@ collections:
       - { label: 'Technology Icon', name: 'icon', widget: 'file', required: false }
       - { label: 'Technology Name', name: 'name', widget: 'string', required: false }
       - { label: 'Technology Short Description', name: 'short_description', widget: 'text', required: false }
-      - { label: 'Technology Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      - { label: 'Technology Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Hero"
         name: "hero"
         widget: "object"
@@ -374,7 +374,7 @@ collections:
       - { label: 'Integration Icon', name: 'icon', widget: 'file', required: false }
       - { label: 'Integration Name', name: 'name', widget: 'string', required: false }
       - { label: 'Integration Short Description', name: 'short_description', widget: 'text', required: false }
-      - { label: 'Integration Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      - { label: 'Integration Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Hero"
         name: "hero"
         widget: "object"
@@ -399,4 +399,4 @@ collections:
       preview: false
     fields:
       - { label: 'Privacy Policy Unique Name', name: 'privacy_policy_name', widget: 'string', required: false }
-      - { label: 'Privacy Policy Text', name: 'privacy_policy_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "bulleted-list", "numbered-list"] }
+      - { label: 'Privacy Policy Text', name: 'privacy_policy_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }

@@ -130,6 +130,9 @@ export default {
         font-weight: 400;
     }
     h4 {
+        font-size: 1em;
+        line-height: 1.2em;
+        font-weight: 400;
         margin: 4px auto 0;
     }
 

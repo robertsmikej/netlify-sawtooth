@@ -1,7 +1,6 @@
 <template>
     <div>
         <Hero :hero="processpage.hero"/>
-        {{processpage}}
     </div>
 </template>
 
