@@ -3,12 +3,8 @@
         <div class="offer__image__container">
             <img :src="service.icon" :alt="service.service_type" class="offer__image">
         </div>
-        <div class="offer__text__container">
-            <h4 class="offer__header">{{ service.service_type }}</h4>
-            <div class="offer__text__inner">
-                <p class="offer__text__para">{{ service.service_short_description }}</p>
-            </div>
-        </div>
+        <h4 class="offer__header">{{ service.service_type }}</h4>
+        <p class="offer__text__para">{{ service.service_short_description }}</p>
     </nuxt-link>
 </template>
 
@@ -25,6 +21,7 @@ export default {
         padding: 20px 0 16px;
         margin: 5px 5px;
         flex: 1 1 31%;
+        max-width: 31%;
         min-width: 200px;
         text-decoration: none;
         transition: all .4s;
@@ -74,5 +71,26 @@ export default {
     .offer__grid__cell:hover .offer__text__para {
         color: var(--dark-grey);
         transition: color .4s;
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 800px) {
+        .offer__grid__cell {
+            min-width: 0;
+            border-radius: 30px;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 450px) {
+        .offer__header {
+            font-size: 1.7em;
+            line-height: 1.1em;
+        }
+        .offer__grid__cell {
+            padding: 14px 0 18px;
+            margin: 3px;
+            flex: 1 1 46%;
+            max-width: 46%;
+            
+        }
     }
 </style>
