@@ -1,0 +1,22 @@
+{
+  "page_name": "about_us",
+  "hero": {
+    "hero_header": "About Us",
+    "hero_para": "Put a face to a voice, or a name to a face!",
+    "hero_background_video": "/img/meeting-blur.mp4"
+  },
+  "page_intro": {
+    "status": "published",
+    "page_intro_header": "Thanks for stopping by!",
+    "page_intro_para": "We're excited to get to know you. If you'd like to get to know us and get a leg up, please read on."
+  },
+  "page_section_1": {
+    "status": "published",
+    "page_section_1_header": "Current Associates",
+    "page_section_1_para": "The Life Blood of the Business."
+  },
+  "page_section_2": {
+    "status": "published",
+    "page_section_2_header": "Current Partners"
+  }
+}
