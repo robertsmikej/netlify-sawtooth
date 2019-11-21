@@ -6,6 +6,7 @@
   "icon": "/img/design-color.png",
   "hero": {
     "hero_header": "Website Development",
+    "hero_para": "Using some of the latest technologies and techniques allows us to do things that other agencies just won't, or can't, do.",
     "hero_background_video": "/img/codecode.mp4",
     "hero_sub_image": ""
   }
