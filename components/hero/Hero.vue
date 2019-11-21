@@ -1,5 +1,5 @@
 <template>
-    <div class="hero">
+    <div class="hero" :class="checkSub(hero)">
         <div v-if="hero" class="hero__background">
             <div class="hero__background__overlay"></div>
             <video v-if="!hero.hero_background_image && hero.hero_background_video" playsinline autoplay muted loop class="hero__header__video">
@@ -59,6 +59,13 @@ export default {
         },
         contactToggle: function(event) {
             this.$nuxt.$emit("showContact", true);
+        },
+        checkSub: function (data) {
+            if (data.hero_sub_image) {
+                return "hero__sub";
+            } else {
+                return "hero__full";
+            }
         }
     },
     mounted() {
@@ -85,12 +92,18 @@ export default {
         position: relative;
         overflow: hidden;
         margin: -60px 0 0 0;
-        min-height: 50vh;
+    }
+    .hero__sub {
+        /* margin: 0; */
+        background: linear-gradient(to bottom right, var(--blue-grey), var(--blue));
+        opacity: 1;
+    }
+    .hero__sub .hero__background {
+        display: none;
     }
     .hero__background {
         width: 100%;
         max-height: 1170px;
-        min-height: 300px;
     }
     .hero__background__overlay {
         position: absolute;
@@ -128,17 +141,29 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .hero__sub .hero__inner {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 7vw 3vw 5vw;
+    }
     .hero__text__container {
         width: 100%;
         margin: 0;
-        max-width: 600px;
+        max-width: 450px;
         display: flex;
         flex-direction: column;
         align-content: flex-start;
         justify-content: center;
     }
-    /* .hero__header {
-        
+    /* .hero__sub .hero__text__container h1 {
+        color: var(--dark-grey);
+        text-shadow: none;
+    }
+    .hero__sub .hero__text__container p {
+        color: var(--dark-grey);
+        text-shadow: none;
     } */
     .hero__hr {
         width: 110px;
@@ -150,8 +175,8 @@ export default {
         align-self: flex-start;
     }
     .hero__para {
-        font-size: 1.2em;
-        line-height: 1.5em;
+        font-size: 1.1em;
+        line-height: 1.3em;
         color: #FFF;
         text-align: left;
     }
@@ -162,27 +187,18 @@ export default {
         align-self: flex-start
     }
 
-    .hero--subpage {
-        min-height: 75vh;
-    }
-    .hero--subpage .hero__background__overlay {
-        background: linear-gradient(to bottom right, var(--blue-grey), var(--blue));
-        opacity: 1;
-    }
-    .hero--subpage .hero__inner {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
     .hero__sub__image__container {
         display: flex;
         flex-direction: row;
         justify-content: center;
         padding: 20px;
+        margin: 40px 0;
+        width: 100%;
     }
-    .hero__sub__image {
+    .hero__sub__image, .hero__sub__image img {
         align-self: center;
-        width: 95%;
-        margin: 10px auto;
+        width: 100%;
+        margin: 0 auto;
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 900px) {

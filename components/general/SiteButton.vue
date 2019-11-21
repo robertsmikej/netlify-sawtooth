@@ -22,7 +22,7 @@ export default {
 
 <style>
 .site__button {
-    margin: 8px auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -32,7 +32,7 @@ export default {
 }
 .site__button__inner {
     width: 100%;
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 10px 24px;
     margin: 0 auto;
     text-decoration: none;
@@ -44,12 +44,12 @@ export default {
     text-transform: capitalize;
     transition: all .5s;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
 }
 .site__button__inner:hover {
     background: #FFF;
     color: var(--dark-blue);
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 </style>

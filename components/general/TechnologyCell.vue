@@ -1,14 +1,14 @@
 <template>
-    <div class="tech__cell__inner">
+    <nuxt-link :to="'/' + cell.type + '/' + cell.slug" class="tech__cell__inner">
         <div class="tech__cell__img__container">
             <img :src="cell.icon" :alt="cell.name + ' Logo'" class="tech__cell__logo">
         </div>
         <div class="tech__cell__text__container">
             <h4>{{ cell.name }}</h4>
             <p v-if="cell.short_description">{{ cell.short_description }}</p>
-            <SiteButton :buttonLink="'/technology/' + cell.slug" :buttonText="'See More'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>

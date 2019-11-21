@@ -119,7 +119,7 @@ export default {
     }
     h1 {
         text-align: left;
-        font-size: 3.5em;
+        font-size: 3em;
         line-height: 1em;
         font-weight: 700;
         margin: 10px 0;
@@ -130,7 +130,7 @@ export default {
         font-weight: 400;
     }
     h4 {
-        margin: 8px auto 0;
+        margin: 4px auto 0;
     }
 
     p {

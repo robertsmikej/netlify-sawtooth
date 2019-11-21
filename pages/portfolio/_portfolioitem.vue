@@ -3,25 +3,31 @@
         <Hero :hero="portfoliopage.hero"/>
         <div class="page__section portfolio__company__intro">
             <img :src="portfoliopage.logo" :alt="portfoliopage.name + ' Logo'" class="portfolio__logo"/>
-            <SectionHeader :header="portfoliopage.name" :para="portfoliopage.para"/>
+            <SectionHeader :para="portfoliopage.para"/>
+            <!-- <SectionHeader :header="portfoliopage.name" :para="portfoliopage.para"/> -->
         </div>
         <!-- {{portfoliopage}} -->
         <div class="page__section portfolio__content">
             <div class="portfolio__content__inner">
                 <div class="our__services__used">
                     <h3 class="portfolio__header">What We Do For Them</h3>
-                    <div class="services__used__cell" v-for="(item, index) in getServicesUsed(portfoliopage.category)">
-                        <!-- {{item}} -->
+                    <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, this.services)" :key="index">
                         <TechnologyCell :cell="item"/>
                     </div>
                 </div>
                 <div class="portfolio__text__content" v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>
                 <div class="portfolio__tech__used">
                     <div class="portfolio__tech__section">
-                        <h3>Technologies Used</h3>
+                        <h3 class="portfolio__header">Technologies Used</h3>
+                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.tech_used, this.technology)" :key="index">
+                            <TechnologyCell :cell="item"/>
+                        </div>
                     </div>
                     <div class="portfolio__tech__section">
-                        <h3>Integrations Used</h3>
+                        <h3 class="portfolio__header">Integrations Used</h3>
+                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.integrations_used, this.integrations)" :key="index">
+                            <TechnologyCell :cell="item"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,18 +76,30 @@ export default {
                 hero_header: pagedata.name
             }
         },
-        getServicesUsed: function (data) {
+        getServices: function (data, stored) {
             let d = {};
-            for(let s in this.services) {
-                let service = this.services[s];
-                if (data.includes(service.service_type)) {
-                    d[service.service_type] = service;
-                    d[service.service_type]["name"] = service.service_type;
+            for(let s in stored) {
+                let stor = stored[s];
+                if (data.includes(stor.service_type)) {
+                    d[stor.service_type] = stor;
+                    d[stor.service_type]["name"] = stor.service_type;
+                    d[stor.service_type]["type"] = "services";
                     // d[service.service_type]["short_description"] = service.service_short_description;
                 }
             }
             return d;
-            
+        },
+        getUsed: function (data, stored) {
+            let d = {};
+            for(let s in stored) {
+                let stor = stored[s];
+                if (data.includes(stor.name)) {
+                    d[stor.name] = stor;
+                    d[stor.name]["short_description"] = "";
+                    d[stor.name]["type"] = "technology";
+                }
+            }
+            return d;
         }
     },
     // head () {
@@ -111,14 +129,15 @@ export default {
 
 }
 .portfolio__company__intro {
-    background: var(--turkish-blue);
-    color: #FFF;
+    /* background: var(--turkish-blue); */
+    /* color: #FFF; */
+    background-color: var(--light-blue);
 }
 .portfolio__company__intro .page__section__header__para {
     margin-bottom: 0;
 }
 .portfolio__content {
-    background-color: var(--light-blue);
+    
 }
 .portfolio__content__inner {
     max-width: 1000px;
@@ -144,13 +163,18 @@ export default {
     flex: 1 1 25%;
     padding: 5px;
 }
+.portfolio__tech__used {
+    flex: 1 1 25%;
+    padding: 5px;
+}
 .portfolio__text__content {
     flex: 1 1 50%;
     padding: 5px;
 }
-.portfolio__tech__used {
-    flex: 1 1 25%;
-    padding: 5px;
+.portfolio__text__content p {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 auto 10px;
 }
 .services__used__cell .tech__cell__inner {
     margin: 20px 0;
