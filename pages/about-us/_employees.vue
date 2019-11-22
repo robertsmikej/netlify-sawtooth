@@ -14,6 +14,7 @@ import PageIntro from '~/components/general/PageIntro.vue';
 import Employee from '~/components/about-us/Employee.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro,

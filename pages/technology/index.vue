@@ -30,6 +30,7 @@ import TechnologyCell from '~/components/general/TechnologyCell.vue';
 import ContactBox from '~/components/general/ContactBox.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro,

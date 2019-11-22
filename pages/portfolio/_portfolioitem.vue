@@ -42,6 +42,7 @@ import SectionHeader from '~/components/general/SectionHeader.vue';
 import TechnologyCell from '~/components/general/TechnologyCell.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro,

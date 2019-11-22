@@ -18,6 +18,7 @@ import PageIntro from '~/components/general/PageIntro.vue';
 import PortfolioCell from '~/components/index/PortfolioCell.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro,

@@ -12,6 +12,7 @@ import PageIntro from '~/components/general/PageIntro.vue';
 
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro

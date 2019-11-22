@@ -25,6 +25,7 @@ import OurStack from '~/components/general/OurStack.vue';
 import ContactBox from '~/components/general/ContactBox.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         PageIntro,

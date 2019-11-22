@@ -21,6 +21,7 @@ import SectionHeader from '~/components/general/SectionHeader.vue';
 import Employee from '~/components/about-us/Employee.vue';
 
 export default {
+    scrollToTop: true,
     components: {
         Hero,
         SectionHeader,
