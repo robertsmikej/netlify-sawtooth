@@ -1,0 +1,16 @@
+{
+  "sort_number": 2,
+  "name": "Audrey Roberts",
+  "long_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "short_text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+  "status": "published",
+  "speciality": "Affiliate Marketing",
+  "title": "Associate",
+  "headshot": "/img/audrey_roberts_boise_idaho_sawtooth.jpg",
+  "hero": {
+    "hero_header": "Audrey Roberts",
+    "hero_para": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+    "hero_background_video": "/img/hotspringinghero.mp4"
+  },
+  "email": "audrey@sawtooth.dev"
+}
