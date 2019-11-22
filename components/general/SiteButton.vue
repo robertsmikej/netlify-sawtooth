@@ -29,6 +29,7 @@ export default {
     align-items: center;
     align-content: center;
     flex: 0 1 auto;
+    z-index: 1;
 }
 .site__button__inner {
     width: 100%;

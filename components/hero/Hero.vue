@@ -95,7 +95,6 @@ export default {
         margin: -60px 0 0 0;
     }
     .hero__sub {
-        /* margin: 0; */
         background: linear-gradient(to bottom right, var(--blue-grey), var(--blue));
         opacity: 1;
     }
@@ -104,7 +103,7 @@ export default {
     }
     .hero__background {
         width: 100%;
-        max-height: 1170px;
+        max-height: 800px;
     }
     .hero__background__overlay {
         position: absolute;

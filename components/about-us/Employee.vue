@@ -28,12 +28,13 @@ export default {
 </script>
 
 <style>
-.employee__cell__inner {
+.employee__cell {
+    max-width: 240px;
     width: 100%;
+    margin: 10px 20px;
     padding: 0px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-around;
     text-decoration: none;

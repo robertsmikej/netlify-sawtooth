@@ -8,15 +8,19 @@
             <div class="work__text">
                 <SectionHeader :header="header" :para="para"/>
             </div>
+            <SiteButton :buttonText="'About Us'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
         </div>
     </section>
 </template>
 
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
+import SiteButton from '~/components/general/SiteButton.vue';
+
 export default {
     components: {
-        SectionHeader
+        SectionHeader,
+        SiteButton
     },
     props: {
         header: String,

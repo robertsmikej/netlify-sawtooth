@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <nav class="nav__container">
-                    <div class="nav__items" @click="navToggle(false)">
+                    <div class="nav__items" @click="navToggle(false); navBarsToX();">
                         <div v-for="(item, index) in navItems" :key="index" class="nav__item">
                             <nuxt-link :to="'/' + item.nav_link" v-if="item.status === 'published' && item.nav_link">
                                 <h2 class="nav__link">{{ item.nav_title }}</h2>

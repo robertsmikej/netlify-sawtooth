@@ -7,8 +7,8 @@
         <section class="page__section employee__cells">
             <SectionHeader :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para"/>
             <div class="employee__cells__inner">
-                <div class="employee__cell" v-for="(emp, index) in employees" :key="index">
-                    <Employee v-if="emp.status === 'published'" :employee="emp"/>
+                <div v-for="(emp, index) in employees" :key="index">
+                    <Employee v-if="emp.status === 'published'" :employee="emp" class="employee__cell"/>
                 </div>
             </div>
         </section>
@@ -64,10 +64,5 @@ export default {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-around;
-}
-.employee__cell {
-    max-width: 240px;
-    width: 100%;
-    margin: 10px 20px;
 }
 </style>
