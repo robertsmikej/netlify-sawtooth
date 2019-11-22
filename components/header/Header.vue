@@ -2,7 +2,7 @@
     <header class="header">
         <div class="header__inner" >
             <div class="site__nav">
-                <div class="nav__icon" @click="navToggle()">
+                <div class="nav__icon" @click="navToggle(); navBarsToX();" :class="{navchanger: navChanged}">
                     <div class="nav__lines">
                         <div class="nav__line nav__line--1"></div>
                         <div class="nav__line nav__line--2"></div>
@@ -43,6 +43,11 @@
 import Logo from '~/components/header/Logo.vue';
 
 export default {
+    data () {
+        return {
+            navChanged: false   
+        }
+    },
     components: {
         Logo
     },
@@ -62,6 +67,9 @@ export default {
         },
         contactToggle: function(toggle) {
             this.$nuxt.$emit("contactShow", toggle);
+        },
+        navBarsToX: function() {
+            this.navChanged = !this.navChanged;
         },
         navToggle: function(toggle) {
             this.$nuxt.$emit("navShow", toggle);

@@ -158,14 +158,6 @@ export default {
         align-content: flex-start;
         justify-content: center;
     }
-    /* .hero__sub .hero__text__container h1 {
-        color: var(--dark-grey);
-        text-shadow: none;
-    }
-    .hero__sub .hero__text__container p {
-        color: var(--dark-grey);
-        text-shadow: none;
-    } */
     .hero__hr {
         width: 110px;
         height: 2px;
@@ -217,6 +209,9 @@ export default {
             align-self: center;
             object-fit: cover;
         }
+        .hero__background {
+            max-height: 700px;
+        }
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 700px) {
@@ -229,6 +224,9 @@ export default {
         }
         .hero__sub .hero__sub__image__container {
             margin: 30px auto 0;
+        }
+        .hero__background {
+            max-height: 500px;
         }
     }
 </style>

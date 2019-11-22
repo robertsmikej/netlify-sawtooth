@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="'/' + cell.type + '/' + cell.slug" class="tech__cell__inner">
+    <nuxt-link :to="'/technology/' + cell.slug" class="tech__cell__inner">
         <div class="tech__cell__img__container">
             <img :src="cell.icon" :alt="cell.name + ' Logo'" class="tech__cell__logo">
         </div>
@@ -8,7 +8,7 @@
             <p v-if="cell.short_description">{{ cell.short_description }}</p>
             <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
         </div>
-    </nuxt-link>
+    </nuxt-link>   
 </template>
 
 <script>
@@ -19,7 +19,8 @@ export default {
         SiteButton
     },
     props: {
-        cell: Object
+        cell: Object,
+        type: String
     }
 }
 </script>
@@ -66,7 +67,7 @@ export default {
 .tech__cell__text__container p {
     font-size: 1em;
     line-height: 23px;
-    font-weight: 400;
+    font-weight: 300;
     margin: 10px auto 0;
 }
 .see__more__link {

@@ -6,7 +6,8 @@ export const state = () => ({
     privacyPolicy: [],
     portfolio: [],
     technology: [],
-    integrations: []
+    integrations: [],
+    employees: []
 });
 
 function sortItems(data) {
@@ -56,6 +57,10 @@ export const mutations = {
     },
     setIntegrations(state, data) {
         state.integrations = sortItems(data);
+    },
+    setEmployees(state, data) {
+        console.log(data);
+        state.employees = sortItems(data);
     }
 };
 
@@ -63,7 +68,6 @@ function getData(files) {
     var f = files.keys().map(key => {
         let res = files(key);
         res.slug = key.slice(2, -5);
-        console.log(f);
         return f;
     });
 }
@@ -157,5 +161,13 @@ export const actions = {
             return res;
         });
         await commit('setIntegrations', file);
+
+        var files = await require.context('~/assets/content/employees/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setEmployees', file);
     },
 };

@@ -200,6 +200,7 @@ export default {
         font-size: 18px;
         line-height: 18px;
         cursor: pointer;
+        text-align: left;
     }
     .footer__legalize {
         width: 100%;
@@ -212,8 +213,8 @@ export default {
     }
     .footer__legalize p, .footer__legalize a {
         margin: 0;
-        font-size: 12px;
-        line-height: 12px;
+        font-size: .8em;
+        line-height: 1em;
         font-weight: 500;
         text-decoration: none;
         display: block;

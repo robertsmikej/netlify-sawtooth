@@ -62,9 +62,43 @@ export default {
     transform-origin: 100% 0;
 }
 .portfolio__cell {
-    flex: 0 1 32%;
+    flex: 1 1 32%;
     max-width: 100%;
+    min-width: 260px;
+    max-width: 500px;
     margin: 6px;
     cursor: pointer;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 900px) {
+    .portfolio__text__container {
+        background: none;
+        opacity: 1;
+        position: relative;
+        flex: 1;
+        padding: 20px;
+        color: var(--dark-grey);
+    }
+    .portfolio__cell__inner {
+        flex-direction: column;
+        align-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: #FFF;
+        text-decoration: none;
+    }
+    
+    .portfolio__cell:nth-of-type(even) .portfolio__cell__inner {
+        flex-direction: column;
+    }
+    .portfolio__name {
+        margin: 0 auto 10px;
+    }
+    .portfolio__link {
+        margin: 10px auto 0;
+        font-size: 1em;
+    }
 }
 </style>

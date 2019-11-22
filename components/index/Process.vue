@@ -9,13 +9,13 @@
                 <div class="process__images">
                     <div class="process__images__inner">
                         <div class="process__image__cell">
-                            <img src="~/assets/imgs/icons/teamwork.png" alt="Teamwork is paramount" class="process__image">
+                            <img src="~/static/img/teamwork.png" alt="Teamwork is paramount" class="process__image">
                         </div>
                         <div class="process__image__cell">
-                            <img src="~/assets/imgs/icons/idea.png" alt="Strategize your goals" class="process__image">
+                            <img src="~/static/img/idea.png" alt="Strategize your goals" class="process__image">
                         </div>
                         <div class="process__image__cell">
-                            <img src="~/assets/imgs/icons/launch.png" alt="Launch your Website" class="process__image">
+                            <img src="~/static/img/launch.png" alt="Launch your Website" class="process__image">
                         </div>
                     </div>
                 </div>

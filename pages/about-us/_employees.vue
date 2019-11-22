@@ -1,7 +1,9 @@
 <template>
     <main>
-        <Hero :hero="technologypage.hero"/>
+        <!-- <Hero :hero="employeepage.hero"/> -->
+        {{employeepage}}
     </main>
+
 </template>
 
 <script>
@@ -17,8 +19,8 @@ export default {
         sitewide: function () {
             return this.$store.state.sitewide
         },
-        technology: function () {
-            return this.$store.state.technologies
+        employees: function () {
+            return this.$store.state.employees
         }
     },
     // head () {
@@ -30,14 +32,13 @@ export default {
     //     }
     // },
     async asyncData({ params, payload }) {
-        console.log(params);
         if (payload) {
             return { 
-                technologypage: payload
+                employeepage: payload
             };
         } else if (params) {
             return {
-                technologypage: await require(`~/assets/content/technologies/${params.technologyitem}.json`),
+                employeepage: await require(`~/assets/content/employees/${params.employees}.json`),
             }
         }
     },

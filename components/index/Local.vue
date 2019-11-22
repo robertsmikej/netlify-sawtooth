@@ -3,7 +3,7 @@
         <div class="page__section__inner">
             <div class="work__background">
                 <div class="work__background__overlay"></div>
-                <img src="~/assets/imgs/clientimgs/sawtoothdev/redfish-lake-stanley-idaho-sawtooth.jpg" alt="" class="work__background__img">
+                <img src="~/static/img/redfish-lake-stanley-idaho-sawtooth.jpg" alt="" class="work__background__img">
             </div>
             <div class="work__text">
                 <SectionHeader :header="header" :para="para"/>
