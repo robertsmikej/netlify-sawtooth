@@ -31,7 +31,6 @@ export default {
     //     }
     // },
     async asyncData({ params, payload }) {
-        console.log(params);
         if (payload) {
             return { 
                 technologypage: payload

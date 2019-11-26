@@ -59,7 +59,6 @@ export const mutations = {
         state.integrations = sortItems(data);
     },
     setEmployees(state, data) {
-        console.log(data);
         state.employees = sortItems(data);
     }
 };

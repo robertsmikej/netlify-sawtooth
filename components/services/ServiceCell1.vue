@@ -40,7 +40,6 @@ export default {
             let th = this;
             Object.keys(this.subservices).forEach(function (service) {
                 if (service === th.pagetype) {
-                    console.log(service);
                     return service;
                 }
             });
