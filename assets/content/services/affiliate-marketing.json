@@ -3,9 +3,15 @@
   "service_type": "Affiliate Marketing",
   "sub_header": "Offer Set Up and Site Development",
   "sort_number": 2,
-  "service_short_description": "Have a new and exciting product that you'd like us to help you sell? You've come to the right place.",
   "short_description": "Have a new and exciting product that you'd like us to help you sell? You've come to the right place.",
   "icon": "/img/affiliate.png",
+  "tech": {
+    "tech_used": [
+      "ClickBank",
+      "Has Offers (TUNE)",
+      "TUNE"
+    ]
+  },
   "hero": {
     "hero_header": "Affiliate Marketing",
     "hero_para": "Have a new and exciting product that you'd like us to help you sell? You've come to the right place.",
