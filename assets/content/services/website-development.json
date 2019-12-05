@@ -8,9 +8,7 @@
   "tech": {
     "tech_used": [
       "Netlify",
-      "Vue.js"
-    ],
-    "integrations_used": [
+      "Vue.js",
       "Shopify"
     ]
   },
