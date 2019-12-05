@@ -1,6 +1,7 @@
 {
   "company_name": "Sawtooth Digital Group",
   "company_logo": "/img/fox-multi-color.png",
+  "company_address_line_2": "Boise, ID 83702",
   "company_email_address": "contact@sawtooth.dev",
   "contact_box": {
     "contact_header": "Contact Us",
