@@ -35,7 +35,7 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 8vh 16px 8vh;
+        /* padding: 8vh 16px 8vh; */
     }
     .work__background {
         position: absolute;

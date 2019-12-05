@@ -94,7 +94,7 @@ export default {
         font-weight: 500;
     }
     .offer__short__description {
-        margin: 0 auto 2px;
+        margin: 8px auto 2px;
         width: 90%;
     }
     .offer__cell__side .technology__cells {

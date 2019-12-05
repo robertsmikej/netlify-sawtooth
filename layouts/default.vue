@@ -159,7 +159,7 @@ a {
     color: var(--dark-grey);
 }
 .page__section {
-    padding: 6vh 16px 8vh;
+    padding: 7vh 16px 8vh;
     position: relative;
     box-sizing: border-box;
     display: flex;

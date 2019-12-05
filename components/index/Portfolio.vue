@@ -61,6 +61,18 @@ export default {
     transform: rotate(1deg) skewX(1deg);
     transform-origin: 100% 0;
 }
+.portfolio::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--turkish-blue);
+    transform: rotate(1.3deg) skewX(1.3deg);
+    transform-origin: 0 0;
+    z-index: 2;
+}
 .portfolio__cell {
     flex: 1 1 32%;
     max-width: 100%;
@@ -89,7 +101,6 @@ export default {
         background-color: #FFF;
         text-decoration: none;
     }
-    
     .portfolio__cell:nth-of-type(even) .portfolio__cell__inner {
         flex-direction: column;
     }

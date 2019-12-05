@@ -40,7 +40,7 @@ export default {
         background: var(--blue);
         position: relative;
         margin: 0;
-        padding-bottom: 13vh;
+        padding-bottom: 10vh;
     }
     .contact__box::before {
         content: "";
@@ -48,7 +48,7 @@ export default {
         top: 0px;
         left: 0;
         width: 100%;
-        height: 60px;
+        height: 70px;
         background-color: var(--blue);
         transform: rotate(-1.3deg) skewX(-1.3deg);
         transform-origin: 0 0;
