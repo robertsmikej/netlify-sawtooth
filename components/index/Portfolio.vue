@@ -101,4 +101,12 @@ export default {
         font-size: 1em;
     }
 }
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 500px) {
+    .portfolio__cell {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
 </style>

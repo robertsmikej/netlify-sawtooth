@@ -79,7 +79,8 @@ export default {
 body, html {
     padding: 0;
     margin: 0;
-} 
+    box-sizing: border-box;
+}
 body * {
     box-sizing: border-box;
 }

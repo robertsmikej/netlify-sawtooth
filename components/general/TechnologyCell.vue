@@ -50,6 +50,8 @@ export default {
 .tech__cell__img__container img {
     max-height: 46px;
     max-width: 120px;
+    object-fit: contain;
+    align-self: center;
 }
 .tech__cell__text__container {
     width: 100%;
