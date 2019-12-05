@@ -1,7 +1,7 @@
 <template>
     <main>
         <Hero :hero="pageInfo.hero"/>
-        <Offer v-if="pageInfo.page_section_1.status === 'published'" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
+        <Offer2 v-if="pageInfo.page_section_1.status === 'published'" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services"/>
         <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.page_section_3.page_section_3_header" :para="pageInfo.page_section_3.page_section_3_para" :process="processes"/>
         <Portfolio v-if="pageInfo.page_section_5.status === 'published'" :header="pageInfo.page_section_5.page_section_5_header" :para="pageInfo.page_section_5.page_section_5_para"/>
         <!-- <OurStack v-if="pageInfo.page_section_6.status === 'published'" :header="pageInfo.page_section_6.page_section_6_header" :para="pageInfo.page_section_6.page_section_6_para" :indexInfo="pageInfo"/> -->
@@ -15,6 +15,7 @@
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import Offer from '~/components/index/Offer.vue';
+import Offer2 from '~/components/index/Offer2.vue';
 import Local from '~/components/index/Local.vue';
 import Testimonials from '~/components/general/Testimonials.vue';
 import Recent from '~/components/index/Recent.vue';
@@ -31,6 +32,7 @@ export default {
         PageIntro,
         ContactBox,
         Offer,
+        Offer2,
         Local,
         Testimonials,
         Recent,

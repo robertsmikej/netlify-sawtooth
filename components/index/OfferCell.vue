@@ -21,7 +21,7 @@ export default {
         padding: 20px 0 16px;
         margin: 5px 5px;
         flex: 1 1 31%;
-        max-width: 31%;
+        /* max-width: 50%; */
         min-width: 200px;
         text-decoration: none;
         transition: all .4s;

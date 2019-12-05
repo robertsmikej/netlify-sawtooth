@@ -2,10 +2,15 @@
     <section class="page__section page__grids what__we__offer">
         <div class="page__section__inner">
             <SectionHeader :header="header" :para="para"/>
+            <!-- <div class="offer__side__by__side">
+                    <OfferCell :service="services.websitedevelopment"/>
+                    <OfferCell :service="services.affiliatemarketing"/>
+
+            </div> -->
             <div class="offer__grid__container">
                 <OfferCell v-for="(service, index) in services" :key="index" :service="service"/>
             </div>
-            <!-- <nuxt-link to="/services" class="site__button services__button">See more</nuxt-link> -->
+            <SiteButton :buttonText="'Learn More'" :buttonLink="'/services'" :backgroundColor="2" :color="'#FFF'"/>
         </div>
     </section>
 </template>
@@ -13,11 +18,13 @@
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import OfferCell from '~/components/index/OfferCell.vue';
+import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
         SectionHeader,
-        OfferCell
+        OfferCell,
+        SiteButton
     },
     props: {
         services: Object,
@@ -72,5 +79,19 @@ export default {
     .services__button {
         background-color: var(--turkish-blue);
         color: #FFF;
+    }
+
+    .offer__side__by__side {
+        margin: 24px auto 10px;
+        max-width: 1120px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-around;
+    }
+    .offer__side__by__side__cell {
+        flex: 1 1 46%;
     }
 </style>

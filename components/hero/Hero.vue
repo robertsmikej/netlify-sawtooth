@@ -20,7 +20,7 @@
                         {{ hero.hero_button_text }}
                     </nuxt-link>
                     <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button js__open__contact">
-                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
+                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="1" :color="'#FFF'"/>
                     </div>
                 </div>
             </div>

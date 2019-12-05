@@ -4,7 +4,7 @@
             <h2 class="contact__box__header page__section__header">{{ sitewide.contact_header }}</h2>
             <p class="contact__box__para">{{ sitewide.contact_para }}</p>
             <div class="contact__box__button js__open__contact" @click="contactToggle()">
-                <SiteButton :buttonText="sitewide.contact_button_text" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+                <SiteButton :buttonText="sitewide.contact_button_text" :backgroundColor="1" :color="'#FFF'"/>
             </div>
         </div>
     </div>

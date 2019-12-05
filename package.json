@@ -17,8 +17,10 @@
     "@nuxtjs/google-analytics": "^2.2.1",
     "@nuxtjs/markdownit": "^1.2.7",
     "@nuxtjs/sitemap": "^2.0.1",
+    "@pake/react-color": "^3.0.0",
     "axios": "^0.19.0",
     "cross-env": "^5.2.0",
+    "netlify-cms-widget-color": "^3.0.1",
     "nuxt": "^2.10.2",
     "vue-carousel": "^0.18.0"
   },

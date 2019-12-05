@@ -1,9 +1,9 @@
 <template>
     <div class="site__button">
-        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: backgroundColor, color: color, border: '1px solid ' + backgroundColor}" class="site__button__inner">
+        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: colors(backgroundColor), color: color, border: '1px solid ' + colors(backgroundColor)}" class="site__button__inner">
             {{ buttonText.trim() }}
         </nuxt-link>
-        <div v-if="!buttonLink" :style="{backgroundColor: backgroundColor, color: color, border: '1px solid ' + backgroundColor}" class="site__button__inner">
+        <div v-if="!buttonLink" :style="{backgroundColor: colors(backgroundColor), color: color, border: '1px solid ' + colors(backgroundColor)}" class="site__button__inner">
             {{ buttonText.trim() }}
         </div>
     </div>
@@ -14,8 +14,14 @@ export default {
     props: {
         buttonLink: String,
         buttonText: String,
-        backgroundColor: String,
+        backgroundColor: Number,
         color: String
+    },
+    methods: {
+        colors: function (num) {
+            console.log(num);
+            return num === 1 ? "var(--light-orange)" : num = 2 ? "var(--logo-orange)" : null
+        }
     }
 }
 </script>
@@ -50,6 +56,7 @@ export default {
 }
 .site__button__inner:hover {
     background-color: #FFF !important;
+    border-color: #FFF !important;
     color: var(--dark-blue) !important;
     font-size: 1.1em !important;
 }
