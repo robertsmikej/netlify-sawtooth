@@ -1,19 +1,9 @@
 {
-  "company_name": "Sawtooth Digital Group",
-  "company_logo": "/img/fox-new-160x241-trimmed.png",
-  "company_address_line_2": "Boise, ID 83702",
-  "company_phone_number": "1(208)794-9008",
-  "company_email_address": "contact@sawtooth.dev",
-  "contact_box": {
-    "contact_header": "Let's Talk",
-    "contact_para": "We’re only a click away, and would to assist you in any way we can. Reach out, and let's talk about how we can help you get started revamping your digital strategy.",
-    "contact_button_text": "Send A Message"
-  },
-  "footer_details": {
-    "footer_show_site_links": true
-  },
+  "name": "Kind Pup",
+  "logo": "/img/kindpuplogo-medium.png",
+  "contact_box": {},
+  "footer_details": {},
   "social_media": {
-    "footer_show_social": false,
     "facebook_link": "https://www.facebook.com/sawtooth-digital"
   }
 }
