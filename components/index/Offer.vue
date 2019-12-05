@@ -84,12 +84,6 @@ export default {
         transform-origin: 0 0;
         z-index: 2;
     }
-    /* .what__we__offer .page__section__header, .what__we__offer .page__section__header__para {
-        color: #FFF;
-    } */
-        /* .what__we__offer .page__section__header {
-        color: var(--dark-grey);
-    } */
     .offer__grid__container {
         margin: 24px auto 16px;
         max-width: 1000px;
@@ -102,5 +96,11 @@ export default {
     .services__button {
         background-color: var(--turkish-blue);
         color: #FFF;
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 600px) {
+        .offer__grid__container {
+            margin: 6px auto;
+        }
     }
 </style>

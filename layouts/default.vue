@@ -186,7 +186,7 @@ a {
     /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width:700px) {
     body .page__section {
-        padding: 6vh 8px 8vh;
+        padding: 7vh 14px;
     }
     h1 {
         font-size: 2.7em;

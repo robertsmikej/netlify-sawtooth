@@ -61,6 +61,9 @@ export default {
         flex: 1 1 auto;
         width: 100%;
     }
+    .offer__cell__side:nth-of-type(1) {
+        justify-content: flex-start;
+    }
     .offer__cell__side:nth-of-type(2) {
         flex: 2 1 auto;
     }
@@ -73,13 +76,11 @@ export default {
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
-        transition: backgroundColor .4s;
     }
     .offer__image {
         align-self: center;
         object-fit: contain;
         margin: 0px 0 -2px;
-        transition: filter .3s;
     }
     .offer__header {
         font-size: 24px;
@@ -114,19 +115,27 @@ export default {
         margin-top: 20px;
     }
     /* ------------------ MEDIA QUERY ------------------ */
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 768px) {
         .offer__grid__cell {
-            
+            padding: 26px 10px;
+            margin: 5px;
+        }
+        .offer__cell__side .tech__cell {
+            padding: 5px 10px;
+        }
+        .offer__sub__header {
+            font-weight: 500;
         }
     }
     /* ------------------ MEDIA QUERY ------------------ */
-    @media screen and (max-width: 450px) {
-        .offer__header {
-            font-size: 1.7em;
-            line-height: 1.1em;
-        }
+    @media screen and (max-width: 600px) {
         .offer__grid__cell {
-            
+            padding: 20px 10px;
+            flex: 1 1 100%;
+            border-radius: 30px;
+        }
+        .offer__image {
+            max-width: 50px;
         }
     }
 </style>

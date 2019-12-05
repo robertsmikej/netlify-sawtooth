@@ -59,4 +59,10 @@ export default {
             font-size: 2.5em;
         }
     }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 450px) {
+        .page__section__header {
+            font-size: 2.3em;
+        }
+    }
 </style>
