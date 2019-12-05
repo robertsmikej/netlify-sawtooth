@@ -91,6 +91,7 @@ export default {
     .offer__sub__header {
         margin-bottom: 0px;
         width: 100%;
+        font-weight: 500;
     }
     .offer__short__description {
         margin: 0 auto 2px;
@@ -122,9 +123,6 @@ export default {
         }
         .offer__cell__side .tech__cell {
             padding: 5px 10px;
-        }
-        .offer__sub__header {
-            font-weight: 500;
         }
     }
     /* ------------------ MEDIA QUERY ------------------ */
