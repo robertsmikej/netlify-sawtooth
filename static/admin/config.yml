@@ -177,6 +177,7 @@ collections:
     fields:
       - { label: 'Service Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
       - { label: 'Service Type', name: 'service_type', widget: 'string' }
+      - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false }
       - label: "Sort Number"
         name: "sort_number"
         widget: "number"
@@ -185,9 +186,22 @@ collections:
         min: 1
         max: 20
         required: false
-      - { label: 'Service Short Description', name: 'service_short_description', widget: 'text', required: false }
+      - { label: 'Short Description', name: 'short_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - { label: 'Service Icon', name: 'icon', widget: 'file', required: false }
       - { label: 'Service Link', name: 'link', widget: 'string', required: false }
+      - label: "Technologies and Integrations"
+        name: "tech"
+        widget: "object"
+        fields:
+          - label: "Tech Used"
+            name: "tech_used"
+            widget: "relation"
+            collection: "technologies"
+            searchFields: ["name"]
+            valueField: "name"
+            multiple: true
+            displayFields: ["name"]
+            required: false
       - label: "Hero"
         name: "hero"
         widget: "object"
@@ -313,15 +327,6 @@ collections:
             multiple: true
             displayFields: ["name"]
             required: false
-          - label: "Integrations Used"
-            name: "integrations_used"
-            widget: "relation"
-            collection: "integrations"
-            searchFields: ["name"]
-            valueField: "name"
-            multiple: true
-            displayFields: ["name"]
-            required: false
 
   - name: 'technologies'
     label: 'Technologies'
@@ -356,43 +361,7 @@ collections:
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
-
-  - name: 'integrations'
-    label: 'Integrations'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/integrations'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Integration Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 40
-        required: false
-      - { label: 'Integration Icon', name: 'icon', widget: 'file', required: false }
-      - { label: 'Integration Name', name: 'name', widget: 'string', required: false }
-      - { label: 'Integration Short Description', name: 'short_description', widget: 'text', required: false }
-      - { label: 'Integration Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-      - label: "Hero"
-        name: "hero"
-        widget: "object"
-        fields:
-        - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
-        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
-        - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
-        - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
-        - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
-      
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }      
 
   - name: 'privacy_policy'
     label: 'Privacy Policy'
@@ -417,8 +386,8 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Integration Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - { label: "Sort Number", name: "sort_number", widget: "number", default: 1, valueType: "int", min: 1, max: 40, required: false }
+      - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - { label: 'Sort Number', name: "sort_number", widget: "number", default: 1, valueType: "int", min: 1, max: 40, required: false }
       - { label: 'Employee Name', name: 'name', widget: 'string', required: false }
       - { label: 'Employee Title', name: 'title', widget: 'string', required: false }
       - { label: 'Speciality', name: 'speciality', widget: 'string', required: false }

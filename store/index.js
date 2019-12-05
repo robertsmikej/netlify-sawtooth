@@ -40,7 +40,7 @@ export const mutations = {
     setServices(state, data) {
         let da = sortItems(data);
         for (let d in da) {
-            da[d].slug = da[d].slug.replace(/-/g,"");
+            da[d].strippedName = da[d].slug.replace(/-/g,"");
             state.services[da[d].slug] = da[d];
         }
     },

@@ -3,9 +3,10 @@
         <div class="tech__cell__img__container">
             <img :src="cell.icon" :alt="cell.name + ' Logo'" class="tech__cell__logo">
         </div>
+        <!-- {{cell}} -->
         <div class="tech__cell__text__container">
             <h4>{{ cell.name }}</h4>
-            <p v-if="cell.short_description">{{ cell.short_description }}</p>
+            <p v-if="cell.short_description && description">{{ cell.short_description }}</p>
             <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
         </div>
     </nuxt-link>   
@@ -20,7 +21,8 @@ export default {
     },
     props: {
         cell: Object,
-        type: String
+        type: String,
+        description: Boolean
     }
 }
 </script>
@@ -36,20 +38,18 @@ export default {
     text-decoration: none;
 }
 .tech__cell__img__container {
-    width: 56px;
-    height: 56px;
+    width: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    overflow: hidden;
 }
 .tech__cell__img__container img {
-    max-width: 100%;
-    width: auto;
-    max-height: 100%;
-    height: auto;
+    max-height: 46px;
+    max-width: 120px;
 }
 .tech__cell__text__container {
     width: 100%;

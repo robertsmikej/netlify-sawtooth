@@ -1,26 +1,29 @@
 <template>
     <div class="contact__box page__section">
         <div class="contact__box__inner">
-            <h2 class="contact__box__header page__section__header">{{ sitewide.contact_header }}</h2>
-            <p class="contact__box__para">{{ sitewide.contact_para }}</p>
+            <SectionHeader :header="header" :para="para" v-if="header || para"/>
             <div class="contact__box__button js__open__contact" @click="contactToggle()">
-                <SiteButton :buttonText="sitewide.contact_button_text" :backgroundColor="1" :color="'#FFF'"/>
+                <SiteButton :buttonText="sitewide.contact_box.contact_button_text" :backgroundColor="1" :color="1"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import SectionHeader from '~/components/general/SectionHeader.vue';
 import ContactForm from '~/components/contact/ContactForm.vue';
 import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
+        SectionHeader,
         ContactForm,
         SiteButton
     },
     props: {
-        sitewide: Object
+        sitewide: Object,
+        header: String,
+        para: String
     },
     methods: {
         contactToggle: function(event) {
@@ -58,14 +61,8 @@ export default {
         justify-content: center;
         padding: 0 14px;
     }
-    .contact__box__header, .contact__box__para {
+    .contact__box__inner h2, .contact__box__inner p {
         color: #FFF;
-    }
-    .contact__box__header {
-        font-size: 3em;
-        line-height: 1em;
-        font-weight: 600;
-        margin: 10px auto;
     }
     .contact__box__para {
         font-size: 1.2em;

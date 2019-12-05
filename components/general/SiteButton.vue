@@ -1,9 +1,9 @@
 <template>
     <div class="site__button">
-        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: colors(backgroundColor), color: color, border: '1px solid ' + colors(backgroundColor)}" class="site__button__inner">
+        <nuxt-link v-if="buttonLink" :to="buttonLink" :style="{backgroundColor: backgroundcolor, border: '1px solid ' + backgroundcolor, color: textcolor}" class="site__button__inner">
             {{ buttonText.trim() }}
         </nuxt-link>
-        <div v-if="!buttonLink" :style="{backgroundColor: colors(backgroundColor), color: color, border: '1px solid ' + colors(backgroundColor)}" class="site__button__inner">
+        <div v-if="!buttonLink" :style="{backgroundColor: backgroundcolor, border: '1px solid ' + backgroundcolor, color: textcolor}" class="site__button__inner">
             {{ buttonText.trim() }}
         </div>
     </div>
@@ -15,12 +15,32 @@ export default {
         buttonLink: String,
         buttonText: String,
         backgroundColor: Number,
-        color: String
+        color: Number
     },
-    methods: {
-        colors: function (num) {
-            console.log(num);
-            return num === 1 ? "var(--light-orange)" : num = 2 ? "var(--logo-orange)" : null
+    computed: {
+        backgroundcolor: function () {
+            let dataBack = this.backgroundColor;
+            let back;
+            if (dataBack === 1) {
+                back = "var(--light-orange)";
+            } else if (dataBack === 2) {
+                back = "var(--lightest-grey)";
+            } else if (dataBack === 3) {
+                back = "var(--logo-orange)";
+            } else if (dataBack === 4) {
+                back = "var(--turkish-blue";
+            }
+            return back;
+        },
+        textcolor: function () {
+            let dataColor = this.color;
+            let color;
+            if (dataColor === 1) {
+                color = "#FFF";
+            } else if (dataColor === 2) {
+                color = "var(--dark-grey)";
+            }
+            return color;
         }
     }
 }
@@ -43,11 +63,6 @@ export default {
     padding: 10px 24px;
     margin: 0 auto;
     text-decoration: none;
-    /* display: flex;
-    flex-direction: row;
-    align-self: center;
-    align-items: center;
-    align-content: center; */
     text-transform: uppercase;
     transition: all .5s;
     cursor: pointer;
@@ -55,8 +70,8 @@ export default {
     text-align: center;
 }
 .site__button__inner:hover {
-    background-color: #FFF !important;
-    border-color: #FFF !important;
+    background-color: var(--lightest-grey) !important;
+    border-color: var(--lightest-grey) !important;
     color: var(--dark-blue) !important;
     font-size: 1.1em !important;
 }

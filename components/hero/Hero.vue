@@ -20,7 +20,7 @@
                         {{ hero.hero_button_text }}
                     </nuxt-link>
                     <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button js__open__contact">
-                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="1" :color="'#FFF'"/>
+                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="1" :color="1"/>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export default {
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
-        margin: -60px 0 0 0;
+        margin: 0;
     }
     .hero__sub {
         background: linear-gradient(to bottom right, var(--blue-grey), var(--blue));

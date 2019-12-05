@@ -7,12 +7,14 @@
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
+import Process from '~/components/index/Process.vue';
 
 export default {
     scrollToTop: true,
     components: {
         Hero,
-        PageIntro
+        PageIntro,
+        Process
     },
     computed: {
         sitewide: function () {

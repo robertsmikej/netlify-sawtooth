@@ -58,6 +58,7 @@ export default {
 <style>
 :root {
     --dark-yellow: #fec303;
+    --lightest-grey: #f2f2f2;
     --teal: #139487;
     --cyan: #1dbad3;
     --aqua: #0ED7F4;
@@ -100,6 +101,7 @@ main {
     width: 100%;
     background-color: #FFF;
     overflow: hidden;
+    margin: -60px 0 0;
 }
 .container {
     width: 100%;
@@ -135,11 +137,17 @@ h4 {
     font-weight: 400;
     margin: 4px auto 0;
 }
-
+h5 {
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 4px auto 0;
+}
 p {
     font-size: 1em;
     line-height: 1.3em;
-    font-weight: 500;
+    font-weight: 400;
+    margin: 10px 0;
 }
 ul, li {
     font-size: 1.1em;
@@ -150,7 +158,7 @@ a {
     color: var(--dark-grey);
 }
 .page__section {
-    padding: 5vh 16px 8vh;
+    padding: 6vh 16px 8vh;
     position: relative;
     box-sizing: border-box;
     display: flex;
