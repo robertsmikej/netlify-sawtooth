@@ -6,7 +6,7 @@
         <div class="tech__cell__text__container">
             <h4>{{ cell.name }}</h4>
             <p v-if="cell.short_description">{{ cell.short_description }}</p>
-            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
         </div>
     </nuxt-link>   
 </template>

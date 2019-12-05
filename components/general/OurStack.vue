@@ -2,7 +2,7 @@
     <section class="page__section our__stack">
         <SectionHeader :header="header" :para="para" v-if="header || para"/>
         <div v-html="$md.render(indexInfo.page_section_6.page_section_6_description)"></div>
-        <SiteButton :buttonText="'Learn More'" :buttonLink="'/technology'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+        <SiteButton :buttonText="'Learn More'" :buttonLink="'/technology'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
     </section>
 </template>
 

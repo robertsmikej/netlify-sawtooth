@@ -6,7 +6,7 @@ media_folder: static/img
 public_folder: /img
 
 site_url: https://www.sawtooth.dev
-display_url: ttps://www.sawtooth.dev
+display_url: https://www.sawtooth.dev
 logo_url: https://www.sawtooth.dev/directus/public/uploads/_/originals/fox1.png
 
 show_preview_links: true

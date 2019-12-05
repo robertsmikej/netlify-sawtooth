@@ -7,7 +7,7 @@
                     <PortfolioCell v-if="cell.status === 'published'" :cell="cell"/>
                 </div>
             </div>
-            <SiteButton :buttonText="'See More Examples'" :buttonLink="'/portfolio'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+            <SiteButton :buttonText="'See More Examples'" :buttonLink="'/portfolio'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
         </div>
     </section>
 </template>

@@ -54,15 +54,15 @@ export default {
     align-content: center;
     justify-content: center;
     position: relative;
-    -webkit-transition: transform 1.2s;
-    transition: transform 1.2s;
+    -webkit-transition: transform .8s;
+    transition: transform .8s;
     transform-style: preserve-3d;
     border-radius: 5px;
 }
 .employee__cell__img__container:hover {
-    -ms-transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
 }
 .employee__card__front {
     position: absolute;
@@ -80,9 +80,9 @@ export default {
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
-    -ms-transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
+    -ms-transform: rotateX(-180deg);
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <SiteButton :buttonText="'Learn More'" :buttonLink="'/process'" :backgroundColor="'var(--light-orange)'" :color="'#FFF'"/>
+            <SiteButton :buttonText="'Learn More'" :buttonLink="'/process'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
         </div>
     </section>
 </template>

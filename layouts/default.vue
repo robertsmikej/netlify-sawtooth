@@ -70,6 +70,7 @@ export default {
     --light-red: #CF2255;
     --deep-red: #901D00;
     --light-orange: #FA9E0D;
+    --logo-orange: #F0512B;
     --powder-blue: #BCF2FC;
     --turkish-blue: #50A3B1;
     --default-font: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
