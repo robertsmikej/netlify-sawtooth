@@ -97,6 +97,9 @@ export default {
         background-color: var(--turkish-blue);
         color: #FFF;
     }
+    .what__we__offer .site__button {
+        margin-bottom: 20px;
+    }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 600px) {
         .offer__grid__container {
