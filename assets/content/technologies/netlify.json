@@ -1,5 +1,5 @@
 {
-  "status": "published",
+  "status": true,
   "name": "Netlify",
   "sort_number": 2,
   "show_label": true,
