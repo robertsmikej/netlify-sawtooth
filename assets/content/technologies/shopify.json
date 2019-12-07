@@ -1,5 +1,5 @@
 {
-  "status": "published",
+  "status": true,
   "name": "Shopify",
   "sort_number": 1,
   "show_label": true,
