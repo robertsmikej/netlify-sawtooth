@@ -1,6 +1,6 @@
 {
-  "status": "published",
+  "status": true,
+  "name": "Has Offers (TUNE)",
   "sort_number": 1,
-  "icon": "/img/hasofferslogo-small1.png",
-  "name": "Has Offers (TUNE)"
+  "icon": "/img/hasofferslogo-small1.png"
 }
