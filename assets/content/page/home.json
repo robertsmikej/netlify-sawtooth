@@ -30,6 +30,61 @@
     "page_section_6_para": "To us, the technology that is used to build your website is just as important as what it looks like.",
     "page_section_6_description": "We've worked hard to built a simple, robust, but easy to use series of systems, so you can get back to what's important. Your business.\n\n![Jam Stack Logo](/img/jamstack-logo.png \"Jam Stack Logo\")\n\nJAMstack stands for JavaScript, APIs, & Pre-rendered Markup.\n\nWhat's all that mean to you?\n\nAt the core of it all it means that we build your site with speed, security, and cost to you in mind. You site will literally be the fastest it can be, right when we deploy it!"
   },
+  "sections": [
+    {
+      "status": true,
+      "header": "Services",
+      "section_text": [
+        {
+          "text": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
+        }
+      ]
+    },
+    {
+      "status": true,
+      "header": "Testimonials",
+      "section_text": [
+        {
+          "text": "What our recent clients have to say."
+        }
+      ]
+    },
+    {
+      "status": true,
+      "header": "The Process",
+      "section_text": [
+        {
+          "text": "Know what to expect when working with us."
+        }
+      ]
+    },
+    {
+      "status": true,
+      "header": "Work With Idaho Natives",
+      "section_text": [
+        {
+          "text": "We've seen Boise grow with you over the last 30 years. We understand the needs and concerns that local business owners have, and will work with you to come up with solutions that work in our region, not just online."
+        }
+      ]
+    },
+    {
+      "status": true,
+      "header": "Our Work",
+      "section_text": [
+        {
+          "text": "Take a look at some of our previous work and see for yourself what we can do for your business."
+        }
+      ]
+    },
+    {
+      "header": "JAMstack",
+      "section_text": [
+        {
+          "text": "We've worked hard to built a simple, robust, but easy to use series of systems, so you can get back to what's important. Your business.\n\n![Jam Stack Logo](/img/jamstack-logo.png \"Jam Stack Logo\")\n\nJAMstack stands for JavaScript, APIs, & Pre-rendered Markup.\n\nWhat's all that mean to you?\n\nAt the core of it all it means that we build your site with speed, security, and cost to you in mind. You site will literally be the fastest it can be, right when we deploy it!"
+        }
+      ]
+    }
+  ],
   "hero": {
     "hero_header": "Digital Experiences. Zero Limitations.",
     "hero_para": "We create modern websites which make a lasting impression.",
