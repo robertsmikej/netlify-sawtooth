@@ -4,14 +4,15 @@
   "logo": "/img/hotspringing.png",
   "name": "HotSpringing.com",
   "status": "published",
+  "testimonials": {
+    "string": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions.",
+    "testimonial_text": "Dedicated to sharing Idaho's Hot Springs with outdoor enthusiasts."
+  },
   "main_image": "/img/hotspringing-mockup-640.jpg",
   "tech": {
     "tech_used": [
       "Vue.js",
       "Netlify"
-    ],
-    "integrations_used": [
-      "Shopify"
     ]
   },
   "long_description": "HotSpringing.com has brought together their favorite hot springs in Idaho, Oregon, and Utah in the hopes that you'll come to love them as much as they do.\n\nWhether you're looking for the perfect temperature soak, an awesome hike to remember, or just a weekend drive to adventure, they hope to help you find yourself in some of the Boise Area's hidden treasures, and wondering when your next 'HotSpringing' excursion will be.",
