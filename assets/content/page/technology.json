@@ -10,6 +10,26 @@
     "page_intro_header": "What We Use",
     "page_intro_para": "To us, the technology that is used to build your website is just as important as what it looks like."
   },
+  "sections": [
+    {
+      "header": "Integrations",
+      "status": true,
+      "section_text": [
+        {
+          "text": "Integrations we use to help your business."
+        }
+      ]
+    },
+    {
+      "header": "Our Stack",
+      "status": true,
+      "section_text": [
+        {
+          "text": "Technologies that we use."
+        }
+      ]
+    }
+  ],
   "page_section_1": {
     "status": "published",
     "page_section_1_header": "Integrations",
