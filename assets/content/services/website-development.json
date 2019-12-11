@@ -1,25 +1,29 @@
 {
-  "processes_list": [
-    [
-      "Design"
-    ],
-    [
-      "Develop"
-    ],
-    [
-      "Discovery and Strategy"
-    ],
-    [
-      "Launch"
-    ],
-    [
-      "Propel"
-    ]
-  ],
   "service_type": "Website Development",
   "sort_number": 1,
   "sub_header": "Website Development and Design",
   "status": "published",
+  "service_processes": {
+    "header": "The Process",
+    "text": "Get to know how we work.",
+    "processes_list": [
+      [
+        "Design"
+      ],
+      [
+        "Develop"
+      ],
+      [
+        "Discovery and Strategy"
+      ],
+      [
+        "Launch"
+      ],
+      [
+        "Propel"
+      ]
+    ]
+  },
   "tech": {
     "tech_used": [
       "Netlify",
@@ -34,12 +38,5 @@
     "hero_para": "Using some of the latest technologies and techniques allows us to do things that other agencies just won't, or can't, do.",
     "hero_background_video": "/img/codecode.mp4",
     "hero_sub_image": ""
-  },
-  "processes": [
-    {},
-    {},
-    {},
-    {},
-    {}
-  ]
+  }
 }
