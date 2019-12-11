@@ -4,6 +4,10 @@
   "logo": "/img/pressed-dress-logo.png",
   "name": "Pressed Dress",
   "status": "published",
+  "testimonials": {
+    "string": "It’s been a delight to work with Sawtooth Digital. We’re continually impressed by their knowledge, integrity and ability to drive profits up.",
+    "testimonial_text": "Bring Your Wedding Dress Out Of The Closest!"
+  },
   "main_image": "/img/pressed-dress-screenshot-640.jpg",
   "tech": {
     "tech_used": [
