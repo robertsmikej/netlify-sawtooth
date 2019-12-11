@@ -1,10 +1,8 @@
 {
-  "status": "published",
   "service_type": "Website Development",
-  "sub_header": "Website Development and Design",
   "sort_number": 1,
-  "short_description": "Using some of the latest technologies and techniques allows us to do things that other agencies just can't do.",
-  "icon": "/img/design-color.png",
+  "sub_header": "Website Development and Design",
+  "status": "published",
   "tech": {
     "tech_used": [
       "Netlify",
@@ -12,10 +10,29 @@
       "Shopify"
     ]
   },
+  "icon": "/img/design-color.png",
+  "short_description": "Using some of the latest technologies and techniques allows us to do things that other agencies just can't do.",
   "hero": {
     "hero_header": "Website Development",
     "hero_para": "Using some of the latest technologies and techniques allows us to do things that other agencies just won't, or can't, do.",
     "hero_background_video": "/img/codecode.mp4",
     "hero_sub_image": ""
-  }
+  },
+  "processes": [
+    [
+      "Design"
+    ],
+    [
+      "Develop"
+    ],
+    [
+      "Discovery and Strategy"
+    ],
+    [
+      "Launch"
+    ],
+    [
+      "Propel"
+    ]
+  ]
 }
