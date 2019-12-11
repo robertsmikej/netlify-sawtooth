@@ -2,19 +2,21 @@
     <div class="container">
         <Header :class="{'navShow' : navShow}" :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
+        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
-        <!-- <ContactForm :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/> -->
     </div>
 </template>
 
 <script>
 import Header from '~/components/header/Header.vue';
 import Footer from '~/components/footer/Footer.vue';
+import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     components: {
         Header,
-        Footer
+        Footer,
+        ContactBox
     },
     computed: {
         sitewide: function () {
@@ -111,9 +113,7 @@ main {
     align-items: flex-start;
     text-align: center;
     flex-wrap: wrap;
-    opacity: 1;
-    /* backface-visibility: hidden;
-    transform: translate3d(0, 0, 0); */
+    opacity: 1; 
 }
 .containerShow {
     opacity: 0;

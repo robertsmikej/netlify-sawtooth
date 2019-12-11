@@ -7,7 +7,6 @@
         <!-- <OurStack v-if="pageInfo.page_section_6.status" :header="pageInfo.page_section_6.page_section_6_header" :para="pageInfo.page_section_6.page_section_6_para" :indexInfo="pageInfo"/> -->
         <Testimonials v-if="sections.testimonials.status" :header="sections.testimonials.header" :para="sections.testimonials.section_text[0].text"/>
         <Local v-if="sections.work_with_idaho_natives.status" :header="sections.work_with_idaho_natives.header" :para="sections.work_with_idaho_natives.section_text[0].text"/>
-        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
@@ -22,14 +21,12 @@ import Process from '~/components/index/Process.vue';
 import Portfolio from '~/components/index/Portfolio.vue';
 import Technology from '~/components/general/Technology.vue';
 import OurStack from '~/components/general/OurStack.vue';
-import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
     components: {
         Hero,
         PageIntro,
-        ContactBox,
         Offer,
         Local,
         Testimonials,
@@ -72,7 +69,8 @@ export default {
                     hid: 'description',
                     name: 'description',
                     content: "Sawtooth Digital is a Digital Web Design and Development Agency based in Boise, Idaho. Our passion is creating custom, cutting edge websites that will make you money."
-                }
+                },
+                { hid: 'robots', name: 'robots', content: 'index, follow' }
             ]
         };
     }

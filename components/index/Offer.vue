@@ -36,7 +36,6 @@ export default {
     },
     methods: {
         techno: function (data) {
-            console.log(data);
             if (data.tech) {
                 let used = data.tech.tech_used;
                 let tech = this.technology;

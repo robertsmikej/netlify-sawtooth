@@ -18,7 +18,6 @@
                 </div>
             </div>
         </section>
-        <ContactBox :sitewide="sitewide.contact_box"/>
     </main>
 </template>
 
@@ -27,7 +26,6 @@ import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import TechnologyCell from '~/components/general/TechnologyCell.vue';
-import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
@@ -35,8 +33,7 @@ export default {
         Hero,
         PageIntro,
         SectionHeader,
-        TechnologyCell,
-        ContactBox
+        TechnologyCell
     },
     computed: {
         sitewide: function () {

@@ -34,7 +34,6 @@ export const mutations = {
                 newsections[slug] = section;
             }
             data[page].sections = newsections;
-
         }
         for (var page in data) {
             state.pages[data[page].slug.toLowerCase().replace(/ /g, "_").replace(/-/g, "_")] = data[page];
@@ -50,7 +49,6 @@ export const mutations = {
     },
     setServices(state, data) {
         let da = sortItems(data);
-        // console.log(da);
         for (let d in da) {
             da[d].strippedName = da[d].slug.replace(/-/g,"");
             state.services[da[d].slug] = da[d];
