@@ -5,8 +5,9 @@
   "name": "HotSpringing.com",
   "status": "published",
   "testimonials": {
-    "string": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions.",
-    "testimonial_text": "Dedicated to sharing Idaho's Hot Springs with outdoor enthusiasts."
+    "client_description": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions.",
+    "testimonial_text": "Dedicated to sharing Idaho's Hot Springs with outdoor enthusiasts.",
+    "quote": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions."
   },
   "main_image": "/img/hotspringing-mockup-640.jpg",
   "tech": {
