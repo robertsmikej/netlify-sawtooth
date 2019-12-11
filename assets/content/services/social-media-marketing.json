@@ -1,8 +1,7 @@
 {
-  "status": "draft",
+  "status": false,
   "service_type": "Social Media Marketing",
   "sort_number": 5,
-  "service_short_description": "Let us handle the management of your social media presence and grow your brand presence.",
   "short_description": "Let us handle the management of your social media presence and grow your brand presence.",
   "icon": "/img/social-color.png",
   "hero": {
