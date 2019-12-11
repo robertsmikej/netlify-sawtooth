@@ -70,9 +70,9 @@ export default {
     text-align: center;
 }
 .site__button__inner:hover {
-    background-color: var(--lightest-grey) !important;
-    border-color: var(--lightest-grey) !important;
-    color: var(--dark-blue) !important;
+    background-color: var(--light-red) !important;
+    border-color: var(--light-red) !important;
+    color: #FFF !important;
     font-size: 1.1em !important;
 }
 </style>
