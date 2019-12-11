@@ -1,12 +1,12 @@
 <template>
     <main>
         <Hero :hero="pageInfo.hero"/>
-        <Offer v-if="pageInfo.page_section_1.status === 'published'" :header="pageInfo.page_section_1.page_section_1_header" :para="pageInfo.page_section_1.page_section_1_para" :services="services" :tech="technology"/>
-        <!-- <Process v-if="pageInfo.page_section_3.status === 'published'" :header="pageInfo.page_section_3.page_section_3_header" :para="pageInfo.page_section_3.page_section_3_para" :process="processes"/> -->
-        <Portfolio v-if="pageInfo.page_section_5.status === 'published'" :header="pageInfo.page_section_5.page_section_5_header" :para="pageInfo.page_section_5.page_section_5_para"/>
-        <!-- <OurStack v-if="pageInfo.page_section_6.status === 'published'" :header="pageInfo.page_section_6.page_section_6_header" :para="pageInfo.page_section_6.page_section_6_para" :indexInfo="pageInfo"/> -->
-        <Testimonials v-if="pageInfo.page_section_2.status === 'published'" :header="pageInfo.page_section_2.page_section_2_header" :para="pageInfo.page_section_2.page_section_2_para"/>
-        <Local v-if="pageInfo.page_section_4.status === 'published'" :header="pageInfo.page_section_4.page_section_4_header" :para="pageInfo.page_section_4.page_section_4_para"/>
+        <Offer v-if="sections.services.status" :header="sections.services.header" :para="sections.services.section_text[0].text" :services="services" :tech="technology"/>
+        <!-- <Process v-if="pageInfo.page_section_3.status" :header="pageInfo.page_section_3.page_section_3_header" :para="pageInfo.page_section_3.page_section_3_para" :process="processes"/> -->
+        <Portfolio v-if="sections.our_work.status" :header="sections.our_work.header" :para="sections.our_work.section_text[0].text"/>
+        <!-- <OurStack v-if="pageInfo.page_section_6.status" :header="pageInfo.page_section_6.page_section_6_header" :para="pageInfo.page_section_6.page_section_6_para" :indexInfo="pageInfo"/> -->
+        <Testimonials v-if="sections.testimonials.status" :header="sections.testimonials.header" :para="sections.testimonials.section_text[0].text"/>
+        <Local v-if="sections.work_with_idaho_natives.status" :header="sections.work_with_idaho_natives.header" :para="sections.work_with_idaho_natives.section_text[0].text"/>
         <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
@@ -46,6 +46,9 @@ export default {
         },
         pageInfo: function () {
             return this.$store.state.pages.index
+        },
+        sections: function () {
+            return this.$store.state.pages.index.sections
         },
         services: function () {
             return this.$store.state.services

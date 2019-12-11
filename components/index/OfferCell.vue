@@ -11,7 +11,7 @@
         <div class="offer__cell__side">
             <div class="technology__cells">
                 <div class="tech__cell" v-for="(item, index) in technologies" :key="index">
-                    <TechnologyCell :type="'technology'" :cell="item" :description="false"/>
+                    <TechnologyCell v-if="item.status" :type="'technology'" :cell="item" :description="false"/>
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         align-content: center;
-        justify-content: center;
+        justify-content: space-around;
         flex: 1;
     } 
     .offer__cell__side .tech__cell {
@@ -111,6 +111,7 @@ export default {
         align-content: center;
         justify-content: center;
         padding: 10px;
+        flex: 0;
     } 
     .offer__grid__cell .site__button {
         margin-top: 20px;

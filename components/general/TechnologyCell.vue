@@ -4,10 +4,10 @@
             <img :src="cell.icon" :alt="cell.name + ' Logo'" class="tech__cell__logo">
         </div>
         <!-- {{cell}} -->
-        <div class="tech__cell__text__container">
-            <h4>{{ cell.name }}</h4>
-            <p v-if="cell.short_description && description">{{ cell.short_description }}</p>
-            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/>
+        <div v-if="cell.show_label && cell.name.length > 0" class="tech__cell__text__container">
+            <p>{{ cell.name }}</p>
+            <!-- <p v-if="cell.short_description && description">{{ cell.short_description }}</p>
+            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/> -->
         </div>
     </nuxt-link>   
 </template>
@@ -62,9 +62,9 @@ export default {
     justify-content: center;
     padding: 0 10px;
 }
-.tech__cell__text__container h3 {
+.tech__cell__text__container h4 {
     margin: 10px auto 0;
-    font-size: 1em;
+    font-size: .8em;
 }
 .tech__cell__text__container p {
     font-size: 1em;

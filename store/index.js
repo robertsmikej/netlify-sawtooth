@@ -15,7 +15,7 @@ function sortItems(data) {
     for (var d in data) {
         let keys = Object.keys(newdata);
         let item = data[d];
-        if (item.status === 'published' && item.sort_number !== null) {
+        if (item.status === 'published' || item.status === true && item.sort_number !== null) {
             newdata.push(item);
         }
     }
@@ -27,6 +27,17 @@ function sortItems(data) {
 
 export const mutations = {
     setPages(state, data) {
+        for (var page in data) {
+            state.pages[data[page].page_name] = data[page];
+            let newsections = {};
+            for (var s in data[page].sections) {
+                var section = data[page].sections[s];
+                var slug = section.header.toLowerCase().replace(/ /g, "_");
+                section.slug = slug;
+                newsections[slug] = section;
+            }
+            data[page].sections = newsections;
+        }
         for (var page in data) {
             state.pages[data[page].page_name] = data[page];
         }
@@ -57,6 +68,7 @@ export const mutations = {
         state.testimonials = sortItems(data);
     },
     setTechnology(state, data) {
+        // console.log(data);
         state.technologies = sortItems(data);
     },
     setIntegrations(state, data) {
@@ -85,13 +97,13 @@ export const actions = {
         // });
         // await commit('setPages', pages);
 
-        var files = await require.context('~/assets/content/page/', false, /\.json$/);
-        var file = files.keys().map(key => {
-            let res = files(key);
+        var pages = await require.context('~/assets/content/page/', false, /\.json$/);
+        var p = pages.keys().map(key => {
+            let res = pages(key);
             res.slug = key.slice(2, -5);
             return res;
         });
-        await commit('setPages', file);
+        await commit('setPages', p);
 
         let navfiles = await require.context('~/assets/content/nav/', false, /\.json$/);
         let navs = navfiles.keys().map(key => {
