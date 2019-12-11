@@ -1,34 +1,16 @@
 {
-  "page_section_1": {
-    "status": "published",
-    "page_section_1_header": "Services",
-    "page_section_1_para": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
+  "page_name": "index",
+  "hero": {
+    "hero_header": "Digital Experiences. Zero Limitations.",
+    "hero_para": "We create modern websites which make a lasting impression.",
+    "hero_button_text": "Start A Project",
+    "hero_button_link": "contact",
+    "hero_background_video": "/img/meeting.mp4"
   },
-  "page_section_2": {
+  "page_intro": {
     "status": "published",
-    "page_section_2_header": "Testimonials",
-    "page_section_2_para": "What our recent clients have to say."
-  },
-  "page_section_3": {
-    "status": "published",
-    "page_section_3_header": "The Process",
-    "page_section_3_para": "Know what to expect when working with us."
-  },
-  "page_section_4": {
-    "status": "published",
-    "page_section_4_header": "Work With Idaho Natives",
-    "page_section_4_para": "We've seen Boise grow with you over the last 30 years. We understand the needs and concerns that local business owners have, and will work with you to come up with solutions that work in our region, not just online."
-  },
-  "page_section_5": {
-    "status": "published",
-    "page_section_5_header": "Our Work",
-    "page_section_5_para": "Take a look at some of our previous work and see for yourself what we can do for your business."
-  },
-  "page_section_6": {
-    "status": "published",
-    "page_section_6_header": "JAMstack",
-    "page_section_6_para": "To us, the technology that is used to build your website is just as important as what it looks like.",
-    "page_section_6_description": "We've worked hard to built a simple, robust, but easy to use series of systems, so you can get back to what's important. Your business.\n\n![Jam Stack Logo](/img/jamstack-logo.png \"Jam Stack Logo\")\n\nJAMstack stands for JavaScript, APIs, & Pre-rendered Markup.\n\nWhat's all that mean to you?\n\nAt the core of it all it means that we build your site with speed, security, and cost to you in mind. You site will literally be the fastest it can be, right when we deploy it!"
+    "page_intro_header": "Better Than Ordinary",
+    "page_intro_para": "Our passion is building custom, quick, and unique digital experiences. We build each experience with you and your business specifically in mind, allowing us to tailor it perfectly. This focus on strategy, design, and technology, makes us an invaluable parter in growing your business and brand."
   },
   "sections": [
     {
@@ -84,18 +66,5 @@
         }
       ]
     }
-  ],
-  "hero": {
-    "hero_header": "Digital Experiences. Zero Limitations.",
-    "hero_para": "We create modern websites which make a lasting impression.",
-    "hero_button_text": "Start A Project",
-    "hero_button_link": "contact",
-    "hero_background_video": "/img/meeting.mp4"
-  },
-  "page_name": "index",
-  "page_intro": {
-    "status": "published",
-    "page_intro_header": "Better Than Ordinary",
-    "page_intro_para": "Our passion is building custom, quick, and unique digital experiences. We build each experience with you and your business specifically in mind, allowing us to tailor it perfectly. This focus on strategy, design, and technology, makes us an invaluable parter in growing your business and brand."
-  }
+  ]
 }
