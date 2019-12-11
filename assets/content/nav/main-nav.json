@@ -4,33 +4,33 @@
   "nav_items": [
     {
       "title": "Home",
-      "para": "Take Me Home.",
       "status": true,
+      "para": "Take Me Home.",
       "link": "/"
     },
     {
       "title": "Services",
-      "para": "See what we do.",
       "status": true,
+      "para": "See what we do.",
       "link": "/services"
     },
     {
       "title": "Portfolio",
-      "para": "See Our Past Work.",
       "status": true,
+      "para": "See Our Past Work.",
       "link": "/portfolio"
     },
     {
       "title": "About Us",
-      "para": "Come Learn All About Us.",
       "status": true,
+      "para": "Come Learn All About Us.",
       "link": "about-us"
     },
     {
       "title": "Contact",
-      "para": "Reach Out And Touch Us.",
       "status": true,
-      "link": "/contact"
+      "para": "Reach Out And Touch Us.",
+      "link": ""
     }
   ]
 }
