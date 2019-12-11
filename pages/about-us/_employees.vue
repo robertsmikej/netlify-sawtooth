@@ -5,6 +5,7 @@
             <Employee v-if="employeepage.status === 'published'" :employee="employeepage" class="employee__cell"/>
             <div v-html="$md.render(employeepage.long_text)" v-if="employeepage.long_text" class="employee__long__text"></div>
         </section>
+        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
@@ -12,13 +13,15 @@
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import Employee from '~/components/about-us/Employee.vue';
+import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
     components: {
         Hero,
         PageIntro,
-        Employee
+        Employee,
+        ContactBox
     },
     computed: {
         sitewide: function () {

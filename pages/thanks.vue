@@ -36,7 +36,5 @@ export default {
 </script>
 
 <style>
-.thanks .contact__box {
-    display: none;
-}
+
 </style>

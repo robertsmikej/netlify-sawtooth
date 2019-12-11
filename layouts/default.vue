@@ -2,7 +2,6 @@
     <div class="container">
         <Header :class="{'navShow' : navShow}" :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
-        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
     </div>
 </template>
@@ -10,13 +9,11 @@
 <script>
 import Header from '~/components/header/Header.vue';
 import Footer from '~/components/footer/Footer.vue';
-import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     components: {
         Header,
-        Footer,
-        ContactBox
+        Footer
     },
     computed: {
         sitewide: function () {

@@ -3,12 +3,14 @@
         <Hero :hero="pageInfo.hero"/>
         <PageIntro :intro="pageInfo.page_intro"/>
         <div class="privacy__policy" v-html="$md.render(privacyPolicy.privacy_policy_text)"></div>
+        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
+import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
