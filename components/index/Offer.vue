@@ -36,19 +36,23 @@ export default {
     },
     methods: {
         techno: function (data) {
-            let used = data.tech.tech_used;
-            let tech = this.technology;
-            let arr = [];
-            for (var u in used) {
-                var us = used[u];
-                for (var t in tech) {
-                    var te = tech[t].name;
-                    if (te.toLowerCase() == us.toLowerCase()) {
-                        arr.push(tech[t]);
+            console.log(data);
+            if (data.tech) {
+                let used = data.tech.tech_used;
+                let tech = this.technology;
+                let arr = [];
+                for (var u in used) {
+                    var us = used[u];
+                    for (var t in tech) {
+                        var te = tech[t].name;
+                        if (te.toLowerCase() == us.toLowerCase()) {
+                            arr.push(tech[t]);
+                        }
                     }
                 }
+                return arr;
             }
-            return arr;
+            return false;
         }
     }
 }

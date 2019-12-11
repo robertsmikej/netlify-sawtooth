@@ -2,16 +2,17 @@
     <div class="contact__box page__section">
         <div class="contact__box__inner">
             <SectionHeader :header="header" :para="para" v-if="header || para"/>
-            <div class="contact__box__button js__open__contact" @click="contactToggle()">
+            <ContactForm :contact="contact"/>
+            <!-- <div class="contact__box__button js__open__contact" @click="contactToggle()">
                 <SiteButton :buttonText="sitewide.contact_box.contact_button_text" :backgroundColor="1" :color="1"/>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
 
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
-import ContactForm from '~/components/contact/ContactForm.vue';
+import ContactForm from '~/components/contact/Contact.vue';
 import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
@@ -19,6 +20,11 @@ export default {
         SectionHeader,
         ContactForm,
         SiteButton
+    },
+    computed: {
+        contact: function () {
+            return this.$store.state.sitewide.contact_form
+        }
     },
     props: {
         sitewide: Object,
@@ -36,7 +42,7 @@ export default {
 <style>
     body .contact__box {
         width: 100%;
-        align-self: flex-end;
+        /* align-self: flex-end; */
         background: var(--blue);
         position: relative;
         margin: 0;

@@ -15,13 +15,10 @@ function sortItems(data) {
     for (var d in data) {
         let keys = Object.keys(newdata);
         let item = data[d];
-        if (item.status === 'published' || item.status === true && item.sort_number !== null) {
+        if (item.shown || item.status || item.status === 'published') {
             newdata.push(item);
         }
     }
-    newdata.sort(function (a, b) {
-        return a.sort_number - b.sort_number;
-    });
     return newdata;
 }
 
@@ -37,19 +34,23 @@ export const mutations = {
                 newsections[slug] = section;
             }
             data[page].sections = newsections;
+
         }
         for (var page in data) {
-            state.pages[data[page].page_name] = data[page];
+            state.pages[data[page].slug.toLowerCase().replace(/ /g, "_").replace(/-/g, "_")] = data[page];
         }
     },
     setNav(state, data) {
-        state.navItems = sortItems(data);
+        var checkLive = sortItems(data);
+        var populate = checkLive[0].nav_items;
+        state.nav = populate;
     },
     setSitewide(state, data) {
         state.sitewide = data;
     },
     setServices(state, data) {
         let da = sortItems(data);
+        // console.log(da);
         for (let d in da) {
             da[d].strippedName = da[d].slug.replace(/-/g,"");
             state.services[da[d].slug] = da[d];

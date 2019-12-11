@@ -22,7 +22,7 @@ import Process from '~/components/index/Process.vue';
 import Portfolio from '~/components/index/Portfolio.vue';
 import Technology from '~/components/general/Technology.vue';
 import OurStack from '~/components/general/OurStack.vue';
-import ContactBox from '~/components/general/ContactBox.vue';
+import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,

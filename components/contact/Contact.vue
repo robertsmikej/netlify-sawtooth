@@ -1,40 +1,21 @@
 <template>
-    <div>
-        <PageOverlay/>
-        <div class="contact__form__container">
-            <div class="contact__exit" @click="contactclose()"></div>
-            <h2 class="contact__header">Send Us A Message</h2>
-            <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="" action="" method="post" @submit.prevent="handleSubmit">
-                <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
-                <fieldset>
-                    <p>Your Name</p>
-                    <input aria-label="Full Name" name="name" placeholder="Eg. Edward Cullen" type="text" v-model="formData.name" required autofocus>
+    <div class="contact__form__container">
+        <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="contact__form" action="" method="post">
+            <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
+            <div v-for="(input, index) in contact.items" :key="index">
+                <fieldset v-if="input.short_name !== 'message'">
+                    <p>{{ input.text }}</p>
+                    <input :aria-label="input.text" :name="input.short_name" :placeholder="input.placeholder" :type="input.field_type" :class="input.short_name">
                 </fieldset>
-                <fieldset>
-                    <p>Your Email Address</p>
-                    <input aria-label="Email Address" name="email" placeholder="Eg. jacobsux@gmail.com" type="email" v-model="formData.email" required>
+                <fieldset v-else>
+                    <p>{{ input.text }}</p>
+                    <textarea :aria-label="input.text" :name="input.short_name" :placeholder="input.placeholder" rows="4" :type="input.field_type" :class="input.short_name"></textarea>
                 </fieldset>
-                <fieldset>
-                    <p>Your Phone Number</p>
-                    <input aria-label="Telephone Number" name="phone" placeholder="Eg. 1-208-555-0000" type="tel" v-model="formData.phone" required>
-                </fieldset>
-                <fieldset>
-                    <p>Your Company</p>
-                    <input aria-label="Your Company's Name" name="company" placeholder="Eg. Nighttime Transfusions" type="text" v-model="formData.companyname">
-                </fieldset>
-                <fieldset>
-                    <p>Your Current Website</p>
-                    <input aria-label="Your Current Website" name="website" placeholder="Eg. https://www.extremehairs.com" type="url" v-model="formData.currentsite">
-                </fieldset>
-                <fieldset>
-                    <p>How Can We Help You?</p>
-                    <textarea aria-label="Message To Us" name="message" placeholder="Eg. Build Me A Website!" rows="4" v-model="formData.message" required></textarea>
-                </fieldset>
-                <fieldset>
-                    <button class="site__button contact__submit js__contact__submit" data-submit="Sending">Send Message</button>
-                </fieldset>
-            </form>
-        </div>
+            </div>
+            <fieldset class="site__button">
+                <button class="site__button__inner contact__submit js__contact__submit" style="background-color: var(--light-orange); border: 1px solid var(--light-orange); color: rgb(255, 255, 255)" data-submit="Sending">{{ contact.button_text }}</button>
+            </fieldset>
+        </form>
     </div>
 </template>
 
@@ -46,6 +27,9 @@ import PageOverlay from '~/components/general/PageOverlay.vue';
 export default {
     components: {
         PageOverlay
+    },
+    props: {
+        contact: Object
     },
     data() {
         return {
@@ -60,21 +44,24 @@ export default {
         }
     },
     methods: {
-        handleSubmit: function () {
-            let emaildata = JSON.stringify({
-                name: this.formData.name,
-                email: this.formData.email,
-                phone: this.formData.phone,
-                company_name: this.formData.company,
-                current_website: this.formData.currentsite,
-                message: this.formData.message
-            });
-            this.$axios.post('/', emaildata).then(function(Response) {
-                console.log(Response);
-            }).catch(function (err) {
-                this.errors.push(err)
-            });
-        },
+        // getRequired: function (e) {
+
+        // },
+        // handleSubmit: function () {
+        //     let emaildata = JSON.stringify({
+        //         name: this.formData.name,
+        //         email: this.formData.email,
+        //         phone: this.formData.phone,
+        //         company_name: this.formData.company,
+        //         current_website: this.formData.currentsite,
+        //         message: this.formData.message
+        //     });
+        //     this.$axios.post('/', emaildata).then(function(Response) {
+        //         console.log(Response);
+        //     }).catch(function (err) {
+        //         this.errors.push(err)
+        //     });
+        // },
         contactclose: function() {
             this.$nuxt.$emit("showContact", false);
         }
@@ -84,6 +71,59 @@ export default {
 
 <style>
     .contact__form__container {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+        background-color: #FFF;
+        border-radius: 10px;
+    }
+    .contact__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .contact__form div {
+        width: 100%;
+    }
+    .contact__form__container fieldset {
+        border: none;
+    }
+    .contact__box__inner .contact__form__container p {
+        text-align: left;
+        margin: 6px 0 0;
+        color: var(--dark-grey);
+    }
+    .contact__form__container input {
+        border: none;
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid var(--dark-grey);
+        background: transparent;
+        color: var(--dark-blue);
+    }
+    .contact__form__container textarea {
+        border: none;
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid var(--dark-grey);
+        background: transparent;
+        color: var(--dark-blue);
+    }
+    .contact__form__container input::placeholder, .contact__form__container textarea::placeholder {
+        font-weight: 500;
+        font-size: 13px;
+    }
+    /* .contact__form__container {
         position: fixed;
         top: 150%;
         left: 50%;
@@ -118,7 +158,6 @@ export default {
         padding: 10px 10px;
         font-size: 14px;
         border-bottom: 1px solid var(--dark-grey);
-        /* border-left: 1px solid var(--dark-grey); */
         background: transparent;
         color: var(--dark-blue);
         text-align: right;
@@ -129,7 +168,6 @@ export default {
         padding: 10px 10px;
         font-size: 14px;
         border-bottom: 1px solid var(--dark-grey);
-        /* border-left: 1px solid var(--dark-grey); */
         background: transparent;
         color: var(--dark-blue);
         text-align: right;
@@ -175,7 +213,7 @@ export default {
         position: absolute;
         top: 50%;
         right: 0;
-    }
+    } */
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 900px) {
     .contact__form__container {

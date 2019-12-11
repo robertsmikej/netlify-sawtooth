@@ -61,10 +61,27 @@ collections:
         - { label: 'Twitter Link', name: 'twitter_link', widget: 'string', required: false }
         - { label: 'GitHub Link', name: 'github_link', widget: 'string', required: false }
         - { label: 'Dribble Link', name: 'dribble_link', widget: 'string', required: false }
+      - label: "Contact Form"
+        name: "contact_form"
+        widget: "object"
+        fields:
+        - name: 'items'
+          label: 'Contact Form Item'
+          widget: "list"
+          fields:
+          - {label: "Text", name: "text", widget: "string"}
+          - {label: "Required Item", name: "required", widget: "boolean", default: false, required: false }
+          - {label: "Short Name", name: "short_name", widget: "string"}
+          - {label: "Placeholder", name: "placeholder", widget: "string", required: false}
+          - label: "Field Type"
+            name: "type"
+            widget: "select"
+            options: ["text", "email", "tel", "url"]
+        - {label: "Submit Button Text", name: "button_text", widget: "string"}
 
   - name: 'nav'
     label: 'Nav Items'
-    identifier_field: nav_title
+    identifier_field: title
     format: 'json'
     folder: 'assets/content/nav'
     create: true
@@ -72,18 +89,17 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Nav Item Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 14
-      - { label: 'Nav Title', name: 'nav_title', widget: 'string', required: false }
-      - { label: 'Nav Para', name: 'nav_para', widget: 'text', required: false }
-      - { label: 'Nav Link', name: 'nav_link', widget: 'string', required: false }
-      - { label: 'Nav Icon', name: 'nav_icon', widget: 'file', required: false }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: "All Nav Shown", name: "status", widget: "boolean", default: true, required: false }
+      - label: "Nav Items"
+        name: "nav_items"
+        widget: "list"
+        fields:
+        - { label: 'Title', name: 'title', widget: 'string' }
+        - { label: "Shown", name: "status", widget: "boolean", default: true, required: false }
+        - { label: 'Short Description', name: 'para', widget: 'text', required: false }
+        - { label: 'Link', name: 'link', widget: 'string', required: false }
+        - { label: 'Icon', name: 'icon', widget: 'file', required: false }
 
   - name: 'page'
     label: 'Page'
@@ -111,7 +127,7 @@ collections:
         name: "page_intro"
         widget: "object"
         fields:
-        - { label: 'Page Intro Section Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+        - { label: 'Show Intro', name: 'status', widget: 'boolean', default: true, required: false }
         - { label: 'Page Intro Header', name: 'page_intro_header', widget: 'string', required: false }
         - { label: 'Page Intro Para', name: 'page_intro_para', widget: 'text', required: false }
       - label: "Page Sections"
@@ -126,58 +142,6 @@ collections:
           widget: "list"
           fields:
           - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-
-      - label: "Page Section - 1"
-        name: "page_section_1"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 1 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 1 Header', name: 'page_section_1_header', widget: 'string', required: false }
-        - { label: 'Page Section 1 Para', name: 'page_section_1_para', widget: 'text', required: false}
-      - label: "Page Section - 2"
-        name: "page_section_2"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 2 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 2 Header', name: 'page_section_2_header', widget: 'string', required: false }
-        - { label: 'Page Section 2 Para', name: 'page_section_2_para', widget: 'text', required: false }
-      - label: "Page Section - 3"
-        name: "page_section_3"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 3 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 3 Header', name: 'page_section_3_header', widget: 'string', required: false }
-        - { label: 'Page Section 3 Para', name: 'page_section_3_para', widget: 'text', required: false }
-      - label: "Page Section - 4"
-        name: "page_section_4"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 4 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 4 Header', name: 'page_section_4_header', widget: 'string', required: false }
-        - { label: 'Page Section 4 Para', name: 'page_section_4_para', widget: 'text', required: false }
-      - label: "Page Section - 5"
-        name: "page_section_5"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 5 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 5 Header', name: 'page_section_5_header', widget: 'string', required: false }
-        - { label: 'Page Section 5 Para', name: 'page_section_5_para', widget: 'text', required: false }
-      - label: "Page Section - 6"
-        name: "page_section_6"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 6 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 6 Header', name: 'page_section_6_header', widget: 'string', required: false }
-        - { label: 'Page Section 6 Para', name: 'page_section_6_para', widget: 'text', required: false }
-        - { label: 'Page Section 6 Description', name: 'page_section_6_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-      - label: "Page Section - 7"
-        name: "page_section_7"
-        widget: "object"
-        fields:
-        - { label: 'Page Section 7 Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-        - { label: 'Page Section 7 Header', name: 'page_section_7_header', widget: 'string', required: false }
-        - { label: 'Page Section 7 Para', name: 'page_section_7_para', widget: 'text', required: false }
-        - { label: 'Page Section 7 Description', name: 'page_section_7_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
 
   - name: 'services'
     label: 'Services'
@@ -271,18 +235,16 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Testamonial Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 20
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - label: "Clients"
+        name: "testimonial"
+        widget: "relation"
+        collection: "portfolio"
+        searchFields: ["name"]
+        valueField: "name"
+        multiple: true
+        displayFields: ["name"]
         required: false
-      - { label: 'Testamonial Name', name: 'name', widget: 'string', required: false }
-      - { label: 'Testamonial Text', name: 'text', widget: 'text', required: false }
-      - { label: 'Testamonial Description', name: 'string', widget: 'text', required: false }
 
   - name: 'portfolio'
     label: 'Portfolio Items'
@@ -295,13 +257,6 @@ collections:
       preview: false
     fields:
       - { label: 'Portfolio Item Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 30
       - { label: 'Client Name', name: 'name', widget: 'string', required: false }
       - { label: 'Client Description', name: 'para', widget: 'text', required: false }
       - { label: 'Client Heavy Text', name: 'long_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
@@ -341,6 +296,14 @@ collections:
             multiple: true
             displayFields: ["name"]
             required: false
+      - label: "Testimonials"
+        name: "testimonials"
+        widget: "object"
+        fields:
+          - { label: 'Client Description', name: 'client_description', widget: 'text', required: false }
+          - { label: 'Main Text', name: 'testimonial_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+          - { label: 'Client Quote', name: 'quote', widget: 'text', required: false }
+          
 
   - name: 'technologies'
     label: 'Technologies'

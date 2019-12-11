@@ -3,27 +3,25 @@
         <Header :class="{'navShow' : navShow}" :sitewide="sitewide" :navItems="nav"/>
         <nuxt/>
         <Footer :sitewide="sitewide" :navItems="nav"/>
-        <ContactForm :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/>
+        <!-- <ContactForm :class="{'pageOverlayShow' : contactShow, 'contactShow' : contactShow}"/> -->
     </div>
 </template>
 
 <script>
 import Header from '~/components/header/Header.vue';
-import ContactForm from '~/components/contact/ContactForm.vue';
 import Footer from '~/components/footer/Footer.vue';
 
 export default {
     components: {
         Header,
-        Footer,
-        ContactForm
+        Footer
     },
     computed: {
         sitewide: function () {
             return this.$store.state.sitewide
         },
         nav: function () {
-            return this.$store.state.navItems
+            return this.$store.state.nav
         }
     },
     created() {

@@ -15,13 +15,14 @@
                 <nav class="nav__container">
                     <div class="nav__items" @click="navToggle(false); navBarsToX();">
                         <div v-for="(item, index) in navItems" :key="index" class="nav__item">
-                            <nuxt-link :to="'/' + item.nav_link" v-if="item.status === 'published' && item.nav_link">
-                                <h2 class="nav__link">{{ item.nav_title }}</h2>
-                                <p class="nav__para">{{ item.nav_para }}</p>
+                            {{item.length}}
+                            <nuxt-link :to="item.link" v-if="item.status && item.link &&  item.title !== 'Contact'">
+                                <h2 class="nav__link">{{ item.title }}</h2>
+                                <p class="nav__para">{{ item.para }}</p>
                             </nuxt-link>
-                            <div v-else-if="item.status === 'published' && !item.nav_link" @click="contactToggle()">
-                                <h2 class="nav__link">{{ item.nav_title }}</h2>
-                                <p class="nav__para">{{ item.nav_para }}</p>
+                            <div v-else-if="item.status && item.title === 'Contact'" @click="contactToggle()">
+                                <h2 class="nav__link">{{ item.title }}</h2>
+                                <p class="nav__para">{{ item.para }}</p>
                             </div>
                         </div>
                     </div>
@@ -66,7 +67,7 @@ export default {
             return name.replace(" ", "-").toLowerCase();
         },
         contactToggle: function(toggle) {
-            this.$nuxt.$emit("contactShow", toggle);
+            this.$nuxt.$emit("contactShow", true);
         },
         navBarsToX: function() {
             this.navChanged = !this.navChanged;
