@@ -1,4 +1,21 @@
 {
+  "processes_list": [
+    [
+      "Design"
+    ],
+    [
+      "Develop"
+    ],
+    [
+      "Discovery and Strategy"
+    ],
+    [
+      "Launch"
+    ],
+    [
+      "Propel"
+    ]
+  ],
   "service_type": "Website Development",
   "sort_number": 1,
   "sub_header": "Website Development and Design",
@@ -19,20 +36,10 @@
     "hero_sub_image": ""
   },
   "processes": [
-    [
-      "Design"
-    ],
-    [
-      "Develop"
-    ],
-    [
-      "Discovery and Strategy"
-    ],
-    [
-      "Launch"
-    ],
-    [
-      "Propel"
-    ]
+    {},
+    {},
+    {},
+    {},
+    {}
   ]
 }
