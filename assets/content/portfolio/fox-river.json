@@ -3,6 +3,7 @@
   "logo": "/img/foxriver-logo.png",
   "name": "Fox River",
   "status": true,
+  "main_image": "/img/foxriver-fancy.jpg",
   "tech": {
     "tech_used": [
       "Netlify",
@@ -10,7 +11,7 @@
     ]
   },
   "long_description": "Fox River is a leading U.S. manufacturer of outdoor, sport and lifestyle performance socks since 1900. Fox River is privately owned and operates a hosiery mill in Osage, Iowa at the heart of the country. The central location of the mill helps Fox River offer quick, convenient deliveries across the country and around the globe. Fox River’s premium and performance socks are manufactured at its Iowa headquarters by 200 of the friendliest, hard-working folks you’ll ever meet. Fox River socks have been made in the USA since 1900 and the brand is committed to remaining American-made.",
-  "link": "https://www.foxriver.com",
+  "link": "https://www.foxsox.com",
   "hero": {
     "hero_header": "Fox River",
     "hero_para": "They Make Socks!"
