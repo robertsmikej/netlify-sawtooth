@@ -46,7 +46,7 @@
         "type": "text"
       },
       {
-        "text": "Your Current Website (If you have one)",
+        "text": "Your Current Website (If Applicable)",
         "required": false,
         "short_name": "website",
         "placeholder": "https://www.google.com",
