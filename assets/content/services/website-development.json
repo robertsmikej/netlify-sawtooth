@@ -23,20 +23,7 @@
       ]
     ],
     "processes_icons": {
-      "images": [
-        {
-          "alt": "1",
-          "icon": "/img/affiliate.png"
-        },
-        {
-          "alt": "2",
-          "icon": "/img/catbreadface.gif"
-        },
-        {
-          "alt": "3",
-          "icon": "/img/clickfunnels-logo.png"
-        }
-      ]
+      "images": []
     }
   },
   "tech": {
