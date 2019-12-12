@@ -3,6 +3,7 @@ export const state = () => ({
     nav: [],
     sitewide: {},
     services: {},
+    subservices: {},
     privacyPolicy: [],
     portfolio: [],
     technology: [],
@@ -53,6 +54,9 @@ export const mutations = {
             da[d].strippedName = da[d].slug.replace(/-/g,"");
             state.services[da[d].slug] = da[d];
         }
+    },
+    setSubServices(state, data) {
+        state.subservices = data;
     },
     setPrivacy(state, data) {
         state.privacyPolicy = data[0];
@@ -127,6 +131,14 @@ export const actions = {
             return res;
         });
         await commit('setServices', services);
+
+        var files = await require.context('~/assets/content/services-sub/', false, /\.json$/);
+        var file = files.keys().map(key => {
+            let res = files(key);
+            res.slug = key.slice(2, -5);
+            return res;
+        });
+        await commit('setSubServices', file);
 
         let processFiles = await require.context('~/assets/content/process/', false, /\.json$/);
         let processes = processFiles.keys().map(key => {

@@ -9,22 +9,24 @@
         <!-- {{portfoliopage}} -->
         <div class="page__section portfolio__content">
             <div class="portfolio__content__inner">
-                <div class="our__services__used portfolio__side__bar" v-if="portfoliopage.category">
-                    <h3 class="portfolio__header">How We Help Them</h3>
-                    <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, this.services)" :key="index">
-                        <TechnologyCell :cell="item"/>
-                    </div>
-                </div>
                 <div class="portfolio__text__content" v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>
                 <div class="portfolio__tech__used portfolio__side__bar">
+                    <div class="portfolio__tech__section" v-if="portfoliopage.category">
+                        <h4 class="portfolio__header">How We Help Them</h4>
+                        <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, this.services)" :key="index">
+                            <TechnologyCell :cell="item"/>
+                        </div>
+                    </div>
+                    <hr v-if="portfoliopage.tech.tech_used" />
                     <div class="portfolio__tech__section" v-if="portfoliopage.tech.tech_used">
-                        <h3 class="portfolio__header">Technologies Used</h3>
+                        <h4 class="portfolio__header">Technologies Used</h4>
                         <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.tech_used, this.technology)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
+                    <hr v-if="portfoliopage.tech.integrations_used" />
                     <div class="portfolio__tech__section" v-if="portfoliopage.tech.integrations_used">
-                        <h3 class="portfolio__header">Integrations Used</h3>
+                        <h4 class="portfolio__header">Integrations Used</h4>
                         <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.integrations_used, this.integrations)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
@@ -83,7 +85,6 @@ export default {
                     d[stor.service_type] = stor;
                     d[stor.service_type]["name"] = stor.service_type;
                     d[stor.service_type]["type"] = "services";
-                    // d[service.service_type]["short_description"] = service.service_short_description;
                 }
             }
             return d;
@@ -131,13 +132,17 @@ export default {
     /* background: var(--turkish-blue); */
     /* color: #FFF; */
     background-color: var(--light-blue);
-    padding:  30px 10px 40px;
+    padding:  40px 10px 40px;
 }
 .portfolio__company__intro .page__section__header__para {
     margin-bottom: 0;
 }
 .portfolio__content {
     
+}
+.portfolio__tech__used hr {
+    width: 80%;
+    margin: 10px auto;
 }
 .portfolio__content__inner {
     max-width: 1100px;
@@ -159,9 +164,9 @@ export default {
 }
 .portfolio__header {
     margin: 10px auto;
-    text-decoration: underline;
-    font-size: 1em;
-    line-height: 1.2em;
+}
+.portfolio__tech__section {
+    margin: 0 0 30px;
 }
 .portfolio__side__bar {
     flex: 1 1 25%;
@@ -173,8 +178,6 @@ export default {
     padding: 5px;
 }
 .portfolio__text__content p {
-    font-size: 1em;
-    font-weight: 400;
     margin: 0 auto 10px;
     text-align: left;
 }

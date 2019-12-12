@@ -7,7 +7,7 @@
                         <div v-if="sitewide.footer_company_logo" class="footer__logo__container">
                             <img class="site__logo" :src="sitewide.company_logo" :alt="sitewide.company_name + ' Logo'">
                         </div>
-                        <h2 class="header__name"><span>{{ boldName(sitewide.company_name) }}</span>{{ notBoldName(sitewide.company_name) }}</h2>
+                        <h3 class="footer__name"><span>{{ boldName(sitewide.company_name) }}</span>{{ notBoldName(sitewide.company_name) }}</h3>
                     </div>
                     <p v-if="sitewide.footer_company_para" class="footer__brand__para">{{ sitewide.footer_company_para }}</p>
                 </div>
@@ -38,8 +38,8 @@
                      <nuxt-link v-if="typeof item === 'string'" :to="'/' + item" class="footer__nav__items" >{{ navStrip(index) }}</nuxt-link>
                 </div>
             </div>
-            <div class="footer__legalize">
-                <p>©{{sitewide.company_name}}, LLC. - All Rights Reserved /</p>
+            <div class=" footer__section footer__legalize">
+                <p>©{{sitewide.company_name}}, LLC. - All Rights Reserved |</p>
                 <nuxt-link to="/privacy-policy">&nbsp;Privacy Policy</nuxt-link>
             </div>
         </div>
@@ -106,7 +106,7 @@ export default {
         max-width: 1300px;
         margin: 0 auto;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around
     }
@@ -134,7 +134,7 @@ export default {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        margin: 0 0 24px;
+        margin: 0 0 4px;
         width: 100%;
     }
     .footer__brand--nowrap {
@@ -159,6 +159,7 @@ export default {
         flex-wrap: nowrap;
         align-content: flex-start;
         justify-content: flex-start;
+        margin: 0;
     }
     .footer__name hr {
         width: 100%;
@@ -173,6 +174,7 @@ export default {
         align-self: center;
         margin: 0 0 0 5px;
         letter-spacing: 0.5px;
+        font-size: 1em;
     }
     .footer__address {
         padding: 0 6px;
@@ -187,7 +189,7 @@ export default {
         display: block;
     }
     a.footer__email__address {
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .footer__nav, .footer__social {
         flex-direction: column;
@@ -209,13 +211,13 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         margin: 70px 0 0;
-        padding: 0 10px;
+        align-self: center;
+        max-width: 100%;
     }
     .footer__legalize p, .footer__legalize a {
         margin: 0;
         font-size: .8em;
         line-height: 1em;
-        font-weight: 500;
         text-decoration: none;
         display: block;
     }
@@ -244,6 +246,13 @@ export default {
         }
         .footer__legalize {
             margin: 20px 0 0;
+        }
+        .footer__legalize p {
+            text-align: center;
+        }
+        .footer__legalize a {
+            text-align: center;
+            margin: 10px 0;
         }
         .footer__nav, .footer__social {
             flex: 1 1 auto;

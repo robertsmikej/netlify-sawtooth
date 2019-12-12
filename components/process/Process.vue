@@ -1,45 +1,64 @@
 <template>
     <section class="page__section our__process">
         <div class="page__section__inner">
-            <SectionHeader :header="header" :para="para"/>
+            <SectionHeader :header="details.header" :para="details.para"/>
             <div class="process__text__images">
                 <div class="process__text__cells">
-                    <ProcessCell v-for="(proc, index) in process" v-if="proc.status === 'published'" :ind="index + 1" :process="proc" :key="index"/>
+                    <ProcessCell v-for="(p, index) in process" :key="index" :ind="parseInt(index) + 1" :process="p"/>
                 </div>
                 <div class="process__images">
                     <div class="process__images__inner">
-                        <div class="process__image__cell">
-                            <img src="~/static/img/teamwork.png" alt="Teamwork is paramount" class="process__image">
-                        </div>
-                        <div class="process__image__cell">
-                            <img src="~/static/img/idea.png" alt="Strategize your goals" class="process__image">
-                        </div>
-                        <div class="process__image__cell">
-                            <img src="~/static/img/launch.png" alt="Launch your Website" class="process__image">
+                        <div class="process__image__cell" v-for="(img, index) in iconList" :key="index">
+                            <img :src="img.icon" :alt="img.alt" class="process__image">
                         </div>
                     </div>
                 </div>
             </div>
-            <SiteButton :buttonText="'Learn More'" :buttonLink="'/process'" :backgroundColor="1" :color="1"/>
         </div>
     </section>
 </template>
 
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
-import ProcessCell from '~/components/index/ProcessCell.vue';
-import SiteButton from '~/components/general/SiteButton.vue';
+import ProcessCell from '~/components/process/ProcessCell.vue';
 
 export default {
     components: {
         SectionHeader,
-        ProcessCell,
-        SiteButton
+        ProcessCell
     },
     props: {
-        process: Array,
+        process: Object,
         header: String,
-        para: String
+        para: String,
+        icons: Array,
+        details: Object
+    },
+    computed: {
+        iconList: function () { 
+            let images = [
+                {
+                    icon: "https://www.sawtooth.dev/img/teamwork.png",
+                    alt: "Teamwork Makes The Dream Work"
+                },
+                {
+                    icon: "https://www.sawtooth.dev/img/idea.png",
+                    alt: "We Make Ideas Come To Life"
+                },
+                {
+                    icon: "https://www.sawtooth.dev/img/launch.png",
+                    alt: "We'll Help You Launch Your Business"
+                }
+            ];
+            if (this.details.processes_icons) {
+                if (this.details.processes_icons.images) {
+                    if (this.details.processes_icons.images.length > 0) {
+                        images = this.details.processes_icons.images;
+                    }
+                }
+            }
+            return images;
+        }
     }
 }
 </script>
@@ -58,6 +77,7 @@ export default {
         background-color: #fff;
         transform: rotate(1deg) skewX(1deg);
         transform-origin: 100% 0;
+        z-index: 2;
     }
     .our__process .page__section__header::after {
         background: var(--light-orange) !important;
@@ -80,10 +100,9 @@ export default {
         flex-wrap: nowrap;
         align-content: flex-start;
         justify-content: flex-start;
-        margin: 0 10px 0 0;
+        margin: 0 30px 0 0;
         box-sizing: border-box;
     }
-    
     .process__images {
         padding: 0;
         display: flex;
@@ -150,13 +169,14 @@ export default {
         .process__text__cells {
             order: 2;
             max-width: 100%;
+            margin-right: 0;
         }
         .process__images__inner {
             align-self: center;
             position: relative;
             margin: 0 auto;
             padding: 0;
-            height: 360px;
+            height: 350px;
         }
         .process__image__cell:nth-of-type(2) {
             top: 125px;

@@ -2,8 +2,8 @@
     <main>
         <Hero :hero="pageInfo.hero"/>
         <Offer v-if="sections.services.status" :header="sections.services.header" :para="sections.services.section_text[0].text" :services="services" :tech="technology"/>
-        <!-- <Process v-if="pageInfo.page_section_3.status" :header="pageInfo.page_section_3.page_section_3_header" :para="pageInfo.page_section_3.page_section_3_para" :process="processes"/> -->
-        <Portfolio v-if="sections.our_work.status" :header="sections.our_work.header" :para="sections.our_work.section_text[0].text"/>
+        <RecentClients :header="sections.our_work.header" :para="sections.our_work.section_text[0].text" :featured="featured"/>
+        <!-- <Portfolio v-if="sections.our_work.status" :header="sections.our_work.header" :para="sections.our_work.section_text[0].text"/> -->
         <!-- <OurStack v-if="pageInfo.page_section_6.status" :header="pageInfo.page_section_6.page_section_6_header" :para="pageInfo.page_section_6.page_section_6_para" :indexInfo="pageInfo"/> -->
         <Testimonials v-if="sections.testimonials.status" :header="sections.testimonials.header" :para="sections.testimonials.section_text[0].text"/>
         <Local v-if="sections.work_with_idaho_natives.status" :header="sections.work_with_idaho_natives.header" :para="sections.work_with_idaho_natives.section_text[0].text"/>
@@ -18,8 +18,8 @@ import Offer from '~/components/index/Offer.vue';
 import Local from '~/components/index/Local.vue';
 import Testimonials from '~/components/general/Testimonials.vue';
 import Recent from '~/components/index/Recent.vue';
-import Process from '~/components/index/Process.vue';
 import Portfolio from '~/components/index/Portfolio.vue';
+import RecentClients from '~/components/general/RecentClients.vue';
 import Technology from '~/components/general/Technology.vue';
 import OurStack from '~/components/general/OurStack.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
@@ -34,9 +34,9 @@ export default {
         Testimonials,
         Recent,
         Portfolio,
+        RecentClients,
         Technology,
         OurStack,
-        Process,
         ContactBox
     },
     transition: 'bounce',
@@ -61,6 +61,21 @@ export default {
         },
         technology: function () {
             return this.$store.state.technologies
+        },
+        featured: function () {
+            let site = this.$store.state.sitewide.featured_clients;
+            let port = this.$store.state.portfolio;
+            let newArr = [];
+            for (let s in site) {
+                let client = site[s];
+                for (let p in port) {
+                    let porter = port[p];
+                    if (porter.name === client) {
+                        newArr.push(porter);
+                    }
+                }
+            }
+            return newArr
         }
     },
     head() {

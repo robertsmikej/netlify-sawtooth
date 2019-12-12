@@ -3,10 +3,9 @@
         <div class="page__section__inner">
             <SectionHeader :header="header" :para="para"/>
             <div class="offer__grid__container">
-                <!-- {{services}} -->
                 <OfferCell v-for="(service, index) in services" :key="index" :service="service" :technologies="techno(service)"/>
             </div>
-            <SiteButton :buttonText="'See All Services'" :buttonLink="'/services'" :backgroundColor="4" :color="1"/>
+            <!-- <SiteButton :buttonText="'See All Services'" :buttonLink="'/services'" :backgroundColor="4" :color="1"/> -->
         </div>
     </section>
 </template>
@@ -89,10 +88,10 @@ export default {
     }
     .offer__grid__container {
         margin: 24px auto 16px;
-        max-width: 1000px;
+        max-width: 1200px;
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         flex-wrap: wrap;
         justify-content: space-around;
     }
@@ -106,7 +105,7 @@ export default {
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 600px) {
         .offer__grid__container {
-            margin: 6px auto;
+            margin: 12px auto 6px;
         }
     }
 </style>

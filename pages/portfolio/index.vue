@@ -3,9 +3,10 @@
         <Hero :hero="pageInfo.hero"/>
         <PageIntro :intro="pageInfo.page_intro"/>
         <section class="portfolio__page__cells page__section">
+            <!-- <SectionHeader :header="header" :para="para"/> -->
             <div class="portfolio__page__cells__inner">
                 <div class="portfolio__cell" v-for="(cell, index) in portfolio" :key="index">
-                    <PortfolioCell v-if="cell.status === 'published'" :cell="cell"/>
+                    <PortfolioCell v-if="cell.status" :cell="cell"/>
                 </div>
             </div>
         </section>
@@ -16,6 +17,7 @@
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
+import SectionHeader from '~/components/general/SectionHeader.vue';
 import PortfolioCell from '~/components/index/PortfolioCell.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
 
@@ -24,6 +26,7 @@ export default {
     components: {
         Hero,
         PageIntro,
+        SectionHeader,
         PortfolioCell,
         ContactBox
     },
@@ -56,7 +59,7 @@ export default {
 <style>
 
 .portfolio__page__cells {
-    background: var(--turkish-blue);
+    background: var(--light-orange);
     color: #FFF;
     width: 100%;
     

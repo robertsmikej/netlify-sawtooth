@@ -1,5 +1,8 @@
 <template>
     <div class="section__header__container">
+        <div v-if="icon" class="section__header__icon__container">
+            <img :src="icon" :alt="header" class="section__header__icon">
+        </div>
         <h2 v-if="header" class="page__section__header">{{ header }}</h2>
         <h3 v-if="subheader" class="page__section__sub__header">{{ subheader }}</h3>
         <p v-if="para" class="page__section__header__para">{{ para }}</p>
@@ -9,6 +12,7 @@
 <script>
 export default {
     props: {
+        icon: String,
         header: String,
         subheader: String,
         para: String
@@ -21,23 +25,26 @@ export default {
         margin: 0 auto;
         display: block;
     }
+    .section__header__icon__container {
+        width: 100%;
+    }
+    .section__header__icon {
+        max-width: 60px;
+    }
     .page__section__header {
         max-width: 810px;
         margin: 20px auto 24px;
-        font-size: 2.5em;
-        line-height: 1em;
-        font-weight: 700;
         position: relative;
         z-index: 1;
     }
     .page__section__header::after {
         content: "";
         position: absolute;
-        bottom: -10px;
+        bottom: -16px;
         left: 50%;
         transform: translate(-50%, 0);
         height: 2px;
-        width: 180px;
+        width: 60%;
         z-index: -1;
     }
     .page__section:nth-of-type(even) .page__section__header::after {
@@ -49,20 +56,5 @@ export default {
     .page__section__header__para {
         max-width: 700px;
         margin: 10px auto;
-        font-size: 1.1em;
-        line-height: 1.5em;
-        font-weight: 500;
-    }
-    /* ------------------ MEDIA QUERY ------------------ */
-    @media screen and (max-width: 900px) {
-        .page__section__header {
-            font-size: 2.5em;
-        }
-    }
-    /* ------------------ MEDIA QUERY ------------------ */
-    @media screen and (max-width: 450px) {
-        .page__section__header {
-            font-size: 2.3em;
-        }
     }
 </style>

@@ -16,12 +16,7 @@
                 <hr v-if="hero.hero_header" class="hero__hr">
                 <p v-if="hero.hero_para" class="hero__para">{{ hero.hero_para }}</p>
                 <div v-if="hero.hero_button_text" class="hero__button__container">
-                    <nuxt-link v-if="hero.hero_button_link !== 'contact'" :to="hero.hero_button_link" class="hero__button js__open__contact">
-                        {{ hero.hero_button_text }}
-                    </nuxt-link>
-                    <div v-if="hero.hero_button_link === 'contact'" @click="contactToggle()" class="hero__button js__open__contact">
-                        <SiteButton :buttonText="hero.hero_button_text" :backgroundColor="1" :color="1"/>
-                    </div>
+                    <SiteButton :buttonLink="hero.hero_button_link" :buttonText="hero.hero_button_text" :backgroundColor="1" :color="1"/>
                 </div>
             </div>
             <div v-if="hero.hero_sub_image" class="hero__sub__image__container">
@@ -95,7 +90,7 @@ export default {
         margin: 0;
     }
     .hero__sub {
-        background: linear-gradient(to bottom right, var(--blue-grey), var(--blue));
+        background: linear-gradient(to bottom right, var(--light-orange), var(--logo-orange));
         opacity: 1;
     }
     .hero__sub .hero__background {
@@ -178,7 +173,6 @@ export default {
         justify-content: center;
         align-self: flex-start
     }
-
     .hero__sub__image__container {
         display: flex;
         flex-direction: row;
@@ -204,6 +198,9 @@ export default {
             align-content: center;
             justify-content: center;
         }
+        .hero__text__container {
+            max-width: 450px;
+        }
         .hero__background video {
             align-self: center;
             object-fit: cover;
@@ -214,6 +211,9 @@ export default {
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 700px) {
+        .hero__inner {
+            padding: 50px 5vw 50px;
+        }
         .hero__sub .hero__inner {
             flex-wrap: wrap;
             padding: 100px 3vw 70px;

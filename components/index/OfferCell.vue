@@ -41,7 +41,7 @@ export default {
         margin: 5px 10px;
         flex: 1 1 46%;
         /* max-width: 50%; */
-        min-width: 200px;
+        min-width: 290px;
         border-radius: 50px;
         display: flex;
         flex-direction: column;
@@ -83,8 +83,6 @@ export default {
         margin: 0px 0 -2px;
     }
     .offer__header {
-        font-size: 24px;
-        line-height: 24px;
         font-weight: 500;
         margin: 14px 0 0;
     }
@@ -128,6 +126,9 @@ export default {
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 600px) {
+        .offer__cell__side:nth-of-type(1) {
+            margin-bottom: 10px;
+        }
         .offer__grid__cell {
             padding: 20px 10px;
             flex: 1 1 100%;

@@ -3,11 +3,11 @@
         <div class="tech__cell__img__container">
             <img :src="cell.icon" :alt="cell.name + ' Logo'" class="tech__cell__logo">
         </div>
-        <!-- {{cell}} -->
         <div v-if="cell.show_label && cell.name.length > 0" class="tech__cell__text__container">
             <p>{{ cell.name }}</p>
-            <!-- <p v-if="cell.short_description && description">{{ cell.short_description }}</p>
-            <SiteButton v-if="cell.showLink" :buttonText="'See More'" :backgroundColor="'var(--logo-orange)'" :color="'#FFF'"/> -->
+        </div>
+        <div v-if="cell.service_type" class="tech__cell__text__container">
+            <p>{{ cell.service_type }}</p>
         </div>
     </nuxt-link>   
 </template>
@@ -46,9 +46,10 @@ export default {
     align-content: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
 }
 .tech__cell__img__container img {
-    max-height: 46px;
+    max-height: 54px;
     max-width: 120px;
     object-fit: contain;
     align-self: center;

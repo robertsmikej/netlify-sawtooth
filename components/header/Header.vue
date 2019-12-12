@@ -101,6 +101,7 @@ export default {
         justify-content: space-between;
         overflow: hidden;
         padding: 0;
+        font-size: .6em;
     }
     .header__logo__and__name {
         display: flex;
@@ -248,7 +249,8 @@ export default {
         transition: all .6s;
     }
     .nav__para {
-        margin: 5px 0 0;
+        margin: 0px 0 0;
+        font-size: 1.8em;
         color: var(--dark-grey);
     }
     /* ------------------ MEDIA QUERY ------------------ */

@@ -48,7 +48,7 @@ export default {
 
 <style>
 .site__button {
-    margin: 10px auto;
+    margin: 16px auto;
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -59,14 +59,13 @@ export default {
 }
 .site__button__inner {
     width: 100%;
-    font-size: 1em;
+    font-size: .9em;
     padding: 10px 24px;
     margin: 0 auto;
     text-decoration: none;
     text-transform: uppercase;
     transition: all .5s;
     cursor: pointer;
-    font-weight: 400;
     text-align: center;
 }
 .site__button__inner:hover {

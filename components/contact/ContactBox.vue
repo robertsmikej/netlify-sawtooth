@@ -3,9 +3,6 @@
         <div class="contact__box__inner">
             <SectionHeader :header="header" :para="para" v-if="header || para"/>
             <ContactForm :contact="contact"/>
-            <!-- <div class="contact__box__button js__open__contact" @click="contactToggle()">
-                <SiteButton :buttonText="sitewide.contact_box.contact_button_text" :backgroundColor="1" :color="1"/>
-            </div> -->
         </div>
     </div>
 </template>
@@ -69,6 +66,8 @@ export default {
     }
     .contact__box__inner h2, .contact__box__inner p {
         color: #FFF;
+        margin-left: auto;
+        margin-right: auto;
     }
     .contact__box__para {
         font-size: 1.2em;

@@ -1,5 +1,5 @@
 <template>
-    <div class="contact__form__container">
+    <div class="contact__form__container" id="contact">
         <form id="contact__form" data-netlify="true" name="Sawtooth-Contact" class="contact__form" action="" method="post">
             <input type="hidden" name="Sawtooth-Contact" value="Sawtooth-Contact" />
             <div v-for="(input, index) in contact.items" :key="index">
@@ -123,105 +123,8 @@ export default {
         font-weight: 500;
         font-size: 13px;
     }
-    /* .contact__form__container {
-        position: fixed;
-        top: 150%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-height: 90vh;
-        z-index: 11;
-        width: 96vw;
-        max-width: 560px;
-        padding: 20px 40px;
-        border: 3px solid var(--dark-blue);
-        border-radius: 8px;
-        background: #FFF;
-        transition: top .6s;
-        overflow: hidden;
-    }
-    .contactShow .contact__form__container {
-        top: 50%;
-    }
-    .contact__header {
-        margin: 14px 0 10px;
-    }
-    .contact__form__container fieldset {
-        border: none;
-    }
-    .contact__form__container p {
-        text-align: right;
-        margin: 6px 0 0;
-    }
-    .contact__form__container input {
-        border: none;
-        width: 100%;
-        padding: 10px 10px;
-        font-size: 14px;
-        border-bottom: 1px solid var(--dark-grey);
-        background: transparent;
-        color: var(--dark-blue);
-        text-align: right;
-    }
-    .contact__form__container textarea {
-        border: none;
-        width: 100%;
-        padding: 10px 10px;
-        font-size: 14px;
-        border-bottom: 1px solid var(--dark-grey);
-        background: transparent;
-        color: var(--dark-blue);
-        text-align: right;
-    }
-    .contact__form__container input::placeholder, .contact__form__container textarea::placeholder {
-        font-weight: 500;
-        font-size: 13px;
-    }
-    .contact__form__container .contact__submit {
-        margin: 14px auto 0;
-        background-color: #FFF;
-        border: none;
-        border-bottom: 1px solid var(--dark-grey);
-        border-right: 1px solid var(--dark-grey);
-        cursor: pointer;
-    }
-    .contact__exit {
-        width: 24px;
-        height: 24px;
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        cursor: pointer;
-    }
-    .contact__exit::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--dark-grey);
-        transform: rotate(45deg);
-        position: absolute;
-        top: 50%;
-        right: 0;
-    }
-    .contact__exit::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--dark-grey);
-        transform: rotate(-45deg);
-        position: absolute;
-        top: 50%;
-        right: 0;
-    } */
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 900px) {
-    .contact__form__container {
-        padding: 14px 20px;
-    }
-    .contactShow {
-        top: 53%;
-    }
     .contact__header {
         margin: 10px 0 5px;
     }
@@ -237,12 +140,6 @@ export default {
 }
 /* ------------------ MEDIA QUERY ------------------ */
 @media screen and (max-width: 410px) {
-    .contact__form__container {
-        padding: 8px 16px;
-    }
-    .contactShow {
-        top: 54%;
-    }
     .contact__header {
         margin: 6px 0 2px;
     }

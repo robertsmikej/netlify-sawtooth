@@ -54,6 +54,7 @@ export default {
 
 <style>
 :root {
+    --site-white: #FFF;
     --dark-yellow: #fec303;
     --lightest-grey: #f2f2f2;
     --teal: #139487;
@@ -72,6 +73,7 @@ export default {
     --powder-blue: #BCF2FC;
     --turkish-blue: #50A3B1;
     --default-font: 'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+    --text-color: #2B373C;
 }
 body, html {
     padding: 0;
@@ -83,8 +85,8 @@ body * {
 }
 html {
     font-family: var(--default-font);
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 24px;
+    line-height: 24px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -98,7 +100,6 @@ html {
 main {
     width: 100%;
     background-color: #FFF;
-    overflow: hidden;
     margin: -60px 0 0;
 }
 .container {
@@ -117,7 +118,7 @@ main {
 }
 h1 {
     text-align: left;
-    font-size: 3em;
+    font-size: 2.2em;
     line-height: 1em;
     font-weight: 700;
     margin: 10px 0;
@@ -125,25 +126,40 @@ h1 {
     text-shadow: 1px 1px 1px var(--dark-grey);
 }
 h2 {
-    font-weight: 400;
+    font-size: 1.9em;
+    line-height: 1em;
+    font-weight: 500;
+    margin: 10px 0;
 }
-h4 {
-    font-size: 1em;
+h3 {
+    font-size: 1.6em;
     line-height: 1.2em;
     font-weight: 400;
-    margin: 4px auto 0;
+    margin: 10px auto 0;
+}
+h4 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 400;
+    margin: 10px auto 0;
 }
 h5 {
     font-size: 1em;
     line-height: 1.2em;
     font-weight: 400;
-    margin: 4px auto 0;
+    margin: 10px auto 0;
+}
+h5 {
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 300;
+    margin: 10px auto 0;
 }
 p {
     font-size: 1em;
     line-height: 1.3em;
-    font-weight: 400;
-    margin: 10px 0;
+    font-weight: 300;
+    margin: 14px 0 0;
 }
 ul, li {
     font-size: 1.1em;
@@ -152,8 +168,11 @@ ul, li {
 }
 a {
     color: var(--dark-grey);
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 400;
 }
-.page__section {
+.site__section, .page__section {
     padding: 7vh 16px 8vh;
     position: relative;
     box-sizing: border-box;
@@ -165,6 +184,15 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+.page__section--constrained {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-self: center;
+}
 .page__section__inner {
     display: flex;
     flex-direction: column;
@@ -172,11 +200,25 @@ a {
     justify-content: flex-start;
     align-self: center;
 }
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 1500px) {
+    html {
+        font-size: 21px;
+        line-height: 21px;
+    } 
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 20px;
+        line-height: 20px;
+    } 
+}
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width:900px) {
     html {
-        font-size: 13px;
-        line-height: 13px;
+        font-size: 19px;
+        line-height: 19px;
     }
 }
     /* ----------------------------  MEDIA QUERY ------------------------------ */
@@ -185,7 +227,15 @@ a {
         padding: 7vh 14px;
     }
     h1 {
-        font-size: 2.7em;
+        font-size: 2em;
+        line-height: 1em;
+        margin: 10px 0;
+    }
+    h2 {
+        font-size: 1.6em;
+        line-height: 1em;
+        font-weight: 500;
+        margin: 10px 0;
     }
 }
 </style>

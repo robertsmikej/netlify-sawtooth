@@ -1,20 +1,28 @@
 <template>
-    <main>
+    <main class="tech_item">
         <Hero :hero="technologypage.hero"/>
-        <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
+        <section v-if="technologypage.name" class="page__section page__intro">
+            <div class="page__section__inner">
+                <SectionHeader :icon="technologypage.icon" :header="technologypage.name" :para="technologypage.short_description"/>
+            </div>
+        </section>
+        <div v-if="technologypage.description" class="page__section tech__section">
+            <div v-html="$md.render(technologypage.description)" class="page__section--constrained"></div>
+        </div>
+        <ContactBox :sitewide="sitewide" :header="'Let\'s Make ' + technologypage.name + ' Work For You'" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
-import PageIntro from '~/components/general/PageIntro.vue';
+import SectionHeader from '~/components/general/SectionHeader.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
     components: {
         Hero,
-        PageIntro,
+        SectionHeader,
         ContactBox
     },
     computed: {
@@ -48,5 +56,12 @@ export default {
 </script>
 
 <style>
+.tech_item {
 
+}
+.tech__section {
+    width: 100%;
+    background-color: var(--blue-grey);
+    color: var(--site-white);
+}
 </style>

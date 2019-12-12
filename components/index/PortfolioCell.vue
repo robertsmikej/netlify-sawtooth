@@ -4,7 +4,7 @@
             <img :src="cell.main_image" :alt="cell.name" class="portfolio__img">
         </div>
         <div class="portfolio__text__container">
-            <h3 class="portfolio__name">{{ cell.name }}</h3>
+            <h4 class="portfolio__name">{{ cell.name }}</h4>
             <p class="portfolio__para">{{ cell.para }}</p>
             <div class="portfolio__link">More Information</div>
         </div>
@@ -47,7 +47,7 @@ export default {
         opacity: 1;
     }
     .portfolio__text__container {
-        background: rgba(000, 000, 000, .7);
+        background: rgba(000, 000, 000, .9);
         transition: opacity .5s;
         opacity: 0;
         position: absolute;
@@ -57,7 +57,7 @@ export default {
         height: 100%;
         flex: 1;
         color: var(--dark-grey);
-        padding: 30px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -68,11 +68,11 @@ export default {
     .portfolio__name {
         margin: 0 auto 20px;
         text-transform: uppercase;
-        font-weight: 400;
     }
     .portfolio__para {
         margin: 0 auto;
-        font-weight: 400;
+        font-size: .9em
+;
     }
     .portfolio__link {
         background: var(--blue-grey);

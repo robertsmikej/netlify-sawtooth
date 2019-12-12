@@ -24,7 +24,7 @@ collections:
       preview: false
     fields:
       - { label: 'Company Name', name: 'company_name', widget: 'string' }
-      - { label: 'Company Logo', name: 'company_logo', widget: 'file', required: false }
+      - { label: 'Company Logo', name: 'company_logo', widget: 'image', required: false }
       - { label: 'Company Address Line 1', name: 'company_address_line_1', widget: 'string', required: false }
       - { label: 'Company Address Line 2', name: 'company_address_line_2', widget: 'string', required: false }
       - { label: 'Company Address Line 3', name: 'company_address_line_3', widget: 'string', required: false }
@@ -44,6 +44,15 @@ collections:
         - { label: 'Contact Para', name: 'contact_para', widget: 'text', required: false }
         - { label: 'Contact Button Link', name: 'contact_button_link', widget: 'string', required: false }
         - { label: 'Contact Button Text', name: 'contact_button_text', widget: 'string', required: false }
+      - label: "Featured Clients"
+        name: "featured_clients"
+        widget: "relation"
+        collection: "portfolio"
+        searchFields: ["name"]
+        valueField: "name"
+        multiple: true
+        displayFields: ["name"]
+        required: false
       - label: "Footer Details"
         name: "footer_details"
         widget: "object"
@@ -99,10 +108,10 @@ collections:
         - { label: "Shown", name: "status", widget: "boolean", default: true, required: false }
         - { label: 'Short Description', name: 'para', widget: 'text', required: false }
         - { label: 'Link', name: 'link', widget: 'string', required: false }
-        - { label: 'Icon', name: 'icon', widget: 'file', required: false }
+        - { label: 'Icon', name: 'icon', widget: 'image', required: false }
 
   - name: 'page'
-    label: 'Page'
+    label: 'Pages'
     identifier_field: page_name
     format: 'json'
     folder: 'assets/content/page'
@@ -120,9 +129,9 @@ collections:
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
         - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
       - label: "Page Intro"
         name: "page_intro"
         widget: "object"
@@ -156,17 +165,27 @@ collections:
       - { label: 'Show Service', name: 'status', widget: 'boolean', required: false }
       - { label: 'Service Type', name: 'service_type', widget: 'string' }
       - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 20
-        required: false
       - { label: 'Short Description', name: 'short_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-      - { label: 'Service Icon', name: 'icon', widget: 'file', required: false }
+      - { label: 'Service Icon', name: 'icon', widget: 'image', required: false }
       - { label: 'Service Link', name: 'link', widget: 'string', required: false }
+      - label: "Page Intro"
+        name: "page_intro"
+        widget: "object"
+        fields:
+        - { label: 'Show Intro', name: 'status', widget: 'boolean', default: true, required: false }
+        - { label: 'Page Intro Header', name: 'page_intro_header', widget: 'string', required: false }
+        - { label: 'Page Intro Para', name: 'page_intro_para', widget: 'text', required: false }
+      - label: "Hero"
+        name: "hero"
+        widget: "object"
+        fields:
+        - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
+        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
+        - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
+        - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
       - label: "Technologies and Integrations"
         name: "tech"
         widget: "object"
@@ -180,20 +199,88 @@ collections:
             multiple: true
             displayFields: ["name"]
             required: false
-      - label: "Hero"
-        name: "hero"
+      - label: "Sub Services"
+        name: "sub_services"
         widget: "object"
         fields:
-        - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
-        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
-        - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
-        - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
-        - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+          - { label: 'Header', name: 'header', widget: 'string', required: false }
+          - { label: 'Intro Para', name: 'para', widget: 'text', required: false}
+          - label: "List"
+            name: "list"
+            widget: "list"
+            fields:
+            - label: "Sub Services Used"
+              name: "sub_services_used"
+              widget: "relation"
+              collection: "sub_services"
+              searchFields: ["name"]
+              valueField: "name"
+              multiple: true
+              displayFields: ["name"]
+              required: false
+      - label: "Processes"
+        name: "service_processes"
+        widget: "object"
+        fields:
+        - { label: 'Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Basic Text', name: 'text', widget: 'text', required: false}
+        - label: "Processes List"
+          name: "processes_list"
+          widget: "list"
+          field: {label: "Process", name: "process", widget: "relation", collection: "process", searchFields: ["process_header"], valueField: "process_header", multiple: true, displayFields: ["process_header"], required: false}
+        - label: "Processes icons"
+          name: "processes_icons"
+          hint: "Optional - To change the 3 icons in the process graphic"
+          widget: "object"
+          fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+            - { label: 'Icon Description', name: 'alt', widget: 'string'}
+            - { label: 'Icon', name: 'icon', widget: 'image', required: false }
+      - label: "Text Section"
+        name: "text_section"
+        widget: "list"
+        fields:
+        - { label: 'Text Description', name: 'text_description', widget: 'string', required: false }
+        - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        fields:
+        - { label: 'Image Description', name: 'alt', widget: 'string', required: false }
+        - { label: 'Image', name: 'image', widget: 'image', required: false }
 
+  - name: 'sub_services'
+    label: 'Services - Sub'
+    identifier_field: name
+    format: 'json'
+    folder: 'assets/content/services-sub'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+    - { label: 'Name', name: 'name', widget: 'string' }
+    - { label: 'Short Description', name: 'short_description', widget: 'string', required: false }
+    - { label: 'Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+    - { label: 'Icon', name: 'icon', widget: 'image', required: false }
+    - label: "Text Section"
+      name: "text_section"
+      widget: "list"
+      fields:
+      - { label: 'Text Description', name: 'text_description', widget: 'string', required: false }
+      - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+    - label: "Images"
+      name: "images"
+      widget: "list"
+      fields:
+      - { label: 'Image Description', name: 'alt', widget: 'string', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+  
   - name: 'process'
-    label: 'Process'
+    label: 'Processes'
     identifier_field: process_header
     format: 'json'
     folder: 'assets/content/process'
@@ -202,15 +289,6 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Process Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 20
-        required: false
       - { label: 'Process Header', name: 'process_header', widget: 'string', required: false }
       - { label: 'Process Short Description', name: 'process_short_description', widget: 'text', required: false }
       - label: "Hero"
@@ -221,30 +299,9 @@ collections:
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
         - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
-
-  - name: 'testimonials'
-    label: 'Testimonials'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/testimonials'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - label: "Clients"
-        name: "testimonial"
-        widget: "relation"
-        collection: "portfolio"
-        searchFields: ["name"]
-        valueField: "name"
-        multiple: true
-        displayFields: ["name"]
-        required: false
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
 
   - name: 'portfolio'
     label: 'Portfolio Items'
@@ -256,7 +313,7 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Portfolio Item Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
+      - { label: 'Portfolio Item Status', name: 'status', widget: 'boolean'}
       - { label: 'Client Name', name: 'name', widget: 'string', required: false }
       - { label: 'Client Description', name: 'para', widget: 'text', required: false }
       - { label: 'Client Heavy Text', name: 'long_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
@@ -270,8 +327,8 @@ collections:
         displayFields: ["service_type"]
         required: false
       - { label: 'Client Link', name: 'link', widget: 'string', required: false }
-      - { label: 'Client Main Image', name: 'main_image', widget: 'file', required: false }
-      - { label: 'Client Logo', name: 'logo', widget: 'file', required: false }
+      - { label: 'Client Main Image', name: 'main_image', widget: 'image', required: false }
+      - { label: 'Client Logo', name: 'logo', widget: 'image', required: false }
       - label: "Hero"
         name: "hero"
         widget: "object"
@@ -280,9 +337,9 @@ collections:
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
         - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
       - label: "Technologies and Integrations"
         name: "tech"
         widget: "object"
@@ -296,8 +353,8 @@ collections:
             multiple: true
             displayFields: ["name"]
             required: false
-      - label: "Testimonials"
-        name: "testimonials"
+      - label: "Testimonial"
+        name: "testimonial"
         widget: "object"
         fields:
           - { label: 'Client Description', name: 'client_description', widget: 'text', required: false }
@@ -317,16 +374,8 @@ collections:
     fields:
       - { label: 'Live Status', name: 'status', widget: 'boolean'}
       - { label: 'Technology Name', name: 'name', widget: 'string', required: false }
-      - label: "Sort Number"
-        name: "sort_number"
-        widget: "number"
-        default: 1
-        valueType: "int"
-        min: 1
-        max: 40
-        required: false
       - { label: 'Show Label', name: 'show_label', widget: 'boolean', required: false }
-      - { label: 'Technology Icon', name: 'icon', widget: 'file', required: false }
+      - { label: 'Technology Icon', name: 'icon', widget: 'image', required: false }
       - { label: 'Technology Short Description', name: 'short_description', widget: 'text', required: false }
       - { label: 'Technology Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Bullets"
@@ -335,16 +384,28 @@ collections:
         fields:
         - { label: 'Header', name: 'header', widget: 'string', required: false }
         - { label: 'Para', name: 'para', widget: 'text', required: false }
-        - { label: 'Icon', name: 'icon', widget: 'file', required: false }
+        - { label: 'Icon', name: 'icon', widget: 'image', required: false }
       - label: "Hero"
         name: "hero"
         widget: "object"
         fields:
         - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+      - label: "Text Section"
+        name: "text_section"
+        widget: "list"
+        fields:
+        - { label: 'Text Description', name: 'text_description', widget: 'string', required: false }
+        - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        fields:
+        - { label: 'Image Description', name: 'alt', widget: 'string', required: false }
+        - { label: 'Image', name: 'image', widget: 'image', required: false }
 
   - name: 'privacy_policy'
     label: 'Privacy Policy'
@@ -385,6 +446,6 @@ collections:
         fields:
         - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }

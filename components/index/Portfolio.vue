@@ -4,7 +4,7 @@
             <SectionHeader :header="header" :para="para" v-if="header || para"/>
             <div class="portfolio__cells">
                 <div class="portfolio__cell" v-for="(cell, index) in portfolio" :key="index">
-                    <PortfolioCell v-if="cell.status === 'published'" :cell="cell"/>
+                    <PortfolioCell v-if="cell.status" :cell="cell"/>
                 </div>
             </div>
             <SiteButton :buttonText="'See More Examples'" :buttonLink="'/portfolio'" :backgroundColor="1" :color="1"/>
