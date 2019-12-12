@@ -49,10 +49,22 @@
   "sub_services": {
     "header": "What We Offer",
     "para": "See Below To See What We Offer To All Of Our Clients",
-    "sub_services_used": [
-      "Search Engine Optimization",
-      "Hosting and Maintenance",
-      "Website Design"
+    "list": [
+      {
+        "sub_services_used": [
+          "Website Design"
+        ]
+      },
+      {
+        "sub_services_used": [
+          "Hosting and Maintenance"
+        ]
+      },
+      {
+        "sub_services_used": [
+          "Search Engine Optimization"
+        ]
+      }
     ]
   }
 }
