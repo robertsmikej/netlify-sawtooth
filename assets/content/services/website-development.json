@@ -22,13 +22,13 @@
         "Propel"
       ]
     ],
-    "processes__icons": {
+    "processes_icons": {
       "images": [
         {
           "icon": "/img/affiliate.png"
         },
         {
-          "icon": "/img/audrey_roberts_boise_idaho_sawtooth.jpg"
+          "icon": "/img/catbreadface.gif"
         },
         {
           "icon": "/img/clickfunnels-logo.png"
