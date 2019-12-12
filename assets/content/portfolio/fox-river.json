@@ -3,7 +3,7 @@
   "logo": "/img/foxriver-logo.png",
   "name": "Fox River",
   "status": true,
-  "main_image": "/img/foxriver-fancy.jpg",
+  "main_image": "/img/foxriver-fancy2.jpg",
   "tech": {
     "tech_used": [
       "Netlify",
