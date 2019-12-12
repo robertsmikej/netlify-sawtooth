@@ -1,20 +1,4 @@
 {
-  "company_name": "Sawtooth Digital Group",
-  "company_logo": "/img/fox-multi-color.png",
-  "company_address_line_2": "Boise, ID 83702",
-  "company_email_address": "contact@sawtooth.dev",
-  "contact_box": {
-    "contact_header": "Contact Us",
-    "contact_para": "Let us know how we can help you grow your business or product. We'd love to hear from you!",
-    "contact_button_link": "",
-    "contact_button_text": "Send Message"
-  },
-  "footer_details": {
-    "footer_copyright": "Sawtooth Digital Group"
-  },
-  "social_media": {
-    "facebook_link": "https://www.facebook.com/sawtooth-digital"
-  },
   "contact_form": {
     "items": [
       {
@@ -61,5 +45,26 @@
       }
     ],
     "button_text": "Send Message"
+  },
+  "contact_box": {
+    "contact_header": "Contact Us",
+    "contact_para": "Let us know how we can help you grow your business or product. We'd love to hear from you!",
+    "contact_button_link": "",
+    "contact_button_text": "Send Message"
+  },
+  "company_logo": "/img/fox-multi-color.png",
+  "company_name": "Sawtooth Digital Group",
+  "company_email_address": "contact@sawtooth.dev",
+  "social_media": {
+    "facebook_link": "https://www.facebook.com/sawtooth-digital"
+  },
+  "company_address_line_2": "Boise, ID 83702",
+  "featured_clients": [
+    "HotSpringing.com",
+    "Pressed Dress",
+    "Rock Climbing Extreme"
+  ],
+  "footer_details": {
+    "footer_copyright": "Sawtooth Digital Group"
   }
 }
