@@ -1,6 +1,5 @@
 {
   "service_type": "Website Development",
-  "sort_number": 1,
   "sub_header": "Website Development and Design",
   "status": "published",
   "service_processes": {
@@ -38,5 +37,10 @@
     "hero_para": "Using some of the latest technologies and techniques allows us to do things that other agencies just won't, or can't, do.",
     "hero_background_video": "/img/codecode.mp4",
     "hero_sub_image": ""
+  },
+  "page_intro": {
+    "status": true,
+    "page_intro_header": "Partner With Us To Build Your Web Presence",
+    "page_intro_para": "Having a functional, fast, and complete website is so important in this day in age that it almost goes without saying. Take a look at how we can help you make the most of your money and time spent furthering your business goals."
   }
 }
