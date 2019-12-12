@@ -14,7 +14,8 @@
   "link": "https://www.foxsox.com",
   "hero": {
     "hero_header": "Fox River",
-    "hero_para": "They Make Socks!"
+    "hero_para": "They Make Socks!",
+    "hero_sub_image": "/img/foxriver-logo.png"
   },
   "category": [
     "Website Development"
