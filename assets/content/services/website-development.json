@@ -48,7 +48,9 @@
   },
   "sub_services": {
     "sub_services": [
-      "Hosting and Maintenance"
+      "Hosting and Maintenance",
+      "Website Design",
+      "Search Engine Optimization"
     ]
   }
 }
