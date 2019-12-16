@@ -47,24 +47,8 @@
     "page_intro_para": "Having a functional, fast, and complete website is so important in this day in age that it almost goes without saying. Take a look at how we can help you make the most of your money and time spent furthering your business goals."
   },
   "sub_services": {
-    "header": "What We Offer",
-    "para": "See Below To See What We Offer To All Of Our Clients",
-    "list": [
-      {
-        "sub_services_used": [
-          "Website Design"
-        ]
-      },
-      {
-        "sub_services_used": [
-          "Hosting and Maintenance"
-        ]
-      },
-      {
-        "sub_services_used": [
-          "Search Engine Optimization"
-        ]
-      }
+    "sub_services": [
+      "Hosting and Maintenance"
     ]
   }
 }
