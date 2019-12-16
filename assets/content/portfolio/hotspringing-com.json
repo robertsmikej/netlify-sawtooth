@@ -3,11 +3,6 @@
   "logo": "/img/hotspringing.png",
   "name": "HotSpringing.com",
   "status": "published",
-  "testimonials": {
-    "client_description": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions.",
-    "testimonial_text": "Dedicated to sharing Idaho's Hot Springs with outdoor enthusiasts.",
-    "quote": "Sawtooth Digital didn’t just create a platform that met our requirements, but came to us with much-appreciated creative suggestions."
-  },
   "main_image": "/img/hotspringing-mockup-640.jpg",
   "tech": {
     "tech_used": [
@@ -26,5 +21,8 @@
   "category": [
     "Website Development",
     "Website Hosting"
-  ]
+  ],
+  "testimonial": {
+    "quote": "Sawtooth Digital really helped HotSpringing.com take things to the next level! We would use them again in a heartbeat!"
+  }
 }
