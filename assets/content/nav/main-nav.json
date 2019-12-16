@@ -25,12 +25,6 @@
       "status": true,
       "para": "Come Learn All About Us.",
       "link": "/about-us"
-    },
-    {
-      "title": "Contact",
-      "status": true,
-      "para": "Reach Out And Touch Us.",
-      "link": "contactScroll"
     }
   ]
 }
