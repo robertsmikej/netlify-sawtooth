@@ -46,6 +46,10 @@
     ],
     "button_text": "Send Message"
   },
+  "major_services": [
+    "Website Development",
+    "Affiliate Marketing"
+  ],
   "contact_box": {
     "contact_header": "Contact Us",
     "contact_para": "Let us know how we can help you grow your business or product. We'd love to hear from you!",
