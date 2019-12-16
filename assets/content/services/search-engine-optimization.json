@@ -1,0 +1,16 @@
+{
+  "status": true,
+  "service_type": "Search Engine Optimization",
+  "sub_header": "SEO can make or break your site, especially locally.",
+  "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "icon": "/img/search-color.png",
+  "page_intro": {
+    "status": true,
+    "page_intro_header": "SEO",
+    "page_intro_para": "Search Engine Optimization"
+  },
+  "hero": {
+    "hero_header": "Search Engine Optimization",
+    "hero_background_video": "/img/discussion.mp4"
+  }
+}
