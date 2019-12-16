@@ -1,0 +1,16 @@
+{
+  "status": true,
+  "service_type": "Hosting and Maintenance",
+  "sub_header": "You have better things to do than maintain your website.",
+  "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "icon": "/img/hosting-color.png",
+  "page_intro": {
+    "status": true,
+    "page_intro_header": "Hosting and Maintenance",
+    "page_intro_para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "hero": {
+    "hero_header": "Hosting and Maintenance",
+    "hero_background_video": "/img/spy.mp4"
+  }
+}
