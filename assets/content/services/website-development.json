@@ -33,6 +33,10 @@
       "Shopify"
     ]
   },
+  "side_by_side": {
+    "header": "Web Development is Important",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
   "icon": "/img/design-color.png",
   "short_description": "Using some of the latest technologies and techniques allows us to do things that other agencies just can't do.",
   "hero": {
