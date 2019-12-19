@@ -12,9 +12,9 @@
         <div class="hero__sub__inner">
             <div class="hero__background__overlay"></div>
             <div class="hero__sub__text__container">
-                <h1 class="hero__sub__header">{{ hero.hero_header }}</h1>
+                <h1 v-if="hero.hero_header" class="hero__sub__header">{{ hero.hero_header }}</h1>
                 <hr class="hero__sub__hr">
-                <p class="hero__sub__para">{{ hero.hero_para }}</p>
+                <p v-if="hero.hero_para" class="hero__sub__para">{{ hero.hero_para }}</p>
             </div>
             <div class="hero____video__image__container">
                 <video playsinline autoplay muted loop class="hero__header__video">

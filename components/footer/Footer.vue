@@ -66,9 +66,6 @@ export default {
         },
         navStrip: function (name) {
             return name.split("_")[0].toLowerCase();
-        },
-        contactToggle: function(event) {
-            this.$nuxt.$emit("showContact", true);
         }
     }
 }
@@ -80,7 +77,6 @@ export default {
         background-color: var(--dark-grey);
         padding: 90px 0 50px;
         color: #FFF;
-        /* align-self: flex-end; */
         position: relative;
         z-index: 10;
     }

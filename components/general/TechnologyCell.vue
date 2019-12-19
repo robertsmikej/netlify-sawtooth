@@ -73,7 +73,4 @@ export default {
     font-weight: 300;
     margin: 10px auto 0;
 }
-.see__more__link {
-
-}
 </style>

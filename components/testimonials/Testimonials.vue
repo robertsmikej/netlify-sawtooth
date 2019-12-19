@@ -21,7 +21,6 @@
 
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
-// import { Carousel, Slide } from 'vue-carousel';
 
 export default {
     components: {

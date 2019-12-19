@@ -105,7 +105,7 @@ export default {
     }
     .process__text h3 {
         text-align: left;
-        margin: 10px 0 0;
+        margin: 0;
     }
     .process__text p {
         text-align: left;

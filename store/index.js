@@ -3,7 +3,6 @@ export const state = () => ({
     nav: [],
     sitewide: {},
     services: {},
-    subservices: {},
     privacyPolicy: [],
     portfolio: [],
     technology: [],
@@ -55,9 +54,6 @@ export const mutations = {
             state.services[da[d].slug] = da[d];
         }
     },
-    setSubServices(state, data) {
-        state.subservices = data;
-    },
     setPrivacy(state, data) {
         state.privacyPolicy = data[0];
     },
@@ -66,9 +62,6 @@ export const mutations = {
     },
     setPortfolio(state, data) {
         state.portfolio = sortItems(data);
-    },
-    setTestimonials(state, data) {
-        state.testimonials = sortItems(data);
     },
     setTechnology(state, data) {
         // console.log(data);
@@ -92,14 +85,6 @@ function getData(files) {
 
 export const actions = {
     async nuxtServerInit({ commit }) {
-        // let pageFiles = await require.context('~/assets/content/page/', false, /\.json$/);
-        // let pages = pageFiles.keys().map(key => {
-        //     let res = pageFiles(key);
-        //     res.slug = key.slice(2, -5);
-        //     return res;
-        // });
-        // await commit('setPages', pages);
-
         var pages = await require.context('~/assets/content/page/', false, /\.json$/);
         var p = pages.keys().map(key => {
             let res = pages(key);
@@ -132,14 +117,6 @@ export const actions = {
         });
         await commit('setServices', services);
 
-        var files = await require.context('~/assets/content/services-sub/', false, /\.json$/);
-        var file = files.keys().map(key => {
-            let res = files(key);
-            res.slug = key.slice(2, -5);
-            return res;
-        });
-        await commit('setSubServices', file);
-
         let processFiles = await require.context('~/assets/content/process/', false, /\.json$/);
         let processes = processFiles.keys().map(key => {
             let res = processFiles(key);
@@ -147,14 +124,6 @@ export const actions = {
             return res;
         });
         await commit('setProcesses', processes);
-
-        let testFiles = await require.context('~/assets/content/testimonials/', false, /\.json$/);
-        let tests = testFiles.keys().map(key => {
-            let res = testFiles(key);
-            res.slug = key.slice(2, -5);
-            return res;
-        });
-        await commit('setTestimonials', tests);
 
         var files = await require.context('~/assets/content/privacy-policy/', false, /\.json$/);
         var file = files.keys().map(key => {

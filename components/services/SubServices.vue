@@ -2,7 +2,7 @@
     <section class="sub__services page__section">
         <SectionHeader :header="subs.header" :para="subs.para"/>
         <div class="sub__cells">
-            <SubServiceCell v-for="(sub, index) in narrowedSubs" :key="index" :cell="sub"/>
+            <SubServiceCell v-for="(sub, index) in narrowedSubs" :key="index" :cell="sub" :parentType="parent.slug"/>
         </div>
     </section>
 </template>
@@ -17,22 +17,22 @@ export default {
         SubServiceCell
     },
     props: {
-        subs: Object
+        subs: Array,
+        parent: Object
     },
     computed: {
-        subservices: function () {
-            return this.$store.state.subservices
+        services: function () {
+            return this.$store.state.services
         },
         narrowedSubs: function () {
             let newSubs = {};
-            let servicesU = this.subs.list;
-            let subState = this.$store.state.subservices;
+            let servicesU = this.subs;
             for (let d in servicesU) {
-                let serviceused = servicesU[d[0]].sub_services_used[0];
-                for (let s in subState) {
-                    let subservice = subState[s];
-                    if (subservice.name === serviceused) {
-                        newSubs[subservice.name] = subservice;
+                let serviceused = servicesU[d];
+                for (let s in this.services) {
+                    let service = this.services[s];
+                    if (service.service_type === serviceused) {
+                        newSubs[service.service_type] = service;
                     }
                 }
             }
@@ -59,5 +59,8 @@ export default {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-around;
+}
+.sub__cells p {
+    
 }
 </style>

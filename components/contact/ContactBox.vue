@@ -1,6 +1,7 @@
 <template>
-    <div class="contact__box page__section">
+    <div id="contact__box" class="contact__box page__section">
         <div class="contact__box__inner">
+            <span id="contactScroll"></span>
             <SectionHeader :header="header" :para="para" v-if="header || para"/>
             <ContactForm :contact="contact"/>
         </div>
@@ -27,16 +28,19 @@ export default {
         sitewide: Object,
         header: String,
         para: String
-    },
-    methods: {
-        contactToggle: function(event) {
-            this.$nuxt.$emit("showContact", true);
-        }
     }
 }
 </script>
 
 <style>
+    #contactScroll {
+        position: absolute;
+        top: -70px;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
     body .contact__box {
         width: 100%;
         /* align-self: flex-end; */
@@ -45,7 +49,7 @@ export default {
         margin: 0;
         padding-bottom: 10vh;
     }
-    .contact__box::before {
+    /* .contact__box::before {
         content: "";
         position: absolute;
         top: 0px;
@@ -56,7 +60,7 @@ export default {
         transform: rotate(-1.3deg) skewX(-1.3deg);
         transform-origin: 0 0;
         z-index: 2;
-    }
+    } */
     .contact__box__inner {
         display: flex;
         flex-direction: column;

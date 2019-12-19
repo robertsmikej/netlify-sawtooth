@@ -23,8 +23,7 @@ module.exports = {
         title: pkg.name,
         meta: [
             { charset: 'utf-8' },
-            { name: 'viewport', content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" },
-            { hid: 'description', name: 'description', content: pkg.description }
+            { name: 'viewport', content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -45,14 +44,13 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        
+        '~plugins/vue-scrollto.js'
     ],
 
     /*
     ** Nuxt.js modules
     */
     modules: [
-        // Doc: https://github.com/nuxt-community/axios-module#usage
         '@nuxtjs/axios',
         '@nuxtjs/markdownit'
     ],
@@ -71,6 +69,10 @@ module.exports = {
     ** Build configuration
     */
     build: {
-        
+        extend(config, ctx) {
+            if(ctx.idDev) {
+                config.entry.push('eventsource-polyfill')
+            }
+        }
     }
 };

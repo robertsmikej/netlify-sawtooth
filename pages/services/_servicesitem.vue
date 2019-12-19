@@ -1,26 +1,29 @@
 <template>
     <main>
-        <Hero :hero="servicespage.hero"/>
+        <HeroSmall :hero="servicespage.hero"/>
         <PageIntro v-if="servicespage.page_intro" :intro="servicespage.page_intro"/>
-        <SubServices v-if="servicespage.sub_services" :subs="servicespage.sub_services"/>
+        <SubServices v-if="servicespage.sub_services" :subs="servicespage.sub_services.sub_services" :parent="servicespage"/>
+        <SideBySide v-if="servicespage.side_by_side" :data="servicespage.side_by_side" :image="servicespage.icon_large" :textSide="'left'"/>
         <Process v-if="servicespage.service_processes" :details="servicespage.service_processes" :process="getProcesses(servicespage.service_processes.processes_list, processes)"/>
         <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
 <script>
-import Hero from '~/components/hero/Hero.vue';
+import HeroSmall from '~/components/hero/HeroSmall.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import SubServices from '~/components/services/SubServices.vue';
+import SideBySide from '~/components/general/SideBySide.vue';
 import Process from '~/components/process/Process.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
     components: {
-        Hero,
+        HeroSmall,
         PageIntro,
         SubServices,
+        SideBySide,
         Process,
         ContactBox
     },

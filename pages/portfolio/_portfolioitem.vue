@@ -4,9 +4,7 @@
         <div class="portfolio__company__intro">
             <img v-if="portfoliopage.logo" :src="portfoliopage.logo" :alt="portfoliopage.name + ' Logo'" class="portfolio__logo"/>
             <SectionHeader :para="portfoliopage.para"/>
-            <!-- <SectionHeader :header="portfoliopage.name" :para="portfoliopage.para"/> -->
         </div>
-        <!-- {{portfoliopage}} -->
         <div class="page__section portfolio__content">
             <div class="portfolio__content__inner">
                 <div class="portfolio__text__content" v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>

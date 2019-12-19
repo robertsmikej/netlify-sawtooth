@@ -22,17 +22,25 @@ export default {
         featured: Array,
         header: String,
         para: String
-    },
-    computed: {
-        
     }
 }
 </script>
 
 <style>
 .recent__clients {
-    background: var(--turkish-blue);
-    color: #FFF;
+    background: var(--site-white);
+    color: var(--text-color);
+}
+.recent__clients::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--site-white);
+    transform: rotate(-1deg) skewX(-1deg);
+    transform-origin: 0 0;
 }
 .recent__client__cells {
     display: flex;
@@ -42,7 +50,7 @@ export default {
     justify-content: space-around;
     max-width: 1200px;
     width: 100%;
-    margin: 30px auto;
+    margin: 10px auto;
 }
 .recent__client__cell {
     display: flex;
@@ -51,13 +59,14 @@ export default {
     align-content: center;
     justify-content: center;
     flex: 1 1 auto;
-    margin: 10px;
-}
-.recent__client__image__container {
-
+    margin: 30px;
 }
 .recent__client__image {
     max-width: 220px;
     max-height: 120px;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 900px) {
+    
 }
 </style>

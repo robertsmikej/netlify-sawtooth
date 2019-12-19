@@ -3,7 +3,6 @@
         <Hero :hero="pageInfo.hero"/>
         <PageIntro :intro="pageInfo.page_intro"/>
         <section class="portfolio__page__cells page__section">
-            <!-- <SectionHeader :header="header" :para="para"/> -->
             <div class="portfolio__page__cells__inner">
                 <div class="portfolio__cell" v-for="(cell, index) in portfolio" :key="index">
                     <PortfolioCell v-if="cell.status" :cell="cell"/>
@@ -62,11 +61,10 @@ export default {
     background: var(--light-orange);
     color: #FFF;
     width: 100%;
-    
     margin: 0;
 }
 .portfolio__page__cells__inner {
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -74,5 +72,17 @@ export default {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+}
+.portfolio__cell {
+    flex: 1 1 30%;
+    margin: 10px;
+    min-width: 240px;
+}
+/* ------------------ MEDIA QUERY ------------------ */
+@media screen and (max-width: 700px) {
+    .portfolio__cell {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
 }
 </style>

@@ -5,7 +5,6 @@
             <div class="offer__grid__container">
                 <OfferCell v-for="(service, index) in services" :key="index" :service="service" :technologies="techno(service)"/>
             </div>
-            <!-- <SiteButton :buttonText="'See All Services'" :buttonLink="'/services'" :backgroundColor="4" :color="1"/> -->
         </div>
     </section>
 </template>
@@ -13,16 +12,14 @@
 <script>
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import OfferCell from '~/components/index/OfferCell.vue';
-import SiteButton from '~/components/general/SiteButton.vue';
 
 export default {
     components: {
         SectionHeader,
-        OfferCell,
-        SiteButton
+        OfferCell
     },
     props: {
-        services: Object,
+        services: Array,
         header: String,
         para: String,
         status: String,
@@ -58,10 +55,8 @@ export default {
 
 <style>
     .what__we__offer {
-        /* background-color: var(--light-orange); */
         position: relative;
     }
-
     .what__we__offer::before {
         content: "";
         position: absolute;

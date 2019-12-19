@@ -40,21 +40,20 @@ export default {
     .page__section__header::after {
         content: "";
         position: absolute;
-        bottom: -16px;
+        bottom: -6px;
         left: 50%;
         transform: translate(-50%, 0);
         height: 2px;
-        width: 60%;
+        width: 24%;
         z-index: -1;
-    }
-    .page__section:nth-of-type(even) .page__section__header::after {
         background: var(--light-orange);
     }
-    .page__section:nth-of-type(odd) .page__section__header::after {
-        background: #FFF;
+    .page__section .page__section__header::after {
+        
+
     }
     .page__section__header__para {
-        max-width: 700px;
+        max-width: 720px;
         margin: 10px auto;
     }
 </style>

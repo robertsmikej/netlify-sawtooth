@@ -53,6 +53,15 @@ collections:
         multiple: true
         displayFields: ["name"]
         required: false
+      - label: "Major Services"
+        name: "major_services"
+        widget: "relation"
+        collection: "services"
+        searchFields: ["service_type"]
+        valueField: "service_type"
+        multiple: true
+        displayFields: ["service_type"]
+        required: false
       - label: "Footer Details"
         name: "footer_details"
         widget: "object"
@@ -139,6 +148,24 @@ collections:
         - { label: 'Show Intro', name: 'status', widget: 'boolean', default: true, required: false }
         - { label: 'Page Intro Header', name: 'page_intro_header', widget: 'string', required: false }
         - { label: 'Page Intro Para', name: 'page_intro_para', widget: 'text', required: false }
+      - label: "Page Services"
+        name: "page_services"
+        widget: "relation"
+        collection: "services"
+        searchFields: ["service_type"]
+        valueField: "service_type"
+        multiple: true
+        displayFields: ["service_type"]
+        required: false
+      - label: "Page Testimonials"
+        name: "testimonials"
+        widget: "relation"
+        collection: "portfolio"
+        searchFields: ["name"]
+        valueField: "name"
+        multiple: true
+        displayFields: ["name"]
+        required: false
       - label: "Page Sections"
         name: "sections"
         widget: "list"
@@ -151,6 +178,7 @@ collections:
           widget: "list"
           fields:
           - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+      
 
   - name: 'services'
     label: 'Services'
@@ -167,6 +195,7 @@ collections:
       - { label: 'Sub Header', name: 'sub_header', widget: 'string', required: false }
       - { label: 'Short Description', name: 'short_description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - { label: 'Service Icon', name: 'icon', widget: 'image', required: false }
+      - { label: 'Service Icon Large', name: 'icon_large', widget: 'image', required: false }
       - { label: 'Service Link', name: 'link', widget: 'string', required: false }
       - label: "Page Intro"
         name: "page_intro"
@@ -199,25 +228,25 @@ collections:
             multiple: true
             displayFields: ["name"]
             required: false
-      - label: "Sub Services"
+      - label: "Sub-Services"
         name: "sub_services"
         widget: "object"
         fields:
-          - { label: 'Header', name: 'header', widget: 'string', required: false }
-          - { label: 'Intro Para', name: 'para', widget: 'text', required: false}
-          - label: "List"
-            name: "list"
-            widget: "list"
-            fields:
-            - label: "Sub Services Used"
-              name: "sub_services_used"
-              widget: "relation"
-              collection: "sub_services"
-              searchFields: ["name"]
-              valueField: "name"
-              multiple: true
-              displayFields: ["name"]
-              required: false
+          - label: "Sub Services"
+            name: "sub_services"
+            widget: "relation"
+            collection: "services"
+            searchFields: ["service_type"]
+            valueField: "service_type"
+            multiple: true
+            displayFields: ["service_type"]
+            required: false
+      - label: "Side By Side"
+        name: "side_by_side"
+        widget: "object"
+        fields:
+        - { label: 'Header', name: 'header', widget: 'string', required: false }
+        - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
       - label: "Processes"
         name: "service_processes"
         widget: "object"
@@ -251,33 +280,6 @@ collections:
         fields:
         - { label: 'Image Description', name: 'alt', widget: 'string', required: false }
         - { label: 'Image', name: 'image', widget: 'image', required: false }
-
-  - name: 'sub_services'
-    label: 'Services - Sub'
-    identifier_field: name
-    format: 'json'
-    folder: 'assets/content/services-sub'
-    create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
-    fields:
-    - { label: 'Name', name: 'name', widget: 'string' }
-    - { label: 'Short Description', name: 'short_description', widget: 'string', required: false }
-    - { label: 'Description', name: 'description', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-    - { label: 'Icon', name: 'icon', widget: 'image', required: false }
-    - label: "Text Section"
-      name: "text_section"
-      widget: "list"
-      fields:
-      - { label: 'Text Description', name: 'text_description', widget: 'string', required: false }
-      - { label: 'Text', name: 'text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-    - label: "Images"
-      name: "images"
-      widget: "list"
-      fields:
-      - { label: 'Image Description', name: 'alt', widget: 'string', required: false }
-      - { label: 'Image', name: 'image', widget: 'image', required: false }
   
   - name: 'process'
     label: 'Processes'

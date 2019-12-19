@@ -1,5 +1,5 @@
 <template>
-    <div class="hero" :class="checkSub(hero)">
+    <div class="hero__small" :class="checkSub(hero)">
         <div v-if="hero" class="hero__background">
             <div class="hero__background__overlay"></div>
             <video v-if="!hero.hero_background_image && hero.hero_background_video" playsinline autoplay muted loop class="hero__header__video">
@@ -41,7 +41,7 @@ export default {
     },
     methods: {
         checkVisible: function () {
-            let rect = document.getElementsByClassName("hero")[0].getBoundingClientRect();
+            let rect = document.getElementsByClassName("hero__small")[0].getBoundingClientRect();
             let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
             return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
         },
@@ -53,12 +53,10 @@ export default {
             }
         },
         checkSub: function (data) {
-            if (data) {
-                if (data.hero_sub_image) {
-                    return "hero__sub";
-                } else {
-                    return "hero__full";
-                }
+            if (data.hero_sub_image) {
+                return "hero__sub";
+            } else {
+                return "hero__full";
             }
         }
     },
@@ -74,7 +72,7 @@ export default {
 </script>
 
 <style>
-    .hero {
+    .hero__small {
         width: 100%;
         min-width: 100%;
         display: flex;
@@ -95,9 +93,9 @@ export default {
     .hero__sub .hero__background {
         display: none;
     }
-    .hero__background {
+    .hero__small .hero__background {
         width: 100%;
-        max-height: 800px;
+        max-height: 400px;
     }
     .hero__background__overlay {
         position: absolute;
@@ -117,12 +115,12 @@ export default {
     .hero__header__image img {
         min-width: 100%;
     }
-    .hero__inner {
+    .hero__small .hero__inner {
         z-index: 3;
         width: 100%;
         max-width: 1600px;
-        max-height: 840px;
-        padding: 50px 6vw 100px;
+        max-height: 340px;
+        padding: 50px 6vw 50px;
         margin: 0 auto;
         display: flex;
         flex-direction: row;

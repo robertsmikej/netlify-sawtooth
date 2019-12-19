@@ -1,18 +1,18 @@
 <template>
-    <div class="sub__service__cell">
+    <nuxt-link :to="cell.slug" class="sub__service__cell">
         <div class="sub__service__image__container">
-            <img :src="cell.icon" alt="" class="sub__service__image">
+            <img :src="cell.icon" :alt="cell.service_type" class="sub__service__image">
         </div>
         <div class="sub__service__text__container">
             <div class="sub__service__text__container__inner sub__service__text__container__front">
-                <h4 v-if="cell.name">{{ cell.name }}</h4>
+                <h4 v-if="cell.service_type">{{ cell.service_type }}</h4>
                 <p v-if="cell.short_description">{{ cell.short_description }}</p>
             </div>
             <div v-if="cell.description" class="sub__service__text__container__inner sub__service__text__container__rear">
                 <p>{{ cell.description }}</p>
             </div>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script>
@@ -21,7 +21,8 @@ export default {
         
     },
     props: {
-        cell: Object
+        cell: Object,
+        parentType: String
     },
     methods: {
         
@@ -36,8 +37,8 @@ export default {
 .sub__service__cell {
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    justify-content: center;
+    align-content: center;
+    justify-content: flex-start;
     background-color: #FFF;
     padding: 30px 16px;
     color: var(--text-color);
@@ -45,6 +46,7 @@ export default {
     width: 30%;
     cursor: pointer;
     margin: 10px;
+    text-decoration: none;
 }
 .sub__service__image__container {
 

@@ -20,10 +20,10 @@
                                 <h2 class="nav__link">{{ item.title }}</h2>
                                 <p class="nav__para">{{ item.para }}</p>
                             </nuxt-link>
-                            <div v-else-if="item.status && item.title === 'Contact'" @click="contactToggle()">
+                            <!-- <div v-else-if="item.status && item.title === 'Contact'" @click="contactToggle()">
                                 <h2 class="nav__link">{{ item.title }}</h2>
                                 <p class="nav__para">{{ item.para }}</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </nav>
@@ -42,6 +42,7 @@
 
 <script>
 import Logo from '~/components/header/Logo.vue';
+import VueScrollTo from '~/plugins/vue-scrollto.js';
 
 export default {
     data () {
@@ -65,9 +66,6 @@ export default {
         },
         navStrip: function (name) {
             return name.replace(" ", "-").toLowerCase();
-        },
-        contactToggle: function(toggle) {
-            this.$nuxt.$emit("contactShow", true);
         },
         navBarsToX: function() {
             this.navChanged = !this.navChanged;

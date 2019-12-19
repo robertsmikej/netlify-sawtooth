@@ -40,7 +40,6 @@ export default {
         padding: 26px 20px;
         margin: 5px 10px;
         flex: 1 1 46%;
-        /* max-width: 50%; */
         min-width: 290px;
         border-radius: 50px;
         display: flex;

@@ -56,7 +56,6 @@ export default {
         width: 100%;
         height: 100%;
         flex: 1;
-        color: var(--dark-grey);
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -88,5 +87,37 @@ export default {
         text-transform: uppercase;
         font-size: 16px;
         border-radius: 5px;
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 700px) {
+        .portfolio__cell__inner {
+            flex-direction: column;
+            text-decoration: none;
+        }
+        .portfolio__text__container {
+            opacity: 1;
+            position: relative;
+            top: auto;
+            left: auto;
+            width: 100%;
+            height: auto;
+            flex: 1;
+            padding: 20px 16px 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: center;
+            color: var(--dark-grey);
+            background: var(--site-white);
+            min-width: 100%;
+        }
+        .portfolio__cell:nth-of-type(even) .portfolio__cell__inner {
+            flex-direction: column;
+        }
+        .portfolio__name {
+            margin: 0 auto 6px;
+            text-transform: uppercase;
+        }
     }
 </style>

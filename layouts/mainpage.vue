@@ -164,7 +164,7 @@ a {
     font-weight: 400;
 }
 .site__section, .page__section {
-    padding: 7vh 16px 9vh;
+    padding: 7vh 16px 8vh;
     position: relative;
     box-sizing: border-box;
     display: flex;
