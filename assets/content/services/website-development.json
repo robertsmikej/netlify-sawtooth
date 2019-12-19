@@ -26,6 +26,7 @@
       "images": []
     }
   },
+  "icon_large": "/img/development-icon.png",
   "tech": {
     "tech_used": [
       "Netlify",
