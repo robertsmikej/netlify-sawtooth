@@ -1,6 +1,8 @@
 {
   "status": true,
   "name": "Click Funnels",
-  "sort_number": 3,
-  "icon": "/img/clickfunnels-logo.png"
+  "icon": "/img/clickfunnels-logo.png",
+  "hero": {
+    "hero_small": true
+  }
 }
