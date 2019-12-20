@@ -1,5 +1,5 @@
 {
-  "name": "Michael Roberts",
+  "name": "Active Employees",
   "list": [
     {
       "gif": "/img/grumpycatface.gif",
@@ -52,9 +52,5 @@
       },
       "email": "michael@sawtooth.dev"
     }
-  ],
-  "sort_number": 1,
-  "hero": {
-    "hero_small": true
-  }
+  ]
 }
