@@ -1,7 +1,9 @@
 {
   "status": true,
   "name": "ClickBank",
-  "sort_number": 2,
   "show_label": false,
-  "icon": "/img/clickbanklogo-small.png"
+  "icon": "/img/clickbanklogo-small.png",
+  "hero": {
+    "hero_small": true
+  }
 }
