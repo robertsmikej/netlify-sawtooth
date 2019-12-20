@@ -3,7 +3,8 @@
   "hero": {
     "hero_header": "Technology",
     "hero_para": "Take a look at the technology and integrations that drive our business.",
-    "hero_background_video": "/img/ipad.mp4"
+    "hero_background_video": "/img/ipad.mp4",
+    "hero_small": false
   },
   "page_intro": {
     "status": "published",
@@ -29,15 +30,5 @@
         }
       ]
     }
-  ],
-  "page_section_1": {
-    "status": "published",
-    "page_section_1_header": "Integrations",
-    "page_section_1_para": "Integrations we use to help your business."
-  },
-  "page_section_2": {
-    "status": "published",
-    "page_section_2_header": "Our Stack",
-    "page_section_2_para": "Technologies that we use."
-  }
+  ]
 }
