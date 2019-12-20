@@ -11,7 +11,8 @@
   "hero": {
     "hero_header": "Matthew Chertudi",
     "hero_para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "hero_background_video": "/img/motorcycles.mp4"
+    "hero_background_video": "/img/motorcycles.mp4",
+    "hero_small": true
   },
   "email": "matthew@sawtooth.dev"
 }
