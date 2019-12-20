@@ -1,6 +1,8 @@
 {
   "status": true,
   "name": "Has Offers (TUNE)",
-  "sort_number": 1,
-  "icon": "/img/hasofferslogo-small1.png"
+  "icon": "/img/hasofferslogo-small1.png",
+  "hero": {
+    "hero_small": true
+  }
 }
