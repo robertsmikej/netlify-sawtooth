@@ -11,7 +11,8 @@
   "hero": {
     "hero_header": "Audrey Roberts",
     "hero_para": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-    "hero_background_video": "/img/hotspringinghero.mp4"
+    "hero_background_video": "/img/hotspringinghero.mp4",
+    "hero_small": true
   },
   "email": "audrey@sawtooth.dev"
 }
