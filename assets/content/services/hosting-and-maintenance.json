@@ -11,7 +11,8 @@
   "short_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "hero": {
     "hero_header": "Hosting and Maintenance",
-    "hero_background_video": "/img/spy.mp4"
+    "hero_background_video": "/img/spy.mp4",
+    "hero__small": true
   },
   "page_intro": {
     "status": true,
