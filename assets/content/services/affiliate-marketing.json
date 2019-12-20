@@ -8,7 +8,7 @@
     "hero_header": "Affiliate Marketing",
     "hero_para": "Have a new and exciting product that you'd like us to help you sell? You've come to the right place.",
     "hero_background_video": "/img/typingfar.mp4",
-    "hero__small": true
+    "hero_small": true
   },
   "tech": {
     "tech_used": [
