@@ -2,6 +2,7 @@
   "page_name": "process",
   "hero": {
     "hero_header": "Process",
-    "hero_background_video": "/img/discussion.mp4"
+    "hero_background_video": "/img/discussion.mp4",
+    "hero_small": false
   }
 }
