@@ -10,6 +10,7 @@
     "page_intro_para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   },
   "hero": {
-    "hero_header": "Website Design"
+    "hero_header": "Website Design",
+    "hero__small": true
   }
 }
