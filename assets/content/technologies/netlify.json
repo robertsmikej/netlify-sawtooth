@@ -1,13 +1,13 @@
 {
   "status": true,
   "name": "Netlify",
-  "sort_number": 2,
   "show_label": true,
   "icon": "/img/netlify-logo.png",
   "short_description": "Netlify is everything you need to build fast, modern websites: continuous deployment, serverless functions, and so much more.",
   "description": "## Why We Use Netlify\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nConsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "hero": {
     "hero_header": "Netlify",
-    "hero_sub_image": "/img/netlify-logo.png"
+    "hero_sub_image": "/img/netlify-logo.png",
+    "hero_small": true
   }
 }
