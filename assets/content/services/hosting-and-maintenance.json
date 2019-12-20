@@ -12,7 +12,7 @@
   "hero": {
     "hero_header": "Hosting and Maintenance",
     "hero_background_video": "/img/spy.mp4",
-    "hero__small": true
+    "hero_small": true
   },
   "page_intro": {
     "status": true,
