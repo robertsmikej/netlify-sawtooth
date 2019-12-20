@@ -3,7 +3,8 @@
   "hero": {
     "hero_header": "Our Services",
     "hero_para": "",
-    "hero_background_video": "/img/teamwork-space.mp4"
+    "hero_background_video": "/img/teamwork-space.mp4",
+    "hero_small": false
   },
   "page_intro": {
     "status": "published",
