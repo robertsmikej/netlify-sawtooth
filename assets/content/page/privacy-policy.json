@@ -3,7 +3,8 @@
   "hero": {
     "hero_header": "Privacy Policy",
     "hero_para": "We take your privacy seriously. Seriously.",
-    "hero_background_video": "/img/spy.mp4"
+    "hero_background_video": "/img/spy.mp4",
+    "hero_small": true
   },
   "page_intro": {
     "status": "published",
