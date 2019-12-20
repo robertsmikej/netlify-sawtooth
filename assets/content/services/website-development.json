@@ -23,7 +23,20 @@
       ]
     ],
     "processes_icons": {
-      "images": []
+      "images": [
+        {
+          "alt": "Teamwork",
+          "icon": "/img/teamwork.png"
+        },
+        {
+          "alt": "Social World",
+          "icon": "/img/social-color.png"
+        },
+        {
+          "alt": "Great Ideas",
+          "icon": "/img/idea.png"
+        }
+      ]
     }
   },
   "icon_large": "/img/development-icon.png",
