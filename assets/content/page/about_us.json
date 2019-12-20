@@ -3,7 +3,8 @@
   "hero": {
     "hero_header": "About Us",
     "hero_para": "Put a face to a voice, or a name to a face!",
-    "hero_background_video": "/img/meeting-blur.mp4"
+    "hero_background_video": "/img/meeting-blur.mp4",
+    "hero_small": false
   },
   "page_intro": {
     "status": "published",
@@ -23,14 +24,5 @@
     {
       "header": "Current Partners"
     }
-  ],
-  "page_section_1": {
-    "status": "published",
-    "page_section_1_header": "Current Associates",
-    "page_section_1_para": "The Life Blood of the Business."
-  },
-  "page_section_2": {
-    "status": "published",
-    "page_section_2_header": "Current Partners"
-  }
+  ]
 }
