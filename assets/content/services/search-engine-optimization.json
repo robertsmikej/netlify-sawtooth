@@ -12,6 +12,6 @@
   "hero": {
     "hero_header": "Search Engine Optimization",
     "hero_background_video": "/img/discussion.mp4",
-    "hero__small": true
+    "hero_small": true
   }
 }
