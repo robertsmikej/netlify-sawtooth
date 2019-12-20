@@ -3,10 +3,6 @@
   "logo": "/img/pressed-dress-logo.png",
   "name": "Pressed Dress",
   "status": false,
-  "testimonials": {
-    "client_description": "It’s been a delight to work with Sawtooth Digital. We’re continually impressed by their knowledge, integrity and ability to drive profits up.",
-    "testimonial_text": "Bring Your Wedding Dress Out Of The Closest!"
-  },
   "main_image": "/img/pressed-dress-screenshot-640.jpg",
   "tech": {
     "tech_used": [
@@ -16,7 +12,8 @@
   "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "link": "https://www.presseddress.com",
   "hero": {
-    "hero_sub_image": "/img/pressed-dress-logo.png"
+    "hero_sub_image": "/img/pressed-dress-logo.png",
+    "hero_small": true
   },
   "category": [
     "Website Design",
