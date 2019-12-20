@@ -1,11 +1,10 @@
 {
-  "status": "published",
-  "sort_number": 5,
   "process_header": "Propel",
   "process_short_description": "Nurturing your website and brand after launch is just as, if not more, important than the process before. Allow us to help you take your business to the next level with optional Social Media management, Website Hosting, and allocated monthly time for any needed revisions.",
   "hero": {
     "hero_header": "Propel",
     "hero_para": "Nurturing your website and brand after launch is just as, if not more, important than the process before. Allow us to help you take your business to the next level with optional Social Media management, Website Hosting, and allocated monthly time for any needed revisions.",
-    "hero_background_video": "/img/secretary.mp4"
+    "hero_background_video": "/img/secretary.mp4",
+    "hero_small": true
   }
 }
