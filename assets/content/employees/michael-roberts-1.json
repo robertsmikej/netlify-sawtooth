@@ -1,0 +1,60 @@
+{
+  "name": "Michael Roberts",
+  "list": [
+    {
+      "gif": "/img/grumpycatface.gif",
+      "name": "Audrey Alexander",
+      "long_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "short_text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "status": true,
+      "speciality": "Affiliate Marketing",
+      "title": "Associate",
+      "headshot": "/img/audrey_roberts_boise_idaho_sawtooth.jpg",
+      "hero": {
+        "hero_header": "Audrey Roberts",
+        "hero_para": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+        "hero_background_video": "/img/hotspringinghero.mp4",
+        "hero_small": true
+      },
+      "email": "audrey@sawtooth.dev"
+    },
+    {
+      "gif": "/img/punchingman.gif",
+      "name": "Matthew Chertudi",
+      "long_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "short_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "status": true,
+      "speciality": "Front-End Web Development",
+      "title": "Associate",
+      "headshot": "/img/matthew_chertudi_boise_idaho_sawtooth.jpg",
+      "hero": {
+        "hero_header": "Matthew Chertudi",
+        "hero_para": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "hero_background_video": "/img/motorcycles.mp4",
+        "hero_small": true
+      },
+      "email": "matthew@sawtooth.dev"
+    },
+    {
+      "gif": "/img/catbreadface.gif",
+      "name": "Michael Roberts",
+      "long_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "short_text": "Michael Roberts was born and raised in the neighborhood of Compton in Los Angeles.",
+      "status": true,
+      "speciality": "Front-End Web Development",
+      "title": "Associate",
+      "headshot": "/img/michael_roberts_boise_idaho_sawtooth.jpg",
+      "hero": {
+        "hero_header": "Michael Roberts",
+        "hero_para": "Michael Roberts was born and raised in the neighborhood of Compton in Los Angeles.",
+        "hero_background_video": "/img/hotspringinghero.mp4",
+        "hero_small": true
+      },
+      "email": "michael@sawtooth.dev"
+    }
+  ],
+  "sort_number": 1,
+  "hero": {
+    "hero_small": true
+  }
+}
