@@ -11,6 +11,6 @@
   },
   "hero": {
     "hero_header": "Website Design",
-    "hero__small": true
+    "hero_small": true
   }
 }
