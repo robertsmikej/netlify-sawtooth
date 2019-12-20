@@ -235,9 +235,6 @@ export default {
         text-decoration: none;
         display: block;
     }
-    /* .nav__item:hover .nav__link {
-        color: var(--dark-grey);
-    } */
     .nav__link {
         color: #FFF;
         font-size: 3em;
@@ -251,8 +248,9 @@ export default {
         font-size: 1.8em;
         color: var(--dark-grey);
     }
+
     /* ------------------ MEDIA QUERY ------------------ */
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 1000px) {
         .site__logo {
             height: 42px;
         }

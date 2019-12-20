@@ -1,6 +1,6 @@
 <template>
     <main>
-        <HeroSmall :hero="servicespage.hero"/>
+        <Hero :hero="servicespage.hero"/>
         <PageIntro v-if="servicespage.page_intro" :intro="servicespage.page_intro"/>
         <SubServices v-if="servicespage.sub_services" :subs="servicespage.sub_services.sub_services" :parent="servicespage"/>
         <SideBySide v-if="servicespage.side_by_side" :data="servicespage.side_by_side" :image="servicespage.icon_large" :textSide="'left'"/>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import HeroSmall from '~/components/hero/HeroSmall.vue';
+import Hero from '~/components/hero/Hero.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import SubServices from '~/components/services/SubServices.vue';
 import SideBySide from '~/components/general/SideBySide.vue';
@@ -20,7 +20,7 @@ import ContactBox from '~/components/contact/ContactBox.vue';
 export default {
     scrollToTop: true,
     components: {
-        HeroSmall,
+        Hero,
         PageIntro,
         SubServices,
         SideBySide,

@@ -1,6 +1,5 @@
 <template>
-
-    <nuxt-link :to="'/about-us/' + employee.slug" class="employee__cell__inner">
+    <nuxt-link :to="'/about-us/' + employee.name.toLowerCase().replace(' ', '-')" class="employee__cell__inner">
         <div class="employee__card__wrapper">
             <div class="employee__cell__img__container employee__card">
                 <div v-if="employee.headshot" class="employee__card__front">

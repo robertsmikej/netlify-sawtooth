@@ -141,6 +141,7 @@ collections:
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+        - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true, required: false }
       - label: "Page Intro"
         name: "page_intro"
         widget: "object"
@@ -212,9 +213,10 @@ collections:
         - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
         - { label: 'Hero Button Text', name: 'hero_button_text', widget: 'string', required: false }
         - { label: 'Hero Button Link', name: 'hero_button_link', widget: 'string', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'file', required: false }
+        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'file', required: false }
+        - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true, required: false }
       - label: "Technologies and Integrations"
         name: "tech"
         widget: "object"
@@ -304,6 +306,7 @@ collections:
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+        - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true, required: false }
 
   - name: 'portfolio'
     label: 'Portfolio Items'
@@ -342,6 +345,7 @@ collections:
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+        - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true, required: false }
       - label: "Technologies and Integrations"
         name: "tech"
         widget: "object"
@@ -396,6 +400,7 @@ collections:
         - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
         - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
         - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+        - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true, required: false }
       - label: "Text Section"
         name: "text_section"
         widget: "list"
@@ -432,22 +437,27 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 'Status', name: 'status', widget: 'select', options: ["published", "draft", "deleted"], required: false }
-      - { label: 'Sort Number', name: "sort_number", widget: "number", default: 1, valueType: "int", min: 1, max: 40, required: false }
-      - { label: 'Employee Name', name: 'name', widget: 'string', required: false }
-      - { label: 'Employee Title', name: 'title', widget: 'string', required: false }
-      - { label: 'Speciality', name: 'speciality', widget: 'string', required: false }
-      - { label: 'Employee Email Address', name: 'email', widget: 'string', required: false }
-      - { label: 'Employee Headshot', name: 'headshot', widget: 'file', required: false }
-      - { label: 'Employee Gif', name: 'gif', widget: 'file', required: false }
-      - { label: 'Employee Short Description', name: 'short_text', widget: 'text', required: false }
-      - { label: 'Employee Long Text', name: 'long_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
-      - label: "Hero"
-        name: "hero"
-        widget: "object"
+      - { label: 'Employee List Name', name: 'name', widget: 'string', required: false }
+      - label: "Employees"
+        name: "list"
+        widget: "list"
         fields:
-        - { label: 'Hero Header', name: 'hero_header', widget: 'string', required: false }
-        - { label: 'Hero Para', name: 'hero_para', widget: 'text', required: false }
-        - { label: 'Hero Background Image', name: 'hero_background_image', widget: 'image', required: false }
-        - { label: 'Hero Background Video', name: 'hero_background_video', widget: 'file', required: false }
-        - { label: 'Hero Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+        - { label: 'Name', name: 'name', widget: 'string', required: false }
+        - { label: 'Show Employee', name: 'status', widget: 'boolean'}
+        - { label: 'Title', name: 'title', widget: 'string', required: false }
+        - { label: 'Speciality', name: 'speciality', widget: 'string', required: false }
+        - { label: 'Email Address', name: 'email', widget: 'string', required: false }
+        - { label: 'Headshot', name: 'headshot', widget: 'image', required: false }
+        - { label: 'Gif', name: 'gif', widget: 'file', required: false }
+        - { label: 'Short Description', name: 'short_text', widget: 'text', required: false }
+        - { label: 'Long Text', name: 'long_text', widget: 'markdown', required: false, buttons: ["bold", "italic", "link", "heading-two", "heading-three", "bulleted-list", "numbered-list"] }
+        - label: "Hero"
+          name: "hero"
+          widget: "object"
+          fields:
+          - { label: 'Header', name: 'hero_header', widget: 'string', required: false }
+          - { label: 'Para', name: 'hero_para', widget: 'text', required: false }
+          - { label: 'Background Image', name: 'hero_background_image', widget: 'image', required: false }
+          - { label: 'Background Video', name: 'hero_background_video', widget: 'file', required: false }
+          - { label: 'Sub Image', name: 'hero_sub_image', widget: 'image', required: false }
+          - { label: 'Smaller Hero', name: 'hero_small', widget: 'boolean', default: true}

@@ -5,12 +5,39 @@ module.exports = {
     generate: {
         routes: function () {
             const fs = require('fs');
-            return fs.readdirSync('./assets/content/portfolio').map(file => {
+            let portfolio = fs.readdirSync('./assets/content/portfolio').map(file => {
                 return {
                     route: `/portfolio/${file.split(".")[0]}`, // Remove the .json from the end of the filename
                     payload: require(`./assets/content/portfolio/${file}`),
                 };
             });
+            let services = fs.readdirSync('./assets/content/services').map(file => {
+                return {
+                    route: `/services/${file.split(".")[0]}`, // Remove the .json from the end of the filename
+                    payload: require(`./assets/content/services/${file}`),
+                };
+            });
+            let technologies = fs.readdirSync('./assets/content/technologies').map(file => {
+                return {
+                    route: `/technology/${file.split(".")[0]}`, // Remove the .json from the end of the filename
+                    payload: require(`./assets/content/technologies/${file}`),
+                };
+            });
+
+            let employees = fs.readdirSync('./assets/content/employees').map(file => {
+                return {
+                    route: `/technology/${file.split(".")[0]}`, // Remove the .json from the end of the filename
+                    payload: require(`./assets/content/employees/${file}`),
+                };
+            });
+            let emps = employees[0].payload.list.map(emp => {
+                return {
+                    route: "/about-us/" + emp.name.toLowerCase().replace(" ", "-"),
+                }
+            });
+            return Promise.all([portfolio, services, technologies, emps]).then(values => {
+                return [...values[0], ...values[1], ...values[2], ...values[3]]
+            })
         },
     },
     /*

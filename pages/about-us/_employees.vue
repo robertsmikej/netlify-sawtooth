@@ -2,7 +2,17 @@
     <main>
         <Hero :hero="employeepage.hero"/>
         <section class="page__section employee__content">
-            <Employee v-if="employeepage.status === 'published'" :employee="employeepage" class="employee__cell"/>
+            <div class="employee__intro">
+                <div v-if="employeepage.headshot" class="employee__page__headshot">
+                    <img :src="employeepage.headshot" :alt="employeepage.name + ' - Boise Idaho'" class="employee__page__headshot__img">
+                </div>
+                <div class="employee__intro__text">
+                    <h2 v-if="employeepage.name" class="employee__name">{{ employeepage.name }}</h2>
+                    <h3 v-if="employeepage.title" class="employee__title">{{ employeepage.title }}</h3>
+                    <h4 v-if="employeepage.speciality" class="employee__title--2">{{ employeepage.speciality }}</h4>
+                </div>
+                
+            </div>
             <div v-html="$md.render(employeepage.long_text)" v-if="employeepage.long_text" class="employee__long__text"></div>
         </section>
         <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
@@ -39,14 +49,15 @@ export default {
     //         ]
     //     }
     // },
-    async asyncData({ params, payload }) {
+    async asyncData({ params, payload, store }) {
         if (payload) {
             return { 
                 employeepage: payload
             };
         } else if (params) {
+            let employee = params.employees;
             return {
-                employeepage: await require(`~/assets/content/employees/${params.employees}.json`),
+                employeepage: store.state.employees[employee],
             }
         }
     },
@@ -64,7 +75,31 @@ export default {
     align-content: center;
     justify-content: center;
 }
+.employee__intro {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    margin: 0 auto 40px;
+}
+.employee__intro__text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
 .employee__long__text {
+    width: 100%;
+    text-align: left;
+}
+
+.employee__page__headshot {
+    width: 290px;
+}
+.employee__page__headshot img {
     width: 100%;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-    <div class="hero" :class="checkSub(hero)">
+    <div :class="hero.hero_small ? 'hero__small' : 'hero__regular'" class="hero">
         <div v-if="hero" class="hero__background">
             <div class="hero__background__overlay"></div>
             <video v-if="!hero.hero_background_image && hero.hero_background_video" playsinline autoplay muted loop class="hero__header__video">
                 <source :src="hero.hero_background_video" type="video/mp4">
             </video>
-            <picture v-if="hero.hero_background_image && !hero.hero_background_video" class="hero__header__image">
+            <picture v-if="hero.hero_background_image && !hero.hero_background_video" class="hero__background__image">
                 <source :srcset="hero.hero_background_image" media="(min-width: 900px)">
                 <img :src="hero.hero_background_image"/>
             </picture>
@@ -37,7 +37,8 @@ export default {
         SiteButton
     },
     props: {
-        hero: Object
+        hero: Object,
+        size: String,
     },
     methods: {
         checkVisible: function () {
@@ -52,15 +53,18 @@ export default {
                 document.getElementsByClassName("header")[0].classList.add("header__dark");
             }
         },
-        checkSub: function (data) {
-            if (data) {
-                if (data.hero_sub_image) {
-                    return "hero__sub";
-                } else {
-                    return "hero__full";
-                }
-            }
-        }
+        checkSmall: function (text) {
+
+        },
+        // checkSub: function (data) {
+        //     if (data) {
+        //         if (data.hero_sub_image) {
+        //             return "hero__sub";
+        //         } else {
+        //             return "hero__full";
+        //         }
+        //     }
+        // }
     },
     mounted() {
         document.getElementsByClassName("header")[0].classList.remove("header__dark");
@@ -88,7 +92,10 @@ export default {
         overflow: hidden;
         margin: 0;
     }
-    .hero__sub {
+    .hero__small {
+
+    }
+    .hero__image__only {
         background: linear-gradient(to bottom right, var(--light-orange), var(--logo-orange));
         opacity: 1;
     }
@@ -98,6 +105,10 @@ export default {
     .hero__background {
         width: 100%;
         max-height: 800px;
+    }
+    .hero__small .hero__background {
+        max-height: 400px;
+        height: 400px;
     }
     .hero__background__overlay {
         position: absolute;
@@ -114,8 +125,16 @@ export default {
         height: auto;
         min-height: 100%;
     }
-    .hero__header__image img {
-        min-width: 100%;
+    .hero__background__image {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .hero__background__image img {
+        width: 100%;
+        max-width: 2800px;
+        max-height: 600px;
+        min-height: 100%;
     }
     .hero__inner {
         z-index: 3;
@@ -135,7 +154,10 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .hero__sub .hero__inner {
+    .hero__small .hero__inner {
+        padding: 0px 6vw 0px;
+    }
+    .hero__image__only .hero__inner {
         position: relative;
         top: auto;
         left: auto;
@@ -179,15 +201,29 @@ export default {
         margin: 40px 0;
         width: 100%;
     }
-    .hero__sub__image, .hero__sub__image img {
+    .hero__image__only, .hero__image__only img {
         align-self: center;
         width: auto;
         margin: 0 auto;
     }
     /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 1250px) {
+        .hero__small .hero__background {
+            max-height: 100%;
+            height: auto;
+        }
+        .hero__small .hero__hr {
+            margin: 0;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 900px) {
+
         .hero__inner {
             padding: 50px 6vw 50px;
+        }
+        .hero__small .hero__inner {
+            padding: 0 6vw;
         }
         .hero__background {
             min-height: 50vh;
@@ -195,6 +231,9 @@ export default {
             flex-direction: row;
             align-content: center;
             justify-content: center;
+        }
+        .hero__small .hero__background {
+            min-height: 300px;
         }
         .hero__text__container {
             max-width: 450px;
@@ -208,22 +247,38 @@ export default {
         }
     }
     /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 768px) {
+        
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 700px) {
         .hero__inner {
             padding: 50px 5vw 50px;
         }
-        .hero__sub .hero__inner {
+        .hero__small .hero__inner {
+            top: 60%;
+        }
+        .hero__image__only .hero__inner {
             flex-wrap: wrap;
             padding: 100px 3vw 70px;
         }
-        .hero__sub .hero__sub__image__container {
+        .hero__image__only .hero__sub__image__container {
             padding: 10px;
         }
-        .hero__sub .hero__sub__image__container {
+        .hero__image__only .hero__sub__image__container {
             margin: 30px auto 0;
         }
         .hero__background {
             max-height: 500px;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 600px) {
+        .hero__background__overlay {
+            opacity: .6;
+        }
+        .hero__small .hero__background {
+            min-height: 260px;
         }
     }
 </style>

@@ -8,7 +8,7 @@
             <div class="work__text">
                 <SectionHeader :header="header" :para="para"/>
             </div>
-            <SiteButton :buttonText="'About Us'" :backgroundColor="1" :color="1"/>
+            <SiteButton :buttonLink="'/about-us'" :buttonText="'About Us'" :backgroundColor="1" :color="1"/>
         </div>
     </section>
 </template>

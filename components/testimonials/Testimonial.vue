@@ -1,9 +1,9 @@
 <template>
     <section class="page__section testimonial__section">
-        <div class="testimonial__inner">
+        <nuxt-link v-if="testimonial.quote" :to="'/portfolio/' + testimonial.name.toLowerCase().replace('.', '-')" class="testimonial__inner">
             <p>{{ testimonial.quote }}</p>
-            <h5 class="testimonial__name">- {{ testimonial.name }}</h5>
-        </div>
+            <h4 v-if="testimonial.name" class="testimonial__name">- {{ testimonial.name }}</h4>
+        </nuxt-link>
     </section>
 </template>
 
@@ -28,7 +28,7 @@ export default {
 
 <style>
 .testimonial__section {
-    background-color: var(--light-blue);
+    background-color: var(--light-orange);
 }
 .testimonial__section::before {
     content: "";
@@ -37,8 +37,8 @@ export default {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: var(--light-blue);
-    transform: rotate(-1deg) skewX(-1deg);
+    background-color: var(--light-orange);
+    transform: rotate(1deg) skewX(1deg);
     transform-origin: 0 0;
 }
 .testimonial__inner {
@@ -49,6 +49,25 @@ export default {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
+    padding: 10px 30px 20px;
+    background-color: var(--site-white);
+    border-radius: 10px;
+    text-decoration: none;
+}
+.testimonial__inner p {
+    line-height: 1.4em;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+.testimonial__inner p::before {
+    content: '\201C';
+    position: absolute;
+    top: 6px;
+    left: -22px;
+    color: rgba(14, 215, 244, .5);
+    font-size: 50px;
+    z-index: 0;
 }
 .testimonial__name {
     text-align: right;

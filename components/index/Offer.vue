@@ -69,7 +69,7 @@ export default {
         transform-origin: 0 0;
         z-index: 2;
     }
-    .what__we__offer::after {
+    /* .what__we__offer::after {
         content: "";
         position: absolute;
         bottom: 0px;
@@ -80,7 +80,7 @@ export default {
         transform: rotate(1.3deg) skewX(1.3deg);
         transform-origin: 0 0;
         z-index: 2;
-    }
+    } */
     .offer__grid__container {
         margin: 24px auto 16px;
         max-width: 1200px;

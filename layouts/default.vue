@@ -217,7 +217,7 @@ a {
     h1 {
         font-size: 2em;
         line-height: 1em;
-        margin: 10px 0;
+        margin: 4px 0;
     }
     h2 {
         font-size: 1.6em;

@@ -16,9 +16,13 @@ export default {
     scrollToTop: true,
     components: {
         Hero,
-        PageIntro
+        PageIntro,
+        ContactBox
     },
     computed: {
+        sitewide: function () {
+            return this.$store.state.sitewide
+        },
         pageInfo: function () {
             return this.$store.state.pages.privacy_policy
         },

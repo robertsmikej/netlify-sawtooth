@@ -7,7 +7,9 @@
         </div>
         <div class="page__section portfolio__content">
             <div class="portfolio__content__inner">
-                <div class="portfolio__text__content" v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>
+                <div class="portfolio__text__content">
+                    <div class="portfolio__text"  v-if="portfoliopage.long_description" v-html="$md.render(portfoliopage.long_description)"></div>
+                </div>
                 <div class="portfolio__tech__used portfolio__side__bar">
                     <div class="portfolio__tech__section" v-if="portfoliopage.category">
                         <h4 class="portfolio__header">How We Help Them</h4>
@@ -29,6 +31,10 @@
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
+                </div>
+                <div v-if="portfoliopage.testimonial" class="portfolio__text__testimonial">
+                    <h4>Client Testimonial</h4>
+                    <p>"{{ portfoliopage.testimonial.quote }}"</p>
                 </div>
             </div>
         </div>
@@ -174,10 +180,36 @@ export default {
 .portfolio__text__content {
     flex: 1 1 50%;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+}
+.portfolio__text {
+    align-self: flex-start;
+}
+.portfolio__text__testimonial {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 0;
+    align-self: flex-end;
+    background-color: var(--lime-green);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--site-white);
+}
+.portfolio__text__testimonial h4 {
+    text-decoration: underline;
+    margin: 0 0 10px;
+}
+.portfolio__text__testimonial p {
+    max-width: 90%;
+    margin: 10px auto 0;
 }
 .portfolio__text__content p {
     margin: 0 auto 10px;
     text-align: left;
+    
 }
 .services__used__cell .tech__cell__inner {
     margin: 20px 0;

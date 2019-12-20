@@ -7,7 +7,7 @@ export const state = () => ({
     portfolio: [],
     technology: [],
     integrations: [],
-    employees: []
+    employees: {}
 });
 
 function sortItems(data) {
@@ -71,8 +71,25 @@ export const mutations = {
         state.integrations = sortItems(data);
     },
     setEmployees(state, data) {
-        state.employees = sortItems(data);
+        let newObj = {};
+        for (let d in data.list) {
+            let datas = data.list[d];
+            newObj[datas.name.toLowerCase().replace(/ /g, "-")] = datas;
+        }
+        state.employees = newObj;
     }
+};
+
+export const getters = {
+    sitewide: state => state.sitewide,
+    nav: state => state.nav,
+    pages: state => state.pages,
+    services: state => state.services,
+    privacyPolicy: state => state.privacyPolicy,
+    portfolio: state => state.portfolio,
+    technologies: state => state.technologies,
+    integrations: state => state.integrations,
+    employees: state => state.employees
 };
 
 function getData(files) {
@@ -163,6 +180,6 @@ export const actions = {
             res.slug = key.slice(2, -5);
             return res;
         });
-        await commit('setEmployees', file);
+        await commit('setEmployees', file[0]);
     },
 };
