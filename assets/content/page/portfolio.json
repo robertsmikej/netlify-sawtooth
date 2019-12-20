@@ -2,16 +2,12 @@
   "page_name": "portfolio",
   "hero": {
     "hero_header": "Our Work",
-    "hero_background_video": "/img/cattype.mp4"
+    "hero_background_video": "/img/cattype.mp4",
+    "hero_small": false
   },
   "page_intro": {
     "status": "published",
     "page_intro_header": "Importance Of Past Work",
     "page_intro_para": "At the end of the day, we realize how important it is for us to show you that we can help make you money."
-  },
-  "page_section_1": {
-    "status": "deleted",
-    "page_section_1_header": "",
-    "page_section_1_para": ""
   }
 }
