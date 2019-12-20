@@ -3,7 +3,8 @@
   "hero": {
     "hero_header": "Thanks For Reaching Out!",
     "hero_para": "We'll be in touch soon.",
-    "hero_sub_image": "/img/deal_handshakes.png"
+    "hero_sub_image": "/img/deal_handshakes.png",
+    "hero_small": true
   },
   "page_intro": {
     "status": false
