@@ -2,10 +2,6 @@
   "para": "Business Dedicated to kicking ass and taking names on the high seas of Idaho",
   "name": "Rock Climbing Extreme",
   "status": "published",
-  "testimonials": {
-    "client_description": "State Legislator And Business Owner",
-    "testimonial_text": "When we asked for something out of the ordinary, the guys at Sawtooth Digital went above and beyond to make our vision a reality."
-  },
   "main_image": "/img/sawtoothdev-screen-small.jpg",
   "tech": {
     "tech_used": [
@@ -17,7 +13,8 @@
   "link": "https://www.google.com",
   "hero": {
     "hero_header": "Rock Climbing Extreme",
-    "hero_background_video": "/img/rockclimbing.mp4"
+    "hero_background_video": "/img/rockclimbing.mp4",
+    "hero_small": true
   },
   "category": [
     "Website Development",
