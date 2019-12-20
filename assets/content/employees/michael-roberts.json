@@ -11,7 +11,8 @@
   "hero": {
     "hero_header": "Michael Roberts",
     "hero_para": "Michael Roberts was born and raised in the neighborhood of Compton in Los Angeles.",
-    "hero_background_video": "/img/hotspringinghero.mp4"
+    "hero_background_video": "/img/hotspringinghero.mp4",
+    "hero_small": true
   },
   "email": "michael@sawtooth.dev"
 }
