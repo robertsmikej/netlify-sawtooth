@@ -8,6 +8,15 @@
   "link": "https://www.kindpup.com",
   "logo": "/img/kindpuplogo-medium.png",
   "hero": {
+    "hero_header": "KinpPup",
+    "hero_background_image": "/img/kindpup-hero.jpg",
     "hero_small": true
+  },
+  "tech": {
+    "tech_used": [
+      "Shopify",
+      "Vue.js",
+      "Netlify"
+    ]
   }
 }
