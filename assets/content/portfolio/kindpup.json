@@ -1,0 +1,13 @@
+{
+  "status": true,
+  "name": "KindPup",
+  "para": "KindPup develops and manufactures CBD for use with our best friends: our pets.",
+  "category": [
+    "Website Development"
+  ],
+  "link": "https://www.kindpup.com",
+  "logo": "/img/kindpuplogo-medium.png",
+  "hero": {
+    "hero_small": true
+  }
+}
