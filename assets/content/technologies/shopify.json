@@ -4,8 +4,10 @@
   "show_label": true,
   "icon": "/img/shopify-logo.png",
   "short_description": "Shopify is a complete commerce platform that lets you start, grow, and manage a business.",
+  "description": "Shopify is a commerce platform that allows anyone to set up an online store and sell their products. Merchants can also sell their products in person with Shopify POS.\n\nShopify is  the leading commerce platform designed for businesses of all sizes. Whether you sell online, on social media, in store, or out of the trunk of your car, Shopify has you covered. The first Shopify store was their own, and it’s been their mission to make commerce better for everyone ever since.",
   "hero": {
     "hero_header": "Shopify",
+    "hero_background_image": "/img/general-green-back.jpg",
     "hero_small": true
   }
 }
