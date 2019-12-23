@@ -2,7 +2,11 @@
   "status": true,
   "name": "Click Funnels",
   "icon": "/img/clickfunnels-logo.png",
+  "short_description": "Enabling People To Grow Their Companies Through Sales Funnels",
+  "description": "ClickFunnels is a website and funnel builder that helps businesses sell their products and services online.",
   "hero": {
+    "hero_header": "Click Funnels",
+    "hero_background_image": "/img/general-tech-back3.jpg",
     "hero_small": true
   }
 }
