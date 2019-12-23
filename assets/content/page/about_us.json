@@ -4,7 +4,7 @@
     "hero_header": "About Us",
     "hero_para": "Put a face to a voice, or a name to a face!",
     "hero_background_video": "/img/meeting-blur.mp4",
-    "hero_small": false
+    "hero_small": true
   },
   "page_intro": {
     "status": "published",
