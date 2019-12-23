@@ -3,7 +3,11 @@
   "name": "ClickBank",
   "show_label": false,
   "icon": "/img/clickbanklogo-small.png",
+  "short_description": "ClickBank Vendors can grow their empire through creating both digital and physical products.",
+  "description": "ClickBank is a performance marketing company with a global presence, providing their clients with secure payment processing; reliable tracking and payouts; and an extensive affiliate network.",
   "hero": {
+    "hero_header": "Click Bank",
+    "hero_background_image": "/img/general-tech-back2.jpg",
     "hero_small": true
   }
 }
