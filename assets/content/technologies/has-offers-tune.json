@@ -1,8 +1,12 @@
 {
   "status": true,
-  "name": "Has Offers (TUNE)",
+  "name": "Has Offers by TUNE",
   "icon": "/img/hasofferslogo-small1.png",
+  "short_description": "TUNE makes the industry’s most flexible SaaS platform for managing marketing partnerships across mobile and web. ",
+  "description": "TUNE makes the industry’s most flexible SaaS platform for managing marketing partnerships across mobile and web. On one platform, you can maximize ROI from onboarding through payout with your most important partners — affiliates, networks, influencers, agencies, and any other business development relationships.",
   "hero": {
+    "hero_header": "Has Offers by TUNE",
+    "hero_background_image": "/img/general-tech-back.jpg",
     "hero_small": true
   }
 }
