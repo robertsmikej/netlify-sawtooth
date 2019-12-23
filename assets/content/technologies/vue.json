@@ -7,7 +7,8 @@
   "hero": {
     "hero_header": "Vue.js",
     "hero_para": "Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.",
-    "hero_sub_image": "/img/vue-logo.png",
+    "hero_background_image": "/img/general-greenblue-back.jpg",
+    "hero_sub_image": "",
     "hero_small": true
   }
 }
