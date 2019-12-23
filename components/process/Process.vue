@@ -161,6 +161,9 @@ export default {
     }
      /* ----------------------------  MEDIA QUERY ------------------------------ */
     @media screen and (max-width:1000px) {
+        .process__images {
+            display: none;
+        }
        .process__text__images {
             flex-direction: column;
             justify-content: center;

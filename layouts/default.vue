@@ -205,8 +205,8 @@ a {
         line-height: 17px;
     }
 }
-    /* ----------------------------  MEDIA QUERY ------------------------------ */
-@media screen and (max-width:700px) {
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width: 700px) {
     html {
         font-size: 16px;
         line-height: 16px;
@@ -221,6 +221,15 @@ a {
     }
     h2 {
         font-size: 1.6em;
+        line-height: 1em;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 1.5em;
         line-height: 1em;
         font-weight: 500;
         margin: 10px 0;

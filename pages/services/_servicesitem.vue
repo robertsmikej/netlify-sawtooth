@@ -1,6 +1,6 @@
 <template>
     <main>
-        <Hero :hero="servicespage.hero"/>
+        <Hero v-if="servicespage.hero" :hero="servicespage.hero"/>
         <PageIntro v-if="servicespage.page_intro" :intro="servicespage.page_intro"/>
         <SubServices v-if="servicespage.sub_services" :subs="servicespage.sub_services.sub_services" :parent="servicespage"/>
         <SideBySide v-if="servicespage.side_by_side" :data="servicespage.side_by_side" :image="servicespage.icon_large" :textSide="'left'"/>

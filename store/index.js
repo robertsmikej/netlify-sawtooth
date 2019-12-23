@@ -58,7 +58,7 @@ export const mutations = {
         state.privacyPolicy = data[0];
     },
     setProcesses(state, data) {
-        state.processes = sortItems(data);
+        state.processes = data;
     },
     setPortfolio(state, data) {
         state.portfolio = sortItems(data);

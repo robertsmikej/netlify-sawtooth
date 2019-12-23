@@ -25,6 +25,17 @@ export default {
         SectionHeader,
         ContactBox
     },
+    data() {
+        return {
+            technologypage:{
+                hero: {
+                    hero_small: true,
+                    hero_background_image: "",
+                    heroHeader: ""
+                }
+            }
+        }
+    },
     computed: {
         sitewide: function () {
             return this.$store.state.sitewide

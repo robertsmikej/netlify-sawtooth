@@ -50,7 +50,7 @@ export default {
     align-content: flex-start;
     justify-content: center;
     padding: 10px 30px 20px;
-    background-color: var(--site-white);
+    background-color: var(--light-blue);
     border-radius: 10px;
     text-decoration: none;
 }

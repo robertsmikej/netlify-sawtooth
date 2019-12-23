@@ -197,9 +197,12 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 20px;
-        margin: 40px 0;
+        padding: 10px;
+        margin: 20px 0;
         width: 100%;
+    }
+    .hero__sub__image__container img {
+        max-width: 300px;
     }
     .hero__image__only, .hero__image__only img {
         align-self: center;
@@ -210,7 +213,7 @@ export default {
     @media screen and (max-width: 1250px) {
         .hero__small .hero__background {
             max-height: 100%;
-            height: auto;
+            
         }
         .hero__small .hero__hr {
             margin: 0;
@@ -234,6 +237,10 @@ export default {
         }
         .hero__small .hero__background {
             min-height: 300px;
+            height: auto;
+        }
+        .hero__sub__image__container img {
+            max-width: 200px;
         }
         .hero__text__container {
             max-width: 450px;
@@ -257,6 +264,7 @@ export default {
         }
         .hero__small .hero__inner {
             top: 60%;
+            padding: 0 30px;
         }
         .hero__image__only .hero__inner {
             flex-wrap: wrap;
@@ -271,6 +279,12 @@ export default {
         .hero__background {
             max-height: 500px;
         }
+        .hero__sub__image__container {
+            width: 50%;
+        }
+        .hero__sub__image__container img {
+            max-width: 140px;
+        }
     }
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 600px) {
@@ -279,6 +293,18 @@ export default {
         }
         .hero__small .hero__background {
             min-height: 260px;
+        }
+        .hero__small .hero__inner {
+            padding: 0 16px;
+        }
+        .hero__sub__image__container img {
+            max-width: 90px;
+        }
+    }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 400px) {
+        .hero__sub__image__container img {
+            max-width: 80px;
         }
     }
 </style>

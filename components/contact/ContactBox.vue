@@ -85,4 +85,10 @@ export default {
     .contact__box .page__section__header::after {
         background: #FFF !important;
     }
+    /* ------------------ MEDIA QUERY ------------------ */
+    @media screen and (max-width: 900px) {
+        .contact__box__inner {
+            padding: 0;
+        }
+    }
 </style>

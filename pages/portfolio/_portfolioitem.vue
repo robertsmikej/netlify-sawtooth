@@ -13,21 +13,21 @@
                 <div class="portfolio__tech__used portfolio__side__bar">
                     <div class="portfolio__tech__section" v-if="portfoliopage.category">
                         <h4 class="portfolio__header">How We Help Them</h4>
-                        <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, this.services)" :key="index">
+                        <div class="services__used__cell" v-for="(item, index) in getServices(portfoliopage.category, services)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
                     <hr v-if="portfoliopage.tech.tech_used" />
                     <div class="portfolio__tech__section" v-if="portfoliopage.tech.tech_used">
                         <h4 class="portfolio__header">Technologies Used</h4>
-                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.tech_used, this.technology)" :key="index">
+                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.tech_used, technology)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
                     <hr v-if="portfoliopage.tech.integrations_used" />
                     <div class="portfolio__tech__section" v-if="portfoliopage.tech.integrations_used">
                         <h4 class="portfolio__header">Integrations Used</h4>
-                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.integrations_used, this.integrations)" :key="index">
+                        <div class="services__used__cell" v-for="(item, index) in getUsed(portfoliopage.tech.integrations_used, integrations)" :key="index">
                             <TechnologyCell :cell="item"/>
                         </div>
                     </div>
@@ -97,10 +97,11 @@ export default {
             let d = {};
             for(let s in stored) {
                 let stor = stored[s];
+                let storName = stored[s].name;
                 if (data.includes(stor.name)) {
-                    d[stor.name] = stor;
-                    d[stor.name]["short_description"] = "";
-                    d[stor.name]["type"] = "technology";
+                    d[storName] = stor;
+                    d[storName]["short_description"] = "placeholder";
+                    d[storName]["type"] = "technology";
                 }
             }
             return d;

@@ -1,11 +1,12 @@
 <template>
-    <nuxt-link :to="'/process/' + process.slug" class="process__text__cell">
+    <!-- <nuxt-link :to="'/process/' + process.slug" class="process__text__cell"> -->
+    <div class="process__text__cell">
         <div class="process__text__number">{{ ind }}</div>
         <div class="process__text">
             <h3>{{ process.process_header }}</h3>
             <p>{{ process.process_short_description }}</p>
         </div>
-    </nuxt-link>
+    </div>
 </template>
 
 <script>
