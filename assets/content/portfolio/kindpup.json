@@ -1,22 +1,23 @@
 {
-  "status": true,
-  "name": "KindPup",
   "para": "KindPup develops and manufactures CBD for use with our best friends: our pets.",
-  "category": [
-    "Website Development"
-  ],
-  "link": "https://www.kindpup.com",
   "logo": "/img/kindpuplogo-medium.png",
-  "hero": {
-    "hero_header": "KinpPup",
-    "hero_background_image": "/img/kindpup-hero.jpg",
-    "hero_small": true
-  },
+  "name": "KindPup",
+  "status": true,
   "tech": {
     "tech_used": [
       "Shopify",
       "Vue.js",
       "Netlify"
     ]
-  }
+  },
+  "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "link": "https://www.kindpup.com",
+  "hero": {
+    "hero_header": "KinpPup",
+    "hero_background_image": "/img/kindpup-hero.jpg",
+    "hero_small": true
+  },
+  "category": [
+    "Website Development"
+  ]
 }
