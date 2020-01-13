@@ -129,7 +129,7 @@ export default {
     .header__name span {
         margin-right: 2px;
     }
-
+    
     .site__nav {
         margin-left: auto;
         align-self: center;
@@ -248,7 +248,6 @@ export default {
         font-size: 1.8em;
         color: var(--dark-grey);
     }
-
     /* ------------------ MEDIA QUERY ------------------ */
     @media screen and (max-width: 1000px) {
         .site__logo {

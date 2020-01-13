@@ -2,35 +2,27 @@
     <main>
         <Hero :hero="pageInfo.hero"/>
         <Offer v-if="sections.services.status" :header="sections.services.header" :para="sections.services.section_text[0].text" :services="getPageServices(pageInfo, services)" :tech="technology"/>
-        <Testimonial v-if="pageInfo.testimonials" :testimonial="getTestimonial(pageInfo.testimonials)"/>
         <RecentClients :header="sections.our_work.header" :para="sections.our_work.section_text[0].text" :featured="featured"/>
-        <Local v-if="sections.work_with_idaho_natives.status" :header="sections.work_with_idaho_natives.header" :para="sections.work_with_idaho_natives.section_text[0].text"/>
         <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
+import RecentClients from '~/components/general/RecentClients.vue';
 import PageIntro from '~/components/general/PageIntro.vue';
 import Offer from '~/components/index/Offer.vue';
-import Local from '~/components/index/Local.vue';
-import Testimonial from '~/components/testimonials/Testimonial.vue';
-import RecentClients from '~/components/general/RecentClients.vue';
 import Technology from '~/components/general/Technology.vue';
-import OurStack from '~/components/general/OurStack.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
     scrollToTop: true,
     components: {
         Hero,
+        RecentClients,
         PageIntro,
         Offer,
-        Local,
-        Testimonial,
-        RecentClients,
         Technology,
-        OurStack,
         ContactBox
     },
     transition: 'bounce',
@@ -85,21 +77,6 @@ export default {
                 }
             }
             return newArr;
-        },
-        getTestimonial: function (testes) {
-            for (let p in this.portfolio) {
-                let portfolioItem = this.portfolio[p];
-                if (portfolioItem.name === testes[0]) {
-                    if (portfolioItem.testimonial) {
-                        return {
-                            name: portfolioItem.name,
-                            description: portfolioItem.testimonial.client_description,
-                            main_text: portfolioItem.testimonial.testimonial_text,
-                            quote: portfolioItem.testimonial.quote
-                        }
-                    }
-                }
-            }
         }
     },
     head() {
