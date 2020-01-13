@@ -15,8 +15,7 @@
                 <nav class="nav__container">
                     <div class="nav__items" @click="navToggle(false); navBarsToX();">
                         <div v-for="(item, index) in navItems" :key="index" class="nav__item">
-                            {{item.length}}
-                            <nuxt-link :to="item.link" v-if="item.status && item.link &&  item.title !== 'Contact'">
+                            <nuxt-link :to="item.link" v-if="item.status && item.link && item.title !== 'Contact'">
                                 <h2 class="nav__link">{{ item.title }}</h2>
                                 <p class="nav__para">{{ item.para }}</p>
                             </nuxt-link>
@@ -38,7 +37,7 @@
 
 <script>
 import Logo from '~/components/header/Logo.vue';
-import VueScrollTo from '~/plugins/vue-scrollto.js';
+// import VueScrollTo from '~/plugins/vue-scrollto.js';
 
 export default {
     data () {
