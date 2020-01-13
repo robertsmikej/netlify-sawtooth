@@ -7,7 +7,6 @@
         <section class="page__section employee__cells">
             <SectionHeader :header="pageInfo.sections.current_associates.header" :para="pageInfo.sections.current_associates.section_text[0].text"/>
             <div class="employee__cells__inner">
-
                 <div v-for="(emp, index) in employees" :key="index">
                     <Employee v-if="emp.status" :employee="emp" class="employee__cell"/>
                 </div>

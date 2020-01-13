@@ -2,7 +2,6 @@
     <main>
         <Hero :hero="pageInfo.hero"/>
         <PageIntro v-if="pageInfo.page_intro" :intro="pageInfo.page_intro"/>
-        {{processes}}
         <ContactBox :sitewide="sitewide" :header="sitewide.contact_box.contact_header" :para="sitewide.contact_box.contact_para"/>
     </main>
 </template>

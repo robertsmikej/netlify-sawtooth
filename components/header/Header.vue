@@ -20,10 +20,6 @@
                                 <h2 class="nav__link">{{ item.title }}</h2>
                                 <p class="nav__para">{{ item.para }}</p>
                             </nuxt-link>
-                            <!-- <div v-else-if="item.status && item.title === 'Contact'" @click="contactToggle()">
-                                <h2 class="nav__link">{{ item.title }}</h2>
-                                <p class="nav__para">{{ item.para }}</p>
-                            </div> -->
                         </div>
                     </div>
                 </nav>
@@ -129,7 +125,7 @@ export default {
     .header__name span {
         margin-right: 2px;
     }
-    
+
     .site__nav {
         margin-left: auto;
         align-self: center;

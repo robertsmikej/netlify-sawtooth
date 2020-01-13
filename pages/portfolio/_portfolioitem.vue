@@ -44,7 +44,6 @@
 
 <script>
 import Hero from '~/components/hero/Hero.vue';
-import PageIntro from '~/components/general/PageIntro.vue';
 import SectionHeader from '~/components/general/SectionHeader.vue';
 import TechnologyCell from '~/components/general/TechnologyCell.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
@@ -53,7 +52,6 @@ export default {
     scrollToTop: true,
     components: {
         Hero,
-        PageIntro,
         SectionHeader,
         TechnologyCell,
         ContactBox

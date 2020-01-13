@@ -65,8 +65,4 @@ export default {
     max-width: 220px;
     max-height: 120px;
 }
-/* ------------------ MEDIA QUERY ------------------ */
-@media screen and (max-width: 900px) {
-    
-}
 </style>

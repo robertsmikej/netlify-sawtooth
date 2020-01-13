@@ -11,7 +11,6 @@
                     <h3 v-if="employeepage.title" class="employee__title">{{ employeepage.title }}</h3>
                     <h4 v-if="employeepage.speciality" class="employee__title--2">{{ employeepage.speciality }}</h4>
                 </div>
-                
             </div>
             <div v-html="$md.render(employeepage.long_text)" v-if="employeepage.long_text" class="employee__long__text"></div>
         </section>

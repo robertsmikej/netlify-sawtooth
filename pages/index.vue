@@ -10,9 +10,7 @@
 <script>
 import Hero from '~/components/hero/Hero.vue';
 import RecentClients from '~/components/general/RecentClients.vue';
-import PageIntro from '~/components/general/PageIntro.vue';
 import Offer from '~/components/index/Offer.vue';
-import Technology from '~/components/general/Technology.vue';
 import ContactBox from '~/components/contact/ContactBox.vue';
 
 export default {
@@ -20,9 +18,7 @@ export default {
     components: {
         Hero,
         RecentClients,
-        PageIntro,
-        Offer,
-        Technology,
+        Offer,  
         ContactBox
     },
     transition: 'bounce',
