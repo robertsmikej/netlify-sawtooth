@@ -3,6 +3,7 @@
   "logo": "/img/kindpuplogo-medium.png",
   "name": "KindPup",
   "status": true,
+  "main_image": "/img/kindpup-main.jpg",
   "tech": {
     "tech_used": [
       "Shopify",
