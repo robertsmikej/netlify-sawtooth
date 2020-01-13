@@ -98,8 +98,8 @@ export default {
                 let storName = stored[s].name;
                 if (data.includes(stor.name)) {
                     d[storName] = stor;
-                    d[storName]["short_description"] = "placeholder";
-                    d[storName]["type"] = "technology";
+                    d[storName]["short_description"];
+                    d[storName]["type"];
                 }
             }
             return d;
