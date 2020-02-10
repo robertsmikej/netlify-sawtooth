@@ -7,7 +7,7 @@
     "hero_small": true
   },
   "page_intro": {
-    "status": "published",
+    "status": true,
     "page_intro_para": "",
     "para": "By not using mass produced templates or platforms, creative constraints disappear and we are free to really listen to exactly what your needs are."
   }
