@@ -4,5 +4,8 @@
     "hero_header": "Process",
     "hero_background_video": "/img/discussion.mp4",
     "hero_small": false
+  },
+  "page_intro": {
+    "status": false
   }
 }
