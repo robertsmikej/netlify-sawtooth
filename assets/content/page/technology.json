@@ -7,7 +7,7 @@
     "hero_small": false
   },
   "page_intro": {
-    "status": "published",
+    "status": true,
     "page_intro_header": "What We Use",
     "page_intro_para": "To us, the technology that is used to build your website is just as important as what it looks like.",
     "header": "What We Use",
