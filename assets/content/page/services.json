@@ -4,7 +4,7 @@
     "hero_header": "Our Services",
     "hero_para": "",
     "hero_background_video": "/img/teamwork-space.mp4",
-    "hero_small": false
+    "hero_small": true
   },
   "page_intro": {
     "status": "published",
