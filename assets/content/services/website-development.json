@@ -1,7 +1,7 @@
 {
   "service_type": "Website Development",
   "sub_header": "Website Development and Design",
-  "status": "published",
+  "status": true,
   "service_processes": {
     "header": "The Process",
     "text": "Get to know how we Develop Websites!",
