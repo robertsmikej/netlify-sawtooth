@@ -18,7 +18,7 @@
     "@nuxtjs/markdownit": "^1.2.7",
     "@nuxtjs/sitemap": "^2.0.1",
     "@pake/react-color": "^3.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cross-env": "^5.2.0",
     "eventsource-polyfill": "^0.9.6",
     "glob-all": "^3.1.0",
