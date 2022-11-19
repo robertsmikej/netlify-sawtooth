@@ -22,7 +22,7 @@
     "cross-env": "^5.2.0",
     "eventsource-polyfill": "^0.9.6",
     "glob-all": "^3.1.0",
-    "nuxt": "^2.10.2",
+    "nuxt": "^2.15.8",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
     "vue-loader": "^15.8.3",
